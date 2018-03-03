@@ -72,6 +72,8 @@
             this.pomocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetujSveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sacuvajCrtezToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -79,6 +81,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // debljinaolovke
@@ -350,7 +354,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(994, 33);
+            this.radioButton1.Location = new System.Drawing.Point(10, 62);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(116, 17);
             this.radioButton1.TabIndex = 14;
@@ -361,7 +365,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(994, 67);
+            this.radioButton2.Location = new System.Drawing.Point(10, 20);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(148, 17);
             this.radioButton2.TabIndex = 15;
@@ -371,7 +375,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(1116, 33);
+            this.numericUpDown1.Location = new System.Drawing.Point(132, 62);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             900,
             0,
@@ -384,7 +388,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1162, 35);
+            this.label1.Location = new System.Drawing.Point(178, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 13);
             this.label1.TabIndex = 17;
@@ -392,7 +396,7 @@
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(1148, 63);
+            this.numericUpDown2.Location = new System.Drawing.Point(164, 16);
             this.numericUpDown2.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -405,7 +409,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1147, 86);
+            this.label2.Location = new System.Drawing.Point(163, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 19;
@@ -413,7 +417,7 @@
             // 
             // numericUpDown3
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(1200, 63);
+            this.numericUpDown3.Location = new System.Drawing.Point(216, 16);
             this.numericUpDown3.Maximum = new decimal(new int[] {
             1214,
             0,
@@ -426,7 +430,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1197, 85);
+            this.label3.Location = new System.Drawing.Point(213, 38);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 21;
@@ -435,7 +439,7 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(994, 108);
+            this.radioButton3.Location = new System.Drawing.Point(6, 16);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(94, 17);
             this.radioButton3.TabIndex = 22;
@@ -446,7 +450,7 @@
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(1116, 108);
+            this.radioButton4.Location = new System.Drawing.Point(6, 36);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(49, 17);
             this.radioButton4.TabIndex = 24;
@@ -457,7 +461,7 @@
             // igracb
             // 
             this.igracb.AutoSize = true;
-            this.igracb.Location = new System.Drawing.Point(1251, 732);
+            this.igracb.Location = new System.Drawing.Point(11, 739);
             this.igracb.Name = "igracb";
             this.igracb.Size = new System.Drawing.Size(44, 17);
             this.igracb.TabIndex = 27;
@@ -467,7 +471,7 @@
             // 
             // zapocnibt
             // 
-            this.zapocnibt.Location = new System.Drawing.Point(12, 732);
+            this.zapocnibt.Location = new System.Drawing.Point(68, 735);
             this.zapocnibt.Name = "zapocnibt";
             this.zapocnibt.Size = new System.Drawing.Size(75, 23);
             this.zapocnibt.TabIndex = 28;
@@ -477,7 +481,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(93, 732);
+            this.button8.Location = new System.Drawing.Point(149, 735);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(75, 23);
             this.button8.TabIndex = 29;
@@ -499,7 +503,7 @@
             this.sacuvajCrtezToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1313, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1509, 24);
             this.menuStrip1.TabIndex = 30;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -526,30 +530,51 @@
             // 
             // sacuvajCrtezToolStripMenuItem
             // 
+            this.sacuvajCrtezToolStripMenuItem.Enabled = false;
             this.sacuvajCrtezToolStripMenuItem.Name = "sacuvajCrtezToolStripMenuItem";
             this.sacuvajCrtezToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.sacuvajCrtezToolStripMenuItem.Text = "Sacuvaj crtez";
             this.sacuvajCrtezToolStripMenuItem.Click += new System.EventHandler(this.sacuvajCrtezToolStripMenuItem_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.numericUpDown3);
+            this.groupBox4.Controls.Add(this.radioButton2);
+            this.groupBox4.Controls.Add(this.numericUpDown2);
+            this.groupBox4.Controls.Add(this.label2);
+            this.groupBox4.Controls.Add(this.label3);
+            this.groupBox4.Controls.Add(this.label1);
+            this.groupBox4.Controls.Add(this.numericUpDown1);
+            this.groupBox4.Controls.Add(this.radioButton1);
+            this.groupBox4.Location = new System.Drawing.Point(984, 25);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(295, 100);
+            this.groupBox4.TabIndex = 31;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Oblici";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.radioButton3);
+            this.groupBox5.Controls.Add(this.radioButton4);
+            this.groupBox5.Location = new System.Drawing.Point(1295, 25);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(200, 100);
+            this.groupBox5.TabIndex = 32;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Alatke";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1313, 761);
+            this.ClientSize = new System.Drawing.Size(1509, 761);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.zapocnibt);
             this.Controls.Add(this.igracb);
-            this.Controls.Add(this.radioButton4);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.numericUpDown3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.gumica);
             this.Controls.Add(this.groupBox3);
@@ -557,9 +582,8 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1329, 800);
-            this.MinimumSize = new System.Drawing.Size(1329, 800);
             this.Name = "Form1";
             this.Text = "Paint";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -576,6 +600,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -625,6 +653,8 @@
         private System.Windows.Forms.ToolStripMenuItem pomocToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resetujSveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sacuvajCrtezToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBox5;
     }
 }
 
