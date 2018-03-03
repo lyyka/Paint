@@ -1,0 +1,46 @@
+C:\Users\Luka\Desktop\Paint\Paint\bin\Debug\Paint.exe.config
+C:\Users\Luka\Desktop\Paint\Paint\bin\Debug\Paint.exe
+C:\Users\Luka\Desktop\Paint\Paint\bin\Debug\Paint.pdb
+C:\Users\Luka\Desktop\Paint\Paint\obj\Debug\Paint.csprojResolveAssemblyReference.cache
+C:\Users\Luka\Desktop\Paint\Paint\obj\Debug\Paint.Form1.resources
+C:\Users\Luka\Desktop\Paint\Paint\obj\Debug\Paint.Properties.Resources.resources
+C:\Users\Luka\Desktop\Paint\Paint\obj\Debug\Paint.csproj.GenerateResource.Cache
+C:\Users\Luka\Desktop\Paint\Paint\obj\Debug\Paint.exe
+C:\Users\Luka\Desktop\Paint\Paint\obj\Debug\Paint.pdb
+C:\Users\Luka\Desktop\Paint\Paint\obj\Debug\Paint.Form2.resources
+C:\Users\Luka\Desktop\Paint\Paint\obj\Debug\Paint.Form3.resources
+C:\Users\Luka\Desktop\C#\Skola vezbe\Paint\Paint\bin\Debug\Paint.exe.config
+C:\Users\Luka\Desktop\C#\Skola vezbe\Paint\Paint\obj\Debug\Paint.exe
+C:\Users\Luka\Desktop\C#\Skola vezbe\Paint\Paint\obj\Debug\Paint.pdb
+C:\Users\Luka\Desktop\C#\Skola vezbe\Paint\Paint\bin\Debug\Paint.exe
+C:\Users\Luka\Desktop\C#\Skola vezbe\Paint\Paint\bin\Debug\Paint.pdb
+C:\Users\Luka\Desktop\C#\Skola vezbe\Paint\Paint\obj\Debug\Paint.csprojResolveAssemblyReference.cache
+C:\Users\Luka\Desktop\C#\Skola vezbe\Paint\Paint\obj\Debug\Paint.Form1.resources
+C:\Users\Luka\Desktop\C#\Skola vezbe\Paint\Paint\obj\Debug\Paint.Form2.resources
+C:\Users\Luka\Desktop\C#\Skola vezbe\Paint\Paint\obj\Debug\Paint.Form3.resources
+C:\Users\Luka\Desktop\C#\Skola vezbe\Paint\Paint\obj\Debug\Paint.Properties.Resources.resources
+C:\Users\Luka\Desktop\C#\Skola vezbe\Paint\Paint\obj\Debug\Paint.csproj.GenerateResource.Cache
+C:\Users\Luka\Desktop\C#\Skola vezbe\Paint\Paint\obj\Debug\Paint.Form4.resources
+C:\Users\Luka\Desktop\C#\Skola vezbe\Paint\Paint\obj\Debug\Paint.Form5.resources
+C:\Users\Luka\Desktop\C#\Skola vezbe\Paint\Paint\bin\Debug\Paint.exe.manifest
+C:\Users\Luka\Desktop\C#\Skola vezbe\Paint\Paint\bin\Debug\Paint.application
+C:\Users\Luka\Desktop\C#\Skola vezbe\Paint\Paint\obj\Debug\Paint.exe.manifest
+C:\Users\Luka\Desktop\C#\Skola vezbe\Paint\Paint\obj\Debug\Paint.application
+D:\Programiranje\Programi\Paint\Paint\obj\Debug\Paint.csprojResolveAssemblyReference.cache
+D:\Programiranje\Programi\Paint\Paint\obj\Debug\Paint.Form1.resources
+D:\Programiranje\Programi\Paint\Paint\obj\Debug\Paint.Form2.resources
+D:\Programiranje\Programi\Paint\Paint\obj\Debug\Paint.Form3.resources
+D:\Programiranje\Programi\Paint\Paint\obj\Debug\Paint.Form4.resources
+D:\Programiranje\Programi\Paint\Paint\obj\Debug\Paint.Form5.resources
+D:\Programiranje\Programi\Paint\Paint\obj\Debug\Paint.Properties.Resources.resources
+D:\Programiranje\Programi\Paint\Paint\obj\Debug\Paint.csproj.GenerateResource.Cache
+D:\Programiranje\Programi\Paint\Paint\obj\Debug\Paint.csproj.CoreCompileInputs.cache
+D:\Programiranje\Programi\Paint\Paint\obj\Debug\Paint.exe
+D:\Programiranje\Programi\Paint\Paint\obj\Debug\Paint.pdb
+D:\Programiranje\Programi\Paint\Paint\bin\Debug\Paint.exe.config
+D:\Programiranje\Programi\Paint\Paint\bin\Debug\Paint.exe.manifest
+D:\Programiranje\Programi\Paint\Paint\bin\Debug\Paint.application
+D:\Programiranje\Programi\Paint\Paint\bin\Debug\Paint.exe
+D:\Programiranje\Programi\Paint\Paint\bin\Debug\Paint.pdb
+D:\Programiranje\Programi\Paint\Paint\obj\Debug\Paint.exe.manifest
+D:\Programiranje\Programi\Paint\Paint\obj\Debug\Paint.application
