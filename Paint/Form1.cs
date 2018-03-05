@@ -149,34 +149,6 @@ namespace Paint
             
         }
 
-        private void button1_Click(object sender, EventArgs e) // povecavanje debljine olovke
-        {
-            if(debolovke >= 100)
-            {
-                MessageBox.Show("Debljina olovke ne moze biti veca od 100");
-            }
-            else
-            {
-                debolovke++;
-                debljinaolovke.Text = Convert.ToString(debolovke);
-                olovka.Width = debolovke;
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e) // smanjivanje debljine olovke
-        {
-            if(debolovke - 1 >= 1)
-            {
-                debolovke--;
-                debljinaolovke.Text = Convert.ToString(debolovke);
-                olovka.Width = debolovke;
-            }
-            else
-            {
-                MessageBox.Show("Ne mozete smanjiti debljinu olovke na vrednost manju od 1.");
-            }
-        }
-
         private void button4_Click(object sender, EventArgs e) // izbrisi sve
         {
             Refresh();
@@ -385,7 +357,7 @@ namespace Paint
         private void resetujSveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             debolovke = 5;
-            debljinaolovke.Text = Convert.ToString(debolovke);
+            numericUpDown5.Value = 5;
             olovka.Color = Color.Black;
             olovkakurg.Color = Color.Black;
             olovkapravoug.Color = Color.Black;
@@ -403,6 +375,12 @@ namespace Paint
             Rectangle boundaries = new Rectangle(0, 0, Width, Height);
             this.DrawToBitmap(bitmap, boundaries);
             bitmap.Save(@"test.png", ImageFormat.Png);
+        }
+
+        private void numericUpDown5_ValueChanged(object sender, EventArgs e)
+        {
+            debolovke = Convert.ToInt32(numericUpDown5.Value);
+            olovka.Width = debolovke;
         }
 
         private void button5_Click(object sender, EventArgs e) // otvaranje RGB prozora
@@ -477,14 +455,11 @@ namespace Paint
         private void Form1_Load(object sender, EventArgs e) // ucitavanje forme
         {
             Icon = new Icon(@"slike/ikonica.ico");
-            debljinaolovke.Text = Convert.ToString(debolovke);
             igracb.Checked = false;
             Image slika = Image.FromFile(@"slike/gumica.jpg");
             gumica.BackgroundImage = slika;
             radioButton3.Checked = true;
             button6.Enabled = false;
-            button1.FlatStyle = FlatStyle.Popup;
-            button2.FlatStyle = FlatStyle.Popup;
             button5.FlatStyle = FlatStyle.Popup;
             button6.FlatStyle = FlatStyle.Popup;
             Colormixer.FlatStyle = FlatStyle.Popup;
