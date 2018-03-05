@@ -118,6 +118,13 @@ namespace Paint
             if (crtanje)
             {
                 Graphics g = CreateGraphics();
+                if (radioButton5.Checked)
+                {
+                    Pen temp = new Pen(Color.White, debolovke);
+                    g.DrawLine(temp, xp, yp, e.X, e.Y);
+                    xp = e.X;
+                    yp = e.Y;
+                }
                 if (radioButton3.Checked)
                 {
                     g.DrawLine(olovka, xp, yp, e.X, e.Y);
@@ -147,11 +154,6 @@ namespace Paint
         {
             crtanje = false;
             
-        }
-
-        private void button4_Click(object sender, EventArgs e) // izbrisi sve
-        {
-            Refresh();
         }
 
         private void omiljenaboja_Click(object sender, EventArgs e) // promena boje olovke u omiljenu boju
@@ -367,6 +369,7 @@ namespace Paint
             numericUpDown2.Value = 0;
             numericUpDown3.Value = 0;
             igracb.Checked = false;
+            Refresh();
         }
 
         private void sacuvajCrtezToolStripMenuItem_Click(object sender, EventArgs e)
@@ -456,16 +459,12 @@ namespace Paint
         {
             Icon = new Icon(@"slike/ikonica.ico");
             igracb.Checked = false;
-            Image slika = Image.FromFile(@"slike/gumica.jpg");
-            gumica.BackgroundImage = slika;
             radioButton3.Checked = true;
             button6.Enabled = false;
             button5.FlatStyle = FlatStyle.Popup;
             button6.FlatStyle = FlatStyle.Popup;
             Colormixer.FlatStyle = FlatStyle.Popup;
             button3.FlatStyle = FlatStyle.Popup;
-            button4.FlatStyle = FlatStyle.Popup;
-            gumica.FlatStyle = FlatStyle.Popup;
             zapocnibt.FlatStyle = FlatStyle.Popup;
             button8.FlatStyle = FlatStyle.Popup;
         }

@@ -47,8 +47,6 @@
             this.omiljenaboja = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.gumica = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -73,6 +71,7 @@
             this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -300,25 +299,6 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // gumica
-            // 
-            this.gumica.Location = new System.Drawing.Point(872, 78);
-            this.gumica.Name = "gumica";
-            this.gumica.Size = new System.Drawing.Size(69, 47);
-            this.gumica.TabIndex = 11;
-            this.gumica.UseVisualStyleBackColor = true;
-            this.gumica.Click += new System.EventHandler(this.gumica_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(842, 33);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(126, 33);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "Obrisi sve";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
@@ -360,9 +340,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(103, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 13);
+            this.label1.Size = new System.Drawing.Size(69, 13);
             this.label1.TabIndex = 17;
-            this.label1.Text = "(Poluprecnik kruga)";
+            this.label1.Text = "(Poluprecnik)";
             // 
             // numericUpDown2
             // 
@@ -425,7 +405,7 @@
             // 
             this.radioButton4.AutoSize = true;
             this.radioButton4.CausesValidation = false;
-            this.radioButton4.Location = new System.Drawing.Point(321, 36);
+            this.radioButton4.Location = new System.Drawing.Point(321, 39);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(49, 17);
             this.radioButton4.TabIndex = 11;
@@ -477,7 +457,7 @@
             this.sacuvajCrtezToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1509, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1355, 24);
             this.menuStrip1.TabIndex = 30;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -512,6 +492,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.radioButton5);
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Controls.Add(this.numericUpDown4);
             this.groupBox4.Controls.Add(this.radioButton3);
@@ -524,9 +505,9 @@
             this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Controls.Add(this.numericUpDown1);
             this.groupBox4.Controls.Add(this.radioButton1);
-            this.groupBox4.Location = new System.Drawing.Point(984, 25);
+            this.groupBox4.Location = new System.Drawing.Point(832, 27);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(513, 100);
+            this.groupBox4.Size = new System.Drawing.Size(513, 98);
             this.groupBox4.TabIndex = 31;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Alaatke";
@@ -534,7 +515,7 @@
             // numericUpDown4
             // 
             this.numericUpDown4.CausesValidation = false;
-            this.numericUpDown4.Location = new System.Drawing.Point(376, 36);
+            this.numericUpDown4.Location = new System.Drawing.Point(376, 39);
             this.numericUpDown4.Name = "numericUpDown4";
             this.numericUpDown4.Size = new System.Drawing.Size(38, 20);
             this.numericUpDown4.TabIndex = 12;
@@ -543,7 +524,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(420, 39);
+            this.label4.Location = new System.Drawing.Point(420, 43);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 13);
             this.label4.TabIndex = 25;
@@ -568,18 +549,26 @@
             0});
             this.numericUpDown5.ValueChanged += new System.EventHandler(this.numericUpDown5_ValueChanged);
             // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(321, 62);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(61, 17);
+            this.radioButton5.TabIndex = 32;
+            this.radioButton5.Text = "Gumica";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1509, 761);
+            this.ClientSize = new System.Drawing.Size(1355, 761);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.zapocnibt);
             this.Controls.Add(this.igracb);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.gumica);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -627,8 +616,6 @@
         private System.Windows.Forms.Button omiljenaboja;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button gumica;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
@@ -656,6 +643,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown numericUpDown4;
         private System.Windows.Forms.NumericUpDown numericUpDown5;
+        private System.Windows.Forms.RadioButton radioButton5;
     }
 }
 
