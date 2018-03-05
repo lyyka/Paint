@@ -29,5 +29,17 @@ namespace Paint
             int b = Convert.ToInt32(textBox1.Text);
             
         }
+
+        private void Form3_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form1 form = new Form1();
+            form.button6.Enabled = false;
+        }
+
+        private void Form3_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Form1 form = new Form1();
+            form.button6.Enabled = false;
+        }
     }
 }

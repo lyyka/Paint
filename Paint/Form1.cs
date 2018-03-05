@@ -15,6 +15,9 @@ namespace Paint
     public partial class Form1 : Form
     {
         // deklaracija promenljivih
+        //test
+       
+        //
         private Form3 frm3;
         private Form5 frm5;
         Random _rnd = new Random();
@@ -112,22 +115,19 @@ namespace Paint
 
         private void Form1_MouseMove(object sender, MouseEventArgs e) //dok se mis pomera 
         {
-
             if (crtanje)
             {
-                if(radioButton3.Checked == true)
+                Graphics g = CreateGraphics();
+                if (radioButton3.Checked)
                 {
-                    Graphics g = CreateGraphics();
                     g.DrawLine(olovka, xp, yp, e.X, e.Y);
                     xp = e.X;
                     yp = e.Y;
-                    g.Dispose();
                 }
-                if (radioButton4.Checked == true) // jedini deo koda skinut sa interneta
+                if (radioButton4.Checked) // jedini deo koda skinut sa interneta
                 {
-                    int radius = 15;
-
-                    using (Graphics g = this.CreateGraphics())
+                    int radius = Convert.ToInt32(numericUpDown4.Value);
+                    using (g)
                     {
                         for (int i = 0; i < 100; ++i)
                         {
@@ -139,12 +139,14 @@ namespace Paint
                         }
                     }
                 }
+                g.Dispose();
             }
         }
 
         private void Form1_MouseUp(object sender, MouseEventArgs e) //kada se pusti levi taster misa
         {
             crtanje = false;
+            
         }
 
         private void button1_Click(object sender, EventArgs e) // povecavanje debljine olovke
@@ -227,9 +229,9 @@ namespace Paint
 
         private void button6_Click(object sender, EventArgs e) // RGB unos
         {
-            if (frm3.textBox1.Text == "" && frm3.textBox2.Text == "" && frm3.textBox3.Text == "") // ako nista nije uneto
+            if (frm3.textBox1.Text == "" || frm3.textBox2.Text == "" || frm3.textBox3.Text == "") // ako nesto nije uneto
             {
-                MessageBox.Show("Doslo je do greske. Niste uneli ni jednu vrednost.");
+                MessageBox.Show("Doslo je do greske. Niste uneli sve vrednosti.");
             }
             else
             {
@@ -245,6 +247,7 @@ namespace Paint
                 }
                 else // kada je sve kako treba
                 {
+                    button6.Enabled = false;
                     olovka.Color = Color.FromArgb(r, g, b);
                     olovkakurg.Color = Color.FromArgb(r, g, b);
                     olovkapravoug.Color = Color.FromArgb(r, g, b);
@@ -404,6 +407,7 @@ namespace Paint
 
         private void button5_Click(object sender, EventArgs e) // otvaranje RGB prozora
         {
+            button6.Enabled = true;
             frm3 = new Form3();
             frm3.Show();
         }
@@ -478,6 +482,7 @@ namespace Paint
             Image slika = Image.FromFile(@"slike/gumica.jpg");
             gumica.BackgroundImage = slika;
             radioButton3.Checked = true;
+            button6.Enabled = false;
             button1.FlatStyle = FlatStyle.Popup;
             button2.FlatStyle = FlatStyle.Popup;
             button5.FlatStyle = FlatStyle.Popup;
