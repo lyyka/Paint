@@ -30,10 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
             this.Colormixer = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.braon = new System.Windows.Forms.Button();
             this.svetlozelena = new System.Windows.Forms.Button();
             this.svetloplava = new System.Windows.Forms.Button();
@@ -44,9 +43,8 @@
             this.narandzasta = new System.Windows.Forms.Button();
             this.zuta = new System.Windows.Forms.Button();
             this.zelena = new System.Windows.Forms.Button();
-            this.omiljenaboja = new System.Windows.Forms.Button();
+            this.favourite_color_pictureBox = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -61,18 +59,18 @@
             this.igracb = new System.Windows.Forms.CheckBox();
             this.zapocnibt = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.stoperica = new System.Windows.Forms.Timer(this.components);
+            this.stopwatch_Control = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.oProgramuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pomocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetujSveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sacuvajCrtezToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -81,7 +79,6 @@
             this.menuStrip1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -92,13 +89,30 @@
             this.groupBox1.Size = new System.Drawing.Size(200, 98);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Debljina olovke";
+            this.groupBox1.Text = "Pen width";
+            // 
+            // numericUpDown5
+            // 
+            this.numericUpDown5.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown5.Location = new System.Drawing.Point(59, 31);
+            this.numericUpDown5.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown5.Name = "numericUpDown5";
+            this.numericUpDown5.Size = new System.Drawing.Size(75, 45);
+            this.numericUpDown5.TabIndex = 0;
+            this.numericUpDown5.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown5.ValueChanged += new System.EventHandler(this.pencilWidth_Change);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.Colormixer);
-            this.groupBox2.Controls.Add(this.button5);
             this.groupBox2.Controls.Add(this.braon);
             this.groupBox2.Controls.Add(this.svetlozelena);
             this.groupBox2.Controls.Add(this.svetloplava);
@@ -111,41 +125,20 @@
             this.groupBox2.Controls.Add(this.zelena);
             this.groupBox2.Location = new System.Drawing.Point(227, 27);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(406, 98);
+            this.groupBox2.Size = new System.Drawing.Size(343, 98);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Boja";
-            // 
-            // button6
-            // 
-            this.button6.CausesValidation = false;
-            this.button6.Location = new System.Drawing.Point(309, 10);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(87, 79);
-            this.button6.TabIndex = 11;
-            this.button6.Text = "Preuzmi vrednosti";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.groupBox2.Text = "Color";
             // 
             // Colormixer
             // 
-            this.Colormixer.Location = new System.Drawing.Point(216, 52);
+            this.Colormixer.Location = new System.Drawing.Point(216, 18);
             this.Colormixer.Name = "Colormixer";
-            this.Colormixer.Size = new System.Drawing.Size(87, 37);
+            this.Colormixer.Size = new System.Drawing.Size(121, 61);
             this.Colormixer.TabIndex = 11;
-            this.Colormixer.Text = "Sve boje ";
+            this.Colormixer.Text = "All colors";
             this.Colormixer.UseVisualStyleBackColor = true;
             this.Colormixer.Click += new System.EventHandler(this.Colormixer_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(216, 10);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(87, 35);
-            this.button5.TabIndex = 10;
-            this.button5.Text = "Prilagodjena boja";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // braon
             // 
@@ -157,7 +150,7 @@
             this.braon.Size = new System.Drawing.Size(36, 27);
             this.braon.TabIndex = 9;
             this.braon.UseVisualStyleBackColor = false;
-            this.braon.Click += new System.EventHandler(this.braon_Click);
+            this.braon.Click += new System.EventHandler(this.brown_Click);
             // 
             // svetlozelena
             // 
@@ -169,7 +162,7 @@
             this.svetlozelena.Size = new System.Drawing.Size(36, 27);
             this.svetlozelena.TabIndex = 8;
             this.svetlozelena.UseVisualStyleBackColor = false;
-            this.svetlozelena.Click += new System.EventHandler(this.svetlozelena_Click);
+            this.svetlozelena.Click += new System.EventHandler(this.lightgreen_Click);
             // 
             // svetloplava
             // 
@@ -181,7 +174,7 @@
             this.svetloplava.Size = new System.Drawing.Size(36, 27);
             this.svetloplava.TabIndex = 7;
             this.svetloplava.UseVisualStyleBackColor = false;
-            this.svetloplava.Click += new System.EventHandler(this.svetloplava_Click);
+            this.svetloplava.Click += new System.EventHandler(this.lightblue_Click);
             // 
             // roze
             // 
@@ -193,7 +186,7 @@
             this.roze.Size = new System.Drawing.Size(36, 27);
             this.roze.TabIndex = 6;
             this.roze.UseVisualStyleBackColor = false;
-            this.roze.Click += new System.EventHandler(this.roze_Click);
+            this.roze.Click += new System.EventHandler(this.pink_Click);
             // 
             // crna
             // 
@@ -205,7 +198,7 @@
             this.crna.Size = new System.Drawing.Size(36, 27);
             this.crna.TabIndex = 5;
             this.crna.UseVisualStyleBackColor = false;
-            this.crna.Click += new System.EventHandler(this.crna_Click);
+            this.crna.Click += new System.EventHandler(this.black_Click);
             // 
             // ljubicasta
             // 
@@ -217,7 +210,7 @@
             this.ljubicasta.Size = new System.Drawing.Size(36, 27);
             this.ljubicasta.TabIndex = 4;
             this.ljubicasta.UseVisualStyleBackColor = false;
-            this.ljubicasta.Click += new System.EventHandler(this.ljubicasta_Click);
+            this.ljubicasta.Click += new System.EventHandler(this.purple_Click);
             // 
             // crvena
             // 
@@ -229,7 +222,7 @@
             this.crvena.Size = new System.Drawing.Size(36, 27);
             this.crvena.TabIndex = 3;
             this.crvena.UseVisualStyleBackColor = false;
-            this.crvena.Click += new System.EventHandler(this.crvena_Click);
+            this.crvena.Click += new System.EventHandler(this.red_Click);
             // 
             // narandzasta
             // 
@@ -241,7 +234,7 @@
             this.narandzasta.Size = new System.Drawing.Size(36, 27);
             this.narandzasta.TabIndex = 2;
             this.narandzasta.UseVisualStyleBackColor = false;
-            this.narandzasta.Click += new System.EventHandler(this.narandzasta_Click);
+            this.narandzasta.Click += new System.EventHandler(this.orange_Click);
             // 
             // zuta
             // 
@@ -253,7 +246,7 @@
             this.zuta.Size = new System.Drawing.Size(36, 27);
             this.zuta.TabIndex = 1;
             this.zuta.UseVisualStyleBackColor = false;
-            this.zuta.Click += new System.EventHandler(this.zuta_Click);
+            this.zuta.Click += new System.EventHandler(this.yellow_Click);
             // 
             // zelena
             // 
@@ -265,39 +258,29 @@
             this.zelena.Size = new System.Drawing.Size(36, 27);
             this.zelena.TabIndex = 0;
             this.zelena.UseVisualStyleBackColor = false;
-            this.zelena.Click += new System.EventHandler(this.zelena_Click);
+            this.zelena.Click += new System.EventHandler(this.green_Click);
             // 
-            // omiljenaboja
+            // favourite_color_pictureBox
             // 
-            this.omiljenaboja.FlatAppearance.BorderSize = 0;
-            this.omiljenaboja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.omiljenaboja.Location = new System.Drawing.Point(15, 38);
-            this.omiljenaboja.Name = "omiljenaboja";
-            this.omiljenaboja.Size = new System.Drawing.Size(36, 27);
-            this.omiljenaboja.TabIndex = 10;
-            this.omiljenaboja.UseVisualStyleBackColor = true;
-            this.omiljenaboja.Click += new System.EventHandler(this.omiljenaboja_Click);
+            this.favourite_color_pictureBox.BackColor = System.Drawing.Color.LightGray;
+            this.favourite_color_pictureBox.FlatAppearance.BorderSize = 0;
+            this.favourite_color_pictureBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.favourite_color_pictureBox.Location = new System.Drawing.Point(67, 39);
+            this.favourite_color_pictureBox.Name = "favourite_color_pictureBox";
+            this.favourite_color_pictureBox.Size = new System.Drawing.Size(36, 27);
+            this.favourite_color_pictureBox.TabIndex = 10;
+            this.favourite_color_pictureBox.UseVisualStyleBackColor = false;
+            this.favourite_color_pictureBox.Click += new System.EventHandler(this.favourite_color_pictreBox_Click);
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.omiljenaboja);
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Location = new System.Drawing.Point(649, 27);
+            this.groupBox3.Controls.Add(this.favourite_color_pictureBox);
+            this.groupBox3.Location = new System.Drawing.Point(576, 27);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(177, 98);
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Omiljena boja";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(69, 26);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(93, 51);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Odredi omiljenu boju";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.groupBox3.Text = "Favourite color";
             // 
             // radioButton1
             // 
@@ -305,9 +288,9 @@
             this.radioButton1.CausesValidation = false;
             this.radioButton1.Location = new System.Drawing.Point(10, 62);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(47, 17);
+            this.radioButton1.Size = new System.Drawing.Size(51, 17);
             this.radioButton1.TabIndex = 14;
-            this.radioButton1.Text = "Krug";
+            this.radioButton1.Text = "Circle";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // radioButton2
@@ -316,15 +299,15 @@
             this.radioButton2.CausesValidation = false;
             this.radioButton2.Location = new System.Drawing.Point(10, 20);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(91, 17);
+            this.radioButton2.Size = new System.Drawing.Size(74, 17);
             this.radioButton2.TabIndex = 16;
-            this.radioButton2.Text = "Pravougaonik";
+            this.radioButton2.Text = "Rectangle";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // numericUpDown1
             // 
             this.numericUpDown1.CausesValidation = false;
-            this.numericUpDown1.Location = new System.Drawing.Point(57, 62);
+            this.numericUpDown1.Location = new System.Drawing.Point(67, 62);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             900,
             0,
@@ -338,11 +321,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(103, 64);
+            this.label1.Location = new System.Drawing.Point(113, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 13);
+            this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 17;
-            this.label1.Text = "(Poluprecnik)";
+            this.label1.Text = "(radius)";
             // 
             // numericUpDown2
             // 
@@ -363,9 +346,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(106, 39);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 19;
-            this.label2.Text = "(Sirina)";
+            this.label2.Text = "(width)";
             // 
             // numericUpDown3
             // 
@@ -384,11 +367,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(156, 38);
+            this.label3.Location = new System.Drawing.Point(156, 39);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 13);
+            this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 21;
-            this.label3.Text = "(Visina)";
+            this.label3.Text = "(height)";
             // 
             // radioButton3
             // 
@@ -396,9 +379,9 @@
             this.radioButton3.CausesValidation = false;
             this.radioButton3.Location = new System.Drawing.Point(321, 16);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(94, 17);
+            this.radioButton3.Size = new System.Drawing.Size(44, 17);
             this.radioButton3.TabIndex = 22;
-            this.radioButton3.Text = "Obicna olovka";
+            this.radioButton3.Text = "Pen";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // radioButton4
@@ -407,9 +390,9 @@
             this.radioButton4.CausesValidation = false;
             this.radioButton4.Location = new System.Drawing.Point(321, 39);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(49, 17);
+            this.radioButton4.Size = new System.Drawing.Size(52, 17);
             this.radioButton4.TabIndex = 11;
-            this.radioButton4.Text = "Sprej";
+            this.radioButton4.Text = "Spray";
             this.radioButton4.UseVisualStyleBackColor = true;
             // 
             // igracb
@@ -417,36 +400,36 @@
             this.igracb.AutoSize = true;
             this.igracb.Location = new System.Drawing.Point(11, 739);
             this.igracb.Name = "igracb";
-            this.igracb.Size = new System.Drawing.Size(44, 17);
+            this.igracb.Size = new System.Drawing.Size(81, 17);
             this.igracb.TabIndex = 27;
-            this.igracb.Text = "Igra";
+            this.igracb.Text = "GameMode";
             this.igracb.UseVisualStyleBackColor = true;
-            this.igracb.CheckedChanged += new System.EventHandler(this.igracb_CheckedChanged);
+            this.igracb.CheckedChanged += new System.EventHandler(this.gameMode_Change);
             // 
             // zapocnibt
             // 
-            this.zapocnibt.Location = new System.Drawing.Point(68, 735);
+            this.zapocnibt.Location = new System.Drawing.Point(91, 735);
             this.zapocnibt.Name = "zapocnibt";
-            this.zapocnibt.Size = new System.Drawing.Size(75, 23);
+            this.zapocnibt.Size = new System.Drawing.Size(120, 23);
             this.zapocnibt.TabIndex = 28;
-            this.zapocnibt.Text = "Zapocni";
+            this.zapocnibt.Text = "Start GameMode";
             this.zapocnibt.UseVisualStyleBackColor = true;
-            this.zapocnibt.Click += new System.EventHandler(this.zapocnibt_Click);
+            this.zapocnibt.Click += new System.EventHandler(this.startGame_Click);
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(149, 735);
+            this.button8.Location = new System.Drawing.Point(214, 735);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.Size = new System.Drawing.Size(120, 23);
             this.button8.TabIndex = 29;
-            this.button8.Text = "Zavrsi";
+            this.button8.Text = "End GameMode";
             this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.button8.Click += new System.EventHandler(this.endGame_Click);
             // 
-            // stoperica
+            // stopwatch_Control
             // 
-            this.stoperica.Interval = 1000;
-            this.stoperica.Tick += new System.EventHandler(this.stoperica_Tick);
+            this.stopwatch_Control.Interval = 1000;
+            this.stopwatch_Control.Tick += new System.EventHandler(this.gameTime_Tick);
             // 
             // menuStrip1
             // 
@@ -466,21 +449,21 @@
             this.oProgramuToolStripMenuItem.Name = "oProgramuToolStripMenuItem";
             this.oProgramuToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
             this.oProgramuToolStripMenuItem.Text = "O programu";
-            this.oProgramuToolStripMenuItem.Click += new System.EventHandler(this.oProgramuToolStripMenuItem_Click);
+            this.oProgramuToolStripMenuItem.Click += new System.EventHandler(this.aboutSoftware_Click);
             // 
             // pomocToolStripMenuItem
             // 
             this.pomocToolStripMenuItem.Name = "pomocToolStripMenuItem";
             this.pomocToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.pomocToolStripMenuItem.Text = "Pomoc...";
-            this.pomocToolStripMenuItem.Click += new System.EventHandler(this.pomocToolStripMenuItem_Click);
+            this.pomocToolStripMenuItem.Click += new System.EventHandler(this.help_Click);
             // 
             // resetujSveToolStripMenuItem
             // 
             this.resetujSveToolStripMenuItem.Name = "resetujSveToolStripMenuItem";
             this.resetujSveToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.resetujSveToolStripMenuItem.Text = "Resetuj sve";
-            this.resetujSveToolStripMenuItem.Click += new System.EventHandler(this.resetujSveToolStripMenuItem_Click);
+            this.resetujSveToolStripMenuItem.Click += new System.EventHandler(this.resetAll_Click);
             // 
             // sacuvajCrtezToolStripMenuItem
             // 
@@ -488,7 +471,7 @@
             this.sacuvajCrtezToolStripMenuItem.Name = "sacuvajCrtezToolStripMenuItem";
             this.sacuvajCrtezToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.sacuvajCrtezToolStripMenuItem.Text = "Sacuvaj crtez";
-            this.sacuvajCrtezToolStripMenuItem.Click += new System.EventHandler(this.sacuvajCrtezToolStripMenuItem_Click);
+            this.sacuvajCrtezToolStripMenuItem.Click += new System.EventHandler(this.saveDrawing_Click);
             // 
             // groupBox4
             // 
@@ -505,21 +488,22 @@
             this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Controls.Add(this.numericUpDown1);
             this.groupBox4.Controls.Add(this.radioButton1);
-            this.groupBox4.Location = new System.Drawing.Point(832, 27);
+            this.groupBox4.Location = new System.Drawing.Point(759, 27);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(513, 98);
             this.groupBox4.TabIndex = 31;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Alaatke";
+            this.groupBox4.Text = "Tools";
             // 
-            // numericUpDown4
+            // radioButton5
             // 
-            this.numericUpDown4.CausesValidation = false;
-            this.numericUpDown4.Location = new System.Drawing.Point(376, 39);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(38, 20);
-            this.numericUpDown4.TabIndex = 12;
-            this.numericUpDown4.TabStop = false;
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(321, 62);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(55, 17);
+            this.radioButton5.TabIndex = 32;
+            this.radioButton5.Text = "Eraser";
+            this.radioButton5.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -530,34 +514,14 @@
             this.label4.TabIndex = 25;
             this.label4.Text = "(radius)";
             // 
-            // numericUpDown5
+            // numericUpDown4
             // 
-            this.numericUpDown5.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown5.Location = new System.Drawing.Point(59, 31);
-            this.numericUpDown5.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(75, 45);
-            this.numericUpDown5.TabIndex = 0;
-            this.numericUpDown5.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown5.ValueChanged += new System.EventHandler(this.numericUpDown5_ValueChanged);
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(321, 62);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(61, 17);
-            this.radioButton5.TabIndex = 32;
-            this.radioButton5.Text = "Gumica";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.numericUpDown4.CausesValidation = false;
+            this.numericUpDown4.Location = new System.Drawing.Point(376, 39);
+            this.numericUpDown4.Name = "numericUpDown4";
+            this.numericUpDown4.Size = new System.Drawing.Size(38, 20);
+            this.numericUpDown4.TabIndex = 12;
+            this.numericUpDown4.TabStop = false;
             // 
             // Form1
             // 
@@ -579,11 +543,12 @@
             this.Name = "Form1";
             this.Text = "Paint";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseClick);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
@@ -594,7 +559,6 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -613,9 +577,8 @@
         private System.Windows.Forms.Button narandzasta;
         private System.Windows.Forms.Button zuta;
         private System.Windows.Forms.Button zelena;
-        private System.Windows.Forms.Button omiljenaboja;
+        private System.Windows.Forms.Button favourite_color_pictureBox;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
@@ -625,21 +588,19 @@
         private System.Windows.Forms.NumericUpDown numericUpDown3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Button Colormixer;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.CheckBox igracb;
         private System.Windows.Forms.Button zapocnibt;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Timer stoperica;
+        private System.Windows.Forms.Timer stopwatch_Control;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem oProgramuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pomocToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resetujSveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sacuvajCrtezToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox4;
-        public System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown numericUpDown4;
         private System.Windows.Forms.NumericUpDown numericUpDown5;

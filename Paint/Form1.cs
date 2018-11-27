@@ -14,124 +14,77 @@ namespace Paint
 {
     public partial class Form1 : Form
     {
-        // deklaracija promenljivih
-        //test
-       
-        //
-        private Form3 frm3;
+        // colors
+        Dictionary<Color, int> colors = new Dictionary<Color, int>()
+        {
+            {Color.FromArgb(0, 192, 0), 0},
+            {Color.Yellow, 0},
+            {Color.FromArgb(255, 128, 0), 0},
+            {Color.Red, 0},
+            {Color.FromArgb(192, 0, 192),0},
+            {Color.Black, 0},
+            {Color.Fuchsia,0},
+            {Color.Aqua,0},
+            {Color.Lime,0},
+            {Color.FromArgb(192, 0, 0),0}
+        };
         private Form5 frm5;
         Random _rnd = new Random();
-        bool crtanje = false;
-        Pen olovkasprej = new Pen(Color.Black, 1);
+        bool drawing = false;
         int xp, yp;
-        string ocena;
-        int r, g, b;
-        int debolovke = 5;
-        int poluprecnik;
-        public int stoperitza;
-        public int minuti;
-        int sirinap; int visinap;
-        int zelenab, zutab, narandzastab, crvenab, ljubicastab, crnab, rozeb, svetloplavab, svetlozelenab, braonb;
-        Pen olovka = new Pen (Color.Black, 5);
-        Pen olovkakurg = new Pen(Color.Black, 2);
-        Pen olovkapravoug = new Pen(Color.Black, 2);
+        // pen width
+        int pencil_width = 5;
+        // radius
+        int radius;
+        // game
+        string game_mark;
+        public int game_seconds;
+        public int game_minutes;
+        int width_p; int height_p;
+        // favourite colors
+        int green_color, yellow_color, orange_color, red_color, purple_color, black_color, pink_color, lightblue_color, lightgreen_color, brown_color;
+        // pens
+        Pen pen = new Pen (Color.Black, 5);
+        Pen circle_pen = new Pen(Color.Black, 2);
+        Pen rect_pen = new Pen(Color.Black, 2);
+        Pen spray = new Pen(Color.Black, 1);
         public Form1()
         {
             InitializeComponent();
         }
-        private void zelena_Click(object sender, EventArgs e) // promena boje u zelenu
-        {
-            olovka.Color = Color.FromArgb(0, 192, 0);
-            olovkakurg.Color = Color.FromArgb(0, 192, 0);
-            olovkapravoug.Color = Color.FromArgb(0, 192, 0);
-            olovkasprej.Color = Color.FromArgb(0, 192, 0);
-            zelenab++;
-        }
-        private void button3_Click(object sender, EventArgs e)// omiljena boja
-        {
-            if (zelenab == 0 && zutab == 0 && narandzastab == 0 && crvenab == 0 && ljubicastab == 0 && crnab == 0 && rozeb == 0 && svetloplavab == 0 && svetlozelenab == 0 && braonb == 0)
-            {
-                MessageBox.Show("Jos niste izabrali ni jednu boju.");
-            }
-            else
-            {
-                int[] niz = { zelenab, zutab, narandzastab, crvenab, ljubicastab, crnab, rozeb, svetloplavab, svetlozelenab, braonb }; // odredjivanje omiljene boje
-                int omiljenab = niz.Max();
-                if (omiljenab == zelenab)
-                {
-                    omiljenaboja.BackColor = Color.FromArgb(0, 192, 0);
-                }
-                if (omiljenab == zutab)
-                {
-                    omiljenaboja.BackColor = Color.Yellow;
-                }
-                if (omiljenab == narandzastab)
-                {
-                    omiljenaboja.BackColor = Color.FromArgb(255, 128, 0);
-                }
-                if (omiljenab == crvenab)
-                {
-                    omiljenaboja.BackColor = Color.Red;
-                }
-                if (omiljenab == ljubicastab)
-                {
-                    omiljenaboja.BackColor = Color.FromArgb(192, 0, 192);
-                }
-                if (omiljenab == crnab)
-                {
-                    omiljenaboja.BackColor = Color.Black;
-                }
-                if (omiljenab == rozeb)
-                {
-                    omiljenaboja.BackColor = Color.Fuchsia;
-                }
-                if (omiljenab == svetloplavab)
-                {
-                    omiljenaboja.BackColor = Color.Aqua;
-                }
-                if (omiljenab == svetlozelenab)
-                {
-                    omiljenaboja.BackColor = Color.Lime;
-                }
-                if (omiljenab == braonb)
-                {
-                    omiljenaboja.BackColor = Color.FromArgb(192, 0, 0);
-                }
-            }
-        }
 
-        private void gumica_Click(object sender, EventArgs e) // gumica
+        private void gumica_Click(object sender, EventArgs e) // eraser
         {
-            olovka.Color = Color.White;
+            pen.Color = Color.White;
             radioButton3.Checked = true;
         }
 
-        private void Form1_MouseDown(object sender, MouseEventArgs e) // kada se klikne mis 
+        private void Form1_MouseDown(object sender, MouseEventArgs e) // when mouse is pushed down
         {         
-            crtanje = true;
+            drawing = true;
             xp = e.X;
             yp = e.Y;          
         }
 
-        private void Form1_MouseMove(object sender, MouseEventArgs e) //dok se mis pomera 
+        private void Form1_MouseMove(object sender, MouseEventArgs e) // while mouse is moving
         {
-            if (crtanje)
+            if (drawing)
             {
                 Graphics g = CreateGraphics();
                 if (radioButton5.Checked)
                 {
-                    Pen temp = new Pen(Color.White, debolovke);
+                    Pen temp = new Pen(Color.White, pencil_width);
                     g.DrawLine(temp, xp, yp, e.X, e.Y);
                     xp = e.X;
                     yp = e.Y;
                 }
                 if (radioButton3.Checked)
                 {
-                    g.DrawLine(olovka, xp, yp, e.X, e.Y);
+                    g.DrawLine(pen, xp, yp, e.X, e.Y);
                     xp = e.X;
                     yp = e.Y;
                 }
-                if (radioButton4.Checked) // jedini deo koda skinut sa interneta
+                if (radioButton4.Checked)
                 {
                     int radius = Convert.ToInt32(numericUpDown4.Value);
                     using (g)
@@ -142,7 +95,7 @@ namespace Paint
                             double r = _rnd.NextDouble() * radius;
                             double x = e.X + Math.Cos(theta) * r;
                             double y = e.Y + Math.Sin(theta) * r;
-                            g.DrawEllipse(olovkasprej, new Rectangle((int)x - 1, (int)y - 1, 1, 1));
+                            g.DrawEllipse(spray, new Rectangle((int)x - 1, (int)y - 1, 1, 1));
                         }
                     }
                 }
@@ -150,97 +103,29 @@ namespace Paint
             }
         }
 
-        private void Form1_MouseUp(object sender, MouseEventArgs e) //kada se pusti levi taster misa
+        private void Form1_MouseUp(object sender, MouseEventArgs e) // when mouse is released
         {
-            crtanje = false;
-            
+            drawing = false;
         }
 
-        private void omiljenaboja_Click(object sender, EventArgs e) // promena boje olovke u omiljenu boju
+        private void favourite_color_pictreBox_Click(object sender, EventArgs e) // change current color to favourite color
         {
-            if (omiljenaboja.BackColor == Color.FromArgb(0, 192, 0))
-            {
-                olovka.Color = Color.FromArgb(0, 192, 0);
-
-            }
-            if (omiljenaboja.BackColor == Color.Yellow)
-            {
-                olovka.Color = Color.Yellow;
-            }
-            if (omiljenaboja.BackColor == Color.FromArgb(255, 128, 0))
-            {
-                olovka.Color = Color.FromArgb(255, 128, 0);
-            }
-            if (omiljenaboja.BackColor == Color.Red)
-            {
-                olovka.Color = Color.Red;
-            }
-            if (omiljenaboja.BackColor == Color.FromArgb(192, 0, 192))
-            {
-                olovka.Color = Color.FromArgb(192, 0, 192);
-            }
-            if (omiljenaboja.BackColor == Color.Black)
-            {
-                olovka.Color = Color.Black;
-            }
-            if (omiljenaboja.BackColor == Color.Fuchsia)
-            {
-                olovka.Color = Color.Fuchsia;
-            }
-            if (omiljenaboja.BackColor == Color.Aqua)
-            {
-                olovka.Color = Color.Aqua;
-            }
-            if (omiljenaboja.BackColor == Color.Lime)
-            {
-                olovka.Color = Color.Lime;
-            }
-            if (omiljenaboja.BackColor == Color.FromArgb(192, 0, 0))
-            {
-                olovka.Color = Color.FromArgb(192, 0, 0);
-            }
+            pen.Color = favourite_color_pictureBox.BackColor;
+            spray.Color = favourite_color_pictureBox.BackColor;
+            circle_pen.Color = favourite_color_pictureBox.BackColor;
+            rect_pen.Color = favourite_color_pictureBox.BackColor;
         }
 
-        private void button6_Click(object sender, EventArgs e) // RGB unos
-        {
-            if (frm3.textBox1.Text == "" || frm3.textBox2.Text == "" || frm3.textBox3.Text == "") // ako nesto nije uneto
-            {
-                MessageBox.Show("Doslo je do greske. Niste uneli sve vrednosti.");
-            }
-            else
-            {
-                r = Convert.ToInt32(frm3.textBox1.Text);
-                g = Convert.ToInt32(frm3.textBox2.Text);
-                b = Convert.ToInt32(frm3.textBox3.Text);
-                if (r > 255 || g > 255 || b > 255) // ako su brojevi ili neki od brojeva veci od 255
-                {
-                    MessageBox.Show("Brojevi moraju biti od 0 do 255.");
-                    frm3.textBox1.Text = "";
-                    frm3.textBox2.Text = "";
-                    frm3.textBox3.Text = "";
-                }
-                else // kada je sve kako treba
-                {
-                    button6.Enabled = false;
-                    olovka.Color = Color.FromArgb(r, g, b);
-                    olovkakurg.Color = Color.FromArgb(r, g, b);
-                    olovkapravoug.Color = Color.FromArgb(r, g, b);
-                    olovkasprej.Color = Color.FromArgb(r, g, b);
-                    frm3.Close();
-                }
-            }
-            
-        }
-        private void Colormixer_Click(object sender, EventArgs e) // klik na kolor mikser 
+        private void Colormixer_Click(object sender, EventArgs e) // open color mixer
         {
             colorDialog1.ShowDialog();
-            olovka.Color = colorDialog1.Color;
-            olovkasprej.Color = colorDialog1.Color;
-            olovkakurg.Color = colorDialog1.Color;
-            olovkapravoug.Color = colorDialog1.Color;
+            pen.Color = colorDialog1.Color;
+            spray.Color = colorDialog1.Color;
+            circle_pen.Color = colorDialog1.Color;
+            rect_pen.Color = colorDialog1.Color;
         }
 
-        private void igracb_CheckedChanged(object sender, EventArgs e) // ukljucivanje moda za igru
+        private void gameMode_Change(object sender, EventArgs e) // game mode on
         {
             if (igracb.Checked == true)
             {
@@ -250,120 +135,104 @@ namespace Paint
             }
             if (igracb.Checked == false)
             {
-                stoperica.Enabled = false;
+                stopwatch_Control.Enabled = false;
             }
         }
 
-        private void stoperica_Tick(object sender, EventArgs e) // merenje vremena za igru i davanje ocena
+        private void gameTime_Tick(object sender, EventArgs e) // game time
         {
-            stoperitza++;
-            if (stoperitza == 60)
+            game_seconds++;
+            if (game_seconds == 60)
             {
-                stoperitza = 0;
-                minuti++;
-                if (minuti >= 1 && minuti < 3)
+                game_seconds = 0;
+                game_minutes++;
+                if (game_minutes >= 0 && game_minutes < 3)
                 {
-                    ocena = "A";
+                    game_mark = "A";
                 }
-                if (minuti >= 3 && minuti < 5)
+                if (game_minutes >= 3 && game_minutes < 5)
                 {
-                    ocena = "B";
+                    game_mark = "B";
                 }
-                if (minuti >= 5 && minuti < 6)
+                if (game_minutes >= 5 && game_minutes < 6)
                 {
-                    ocena = "C";
+                    game_mark = "C";
                 }
-                if (minuti >= 6 && minuti < 7)
+                if (game_minutes >= 6 && game_minutes < 7)
                 {
-                    ocena = "D";
+                    game_mark = "D";
                 }
             }
         }
 
-        private void button8_Click(object sender, EventArgs e) // dugme za kraj igre
+        private void endGame_Click(object sender, EventArgs e) // end game
         {
             if (igracb.Checked)
-            {              
-                if (minuti == 0)
-                {
-                    MessageBox.Show("Zavrsili ste za " + stoperitza + " sekundi. Vasa ocena je A.");
-                    stoperica.Enabled = false;
-                    igracb.Checked = false;
-                }
-                if (minuti > 1)
-                {
-                    MessageBox.Show("Zavrsili ste za " + minuti + " minuta i " + stoperitza + " sekundi. Vasa ocena je " + ocena + ".");
-                    stoperica.Enabled = false;
-                    igracb.Checked = false;
-                }
-                if(minuti == 1)
-                {
-                    MessageBox.Show("Zavrsili ste za " + minuti + " minut i " + stoperitza + " sekundi. Vasa ocena je " + ocena + ".");
-                    stoperica.Enabled = false;
-                    igracb.Checked = false;
-                }
-                stoperica.Enabled = false;
+            {
+                MessageBox.Show("You finished in " + game_minutes + " minute(s) and " + game_seconds + " seconds. Your mark is " + game_mark + ".");
+                stopwatch_Control.Enabled = false;
                 igracb.Checked = false;
             }
-            else // ako je dugme kliknuto dok mod za igru nije ukljucen
+            else
             {
-                MessageBox.Show("Mod za igru je iskljucen.");
+                MessageBox.Show("GameMode Off.");
             }
             frm5 = new Form5();
             frm5.Close();
         }
 
-        private void zapocnibt_Click(object sender, EventArgs e) // pocetak igre
+        private void startGame_Click(object sender, EventArgs e) // start game
         {
             if (igracb.Checked)
             {
-                stoperica.Enabled = true;
+                stopwatch_Control.Enabled = true;
             }
             else
             {
-                MessageBox.Show("Mod za igru je iskljucen.");
+                MessageBox.Show("GameMode On.");
             }
         }
 
-        private void Form1_MouseClick(object sender, MouseEventArgs e) // crtanje pravougaonika i krugova
+        private void canvas_MouseClick(object sender, MouseEventArgs e) // rectangle and circle drawing
         {
+            //circle
             if (radioButton1.Checked == true)
             {
-                poluprecnik = Convert.ToInt32(numericUpDown1.Value);
+                radius = Convert.ToInt32(numericUpDown1.Value);
                 Graphics g1 = CreateGraphics();
-                g1.DrawEllipse(olovkakurg, xp - poluprecnik, yp-poluprecnik, poluprecnik*2, poluprecnik*2);
+                g1.DrawEllipse(circle_pen, xp - radius, yp-radius, radius*2, radius*2);
                 g1.Dispose();
             }
+            //rectangle
             if (radioButton2.Checked == true)
             {
-                sirinap = Convert.ToInt32(numericUpDown2.Value);
-                visinap = Convert.ToInt32(numericUpDown3.Value);
+                width_p = Convert.ToInt32(numericUpDown2.Value);
+                height_p = Convert.ToInt32(numericUpDown3.Value);
                 Graphics g2 = CreateGraphics();
-                g2.DrawRectangle(olovkapravoug, xp, yp, sirinap, visinap);
+                g2.DrawRectangle(rect_pen, xp, yp, width_p, height_p);
                 g2.Dispose();
             }
         }
 
-        private void oProgramuToolStripMenuItem_Click(object sender, EventArgs e) // o programu
+        private void aboutSoftware_Click(object sender, EventArgs e) // about software
         {
-            Form2 form2 = new Form2();
-            form2.Show();
+            
         }
 
-        private void pomocToolStripMenuItem_Click(object sender, EventArgs e) // pomoc
+        private void help_Click(object sender, EventArgs e) // help
         {
-            Form4 frm4 = new Form4();
-            frm4.Show();
+            Help Help = new Help();
+            Help.Show();
         }
 
-        private void resetujSveToolStripMenuItem_Click(object sender, EventArgs e)
+        private void resetAll_Click(object sender, EventArgs e)
         {
-            debolovke = 5;
+            pencil_width = 5;
             numericUpDown5.Value = 5;
-            olovka.Color = Color.Black;
-            olovkakurg.Color = Color.Black;
-            olovkapravoug.Color = Color.Black;
-            omiljenaboja.BackColor = Color.White;
+            pen.Color = Color.Black;
+            circle_pen.Color = Color.Black;
+            rect_pen.Color = Color.Black;
+            favourite_color_pictureBox.BackColor = Color.White;
             radioButton3.Checked = true;
             numericUpDown1.Value = 0;
             numericUpDown2.Value = 0;
@@ -372,7 +241,7 @@ namespace Paint
             Refresh();
         }
 
-        private void sacuvajCrtezToolStripMenuItem_Click(object sender, EventArgs e)
+        private void saveDrawing_Click(object sender, EventArgs e)
         {
             Bitmap bitmap = new Bitmap(Convert.ToInt32(1024), Convert.ToInt32(1024), System.Drawing.Imaging.PixelFormat.Format32bppArgb);
             Rectangle boundaries = new Rectangle(0, 0, Width, Height);
@@ -380,91 +249,99 @@ namespace Paint
             bitmap.Save(@"test.png", ImageFormat.Png);
         }
 
-        private void numericUpDown5_ValueChanged(object sender, EventArgs e)
+        private void pencilWidth_Change(object sender, EventArgs e)
         {
-            debolovke = Convert.ToInt32(numericUpDown5.Value);
-            olovka.Width = debolovke;
+            pencil_width = Convert.ToInt32(numericUpDown5.Value);
+            pen.Width = pencil_width;
         }
 
-        private void button5_Click(object sender, EventArgs e) // otvaranje RGB prozora
+        #region colorChanges
+
+        private void getFavouriteColor()
         {
-            button6.Enabled = true;
-            frm3 = new Form3();
-            frm3.Show();
+            List<KeyValuePair<Color, int>> sorted_colors = (from pair in colors
+                                                            orderby pair.Value descending
+                                                            select pair).ToList();
+
+            favourite_color_pictureBox.BackColor = sorted_colors[0].Key;
+            
         }
 
         private void ChangeColor(Color color)
         {
-            if(color == Color.Yellow && olovka.Color != Color.Yellow) { zutab++; }
-            if(color == Color.FromArgb(255, 128, 0) && olovka.Color != Color.FromArgb(255, 128, 0)) { narandzastab++; }
-            if(color == Color.Red && olovka.Color != Color.Red) { crvenab++; }
-            if(color == Color.FromArgb(192, 0, 192) && olovka.Color != Color.FromArgb(192, 0, 192)) { ljubicastab++; }
-            if(color == Color.Black && olovka.Color != Color.Black) { crnab++; }
-            if(color == Color.Fuchsia && olovka.Color != Color.Fuchsia) { rozeb++; }
-            if(color == Color.Aqua && olovka.Color != Color.Aqua) { svetloplavab++; }
-            if(color == Color.Lime && olovka.Color != Color.Lime) { svetlozelenab++; }
-            if(color == Color.FromArgb(192, 0, 0) && olovka.Color != Color.FromArgb(192, 0, 0)) { braonb++; }
-            olovka.Color = color;
-            olovkakurg.Color = color;
-            olovkapravoug.Color = color;
-            olovkasprej.Color = color;
+
+            if(pen.Color != color)
+            {
+                // increase for fav color
+                colors[color]++;
+                // set this color to all
+                pen.Color = color;
+                circle_pen.Color = color;
+                rect_pen.Color = color;
+                spray.Color = color;
+                getFavouriteColor();
+            }
+            
         }
 
-        private void zuta_Click(object sender, EventArgs e) // promena boje u zutu
+        private void green_Click(object sender, EventArgs e) // pchange to green
+        {
+            ChangeColor(Color.FromArgb(0, 192, 0));
+        }
+
+        private void yellow_Click(object sender, EventArgs e) // change to yellow
         {
             ChangeColor(Color.Yellow);
         }
 
-        private void narandzasta_Click(object sender, EventArgs e) // promena boje u narandzastu
+        private void orange_Click(object sender, EventArgs e) // change to orange
         {
             ChangeColor(Color.FromArgb(255, 128, 0));
         }
 
-        private void crvena_Click(object sender, EventArgs e) // promena boje u crvenu
+        private void red_Click(object sender, EventArgs e) // change to red
         {
             ChangeColor(Color.Red);
         }
 
-        private void ljubicasta_Click(object sender, EventArgs e) // promena boja ljubicastu
+        private void purple_Click(object sender, EventArgs e) // change to purple
         {
             ChangeColor(Color.FromArgb(192, 0, 192));
         }
 
-        private void crna_Click(object sender, EventArgs e) // promena boje u crnu
+        private void black_Click(object sender, EventArgs e) // pchange to black
         {
             ChangeColor(Color.Black);
         }
 
-        private void roze_Click(object sender, EventArgs e) // promena boje u roze
+        private void pink_Click(object sender, EventArgs e) // change to pink
         {
             ChangeColor(Color.Fuchsia);
         }
 
-        private void svetloplava_Click(object sender, EventArgs e)// promena boje u svetlo plavu
+        private void lightblue_Click(object sender, EventArgs e)// change to light blue
         {
             ChangeColor(Color.Aqua);
         }
 
-        private void svetlozelena_Click(object sender, EventArgs e) // promena boje u svetlo zelenu
+        private void lightgreen_Click(object sender, EventArgs e) // change to light green
         {
             ChangeColor(Color.Lime);
         }
 
-        private void braon_Click(object sender, EventArgs e) // promena boje u braon
+        private void brown_Click(object sender, EventArgs e) // change to brown
         {
             ChangeColor(Color.FromArgb(192, 0, 0));
         }
 
-        private void Form1_Load(object sender, EventArgs e) // ucitavanje forme
+        #endregion
+
+        private void Form1_Load(object sender, EventArgs e) // form load
         {
             Icon = new Icon(@"slike/ikonica.ico");
             igracb.Checked = false;
             radioButton3.Checked = true;
-            button6.Enabled = false;
-            button5.FlatStyle = FlatStyle.Popup;
-            button6.FlatStyle = FlatStyle.Popup;
             Colormixer.FlatStyle = FlatStyle.Popup;
-            button3.FlatStyle = FlatStyle.Popup;
             zapocnibt.FlatStyle = FlatStyle.Popup;
             button8.FlatStyle = FlatStyle.Popup;
         }
