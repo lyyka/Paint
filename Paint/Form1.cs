@@ -41,8 +41,6 @@ namespace Paint
         public int game_seconds;
         public int game_minutes;
         int width_p; int height_p;
-        // favourite colors
-        int green_color, yellow_color, orange_color, red_color, purple_color, black_color, pink_color, lightblue_color, lightgreen_color, brown_color;
         // pens
         Pen pen = new Pen (Color.Black, 5);
         Pen circle_pen = new Pen(Color.Black, 2);
