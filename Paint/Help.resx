@@ -118,26 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="richTextBox1.Text" xml:space="preserve">
-    <value>Dobrodosli u Paint,
+    <value>Welcome to my Paint App.
 
-Ovo su neka uputstva o koriscenju programa:
--U gornjem levom uglu prozora podesavate debljinu vase olovke i gumice.
--Desno od toga je postavka boja, mozete izabrati vec odredjenu boju,
-mozete kliknuti na "Prilagodjena boja" i uneti RGB format boje koju zelite,
-a mozete i kliknuti na "Color Mixer" i tu podesiti boju("Color Mixer" sadrzi najvise podesavanje boje).
-Omiljena boja se odredjuje na osnovu toga koliko ste puta koju boju od 10 vec odredjenih boja izabrali.
--Desno od postavki za boje imate gumicu, ona je iste debljine kao i olovka kojom crtate.
-Iznad gumice imate dugme "Obrisi sve" i klikom na njega u potpunosti brisete sve sto ste do tad nacrtali.
--Desno od gumice dolazi se na opciju izbora. Mozete izabrati da koristite:
-*obicnu olovku - iscrtavaju se obicne linije
-*sprej - simulacija obicnog spreja (Debljina spreja se ne moze menjati vec uvek ostaje ista)
-*crtaj samo krugove - unesete poluprecnik kruga i klikom bilo gde na prozor iscrtace se krug sa unetim poluprecnikom
-*crtaj samo pravougaonike - unesete sirinu i duzinu pravougaonika i klikom bilo gde na prozor iscrtace se pravougaonik
--U gornjem desnom uglu, klikom na tekst ispisan plavom bojom, mozete videti informacije o programu.
--U donjem desnom uglu mozete aktivirati mod za igru.
+# # # # # # # BASIC # # # # # # #
 
-Hvala na koriscenju ovog programa,
-Luka Robajac
-</value>
+Top side of the form contains all controls for painting.
+Color picker, pencil width control, and control for selecting drawing method.
+Some drawing methods have aditional parameters that are configured by the user.
+
+# # # # # # # GAME MODE # # # # # # #
+
+On the far bottom left section of the main window, you have "GameMode" checkbox.
+When checked, the GameMode is started, you are given the task (what you should draw) and the timer starts.
+End GameMode button will appear, and when you are sure you completed the task, you should click that button.
+Based on your time you will receive your mark!</value>
   </data>
 </root>

@@ -13,4 +13,7 @@
   <PropertyGroup>
     <EnableSecurityDebugging>false</EnableSecurityDebugging>
   </PropertyGroup>
+  <PropertyGroup>
+    <ReferencePath>C:\Users\Asus\Documents\git\Paint\Paint\GraphicObjects\</ReferencePath>
+  </PropertyGroup>
 </Project>

@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace Paint
 {
-    public partial class Form2 : Form
+    public partial class About : Form
     {
-        public Form2()
+        public About()
         {
             InitializeComponent();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void About_Load(object sender, EventArgs e)
         {
-            Image slicka = Image.FromFile(@"slike/unnamed.jpg");
-            pictureBox1.BackgroundImage = slicka;
+            Image picture = Image.FromFile(@"images/palette.jpg");
+            palette_image.BackgroundImage = picture;
         }
 
         private void button1_Click(object sender, EventArgs e)

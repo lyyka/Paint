@@ -19,7 +19,7 @@ namespace Paint
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            Image help2 = Image.FromFile(@"slike/help2.png");
+            Image help2 = Image.FromFile(@"images/help.png");
             pictureBox1.Image = help2;
         }
 

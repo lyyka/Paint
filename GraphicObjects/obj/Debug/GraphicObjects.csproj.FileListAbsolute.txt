@@ -1,0 +1,5 @@
+C:\Users\Asus\Documents\git\Paint\GraphicObjects\bin\Debug\GraphicObjects.dll
+C:\Users\Asus\Documents\git\Paint\GraphicObjects\bin\Debug\GraphicObjects.pdb
+C:\Users\Asus\Documents\git\Paint\GraphicObjects\obj\Debug\GraphicObjects.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Documents\git\Paint\GraphicObjects\obj\Debug\GraphicObjects.dll
+C:\Users\Asus\Documents\git\Paint\GraphicObjects\obj\Debug\GraphicObjects.pdb

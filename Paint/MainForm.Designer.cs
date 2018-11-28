@@ -1,6 +1,6 @@
 ﻿namespace Paint
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
+            this.pen_width_nud = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Colormixer = new System.Windows.Forms.Button();
             this.braon = new System.Windows.Forms.Button();
@@ -45,20 +45,19 @@
             this.zelena = new System.Windows.Forms.Button();
             this.favourite_color_pictureBox = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.circle_rb = new System.Windows.Forms.RadioButton();
+            this.rect_rb = new System.Windows.Forms.RadioButton();
+            this.circle_radius_nud = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.rectangle_width_nud = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.rectangle_height_nud = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.igracb = new System.Windows.Forms.CheckBox();
-            this.zapocnibt = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.basic_pen_rb = new System.Windows.Forms.RadioButton();
+            this.color_mixer = new System.Windows.Forms.ColorDialog();
+            this.spray_rb = new System.Windows.Forms.RadioButton();
+            this.game_cb = new System.Windows.Forms.CheckBox();
+            this.end_game_btn = new System.Windows.Forms.Button();
             this.stopwatch_Control = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.oProgramuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,24 +65,26 @@
             this.resetujSveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sacuvajCrtezToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.eraser_rb = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.spray_radius_nud = new System.Windows.Forms.NumericUpDown();
+            this.drawingCanvas = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pen_width_nud)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circle_radius_nud)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rectangle_width_nud)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rectangle_height_nud)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spray_radius_nud)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drawingCanvas)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.numericUpDown5);
+            this.groupBox1.Controls.Add(this.pen_width_nud);
             this.groupBox1.Location = new System.Drawing.Point(11, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 98);
@@ -91,24 +92,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pen width";
             // 
-            // numericUpDown5
+            // pen_width_nud
             // 
-            this.numericUpDown5.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown5.Location = new System.Drawing.Point(59, 31);
-            this.numericUpDown5.Minimum = new decimal(new int[] {
+            this.pen_width_nud.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pen_width_nud.Location = new System.Drawing.Point(59, 31);
+            this.pen_width_nud.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(75, 45);
-            this.numericUpDown5.TabIndex = 0;
-            this.numericUpDown5.Value = new decimal(new int[] {
+            this.pen_width_nud.Name = "pen_width_nud";
+            this.pen_width_nud.Size = new System.Drawing.Size(75, 45);
+            this.pen_width_nud.TabIndex = 0;
+            this.pen_width_nud.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pen_width_nud.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown5.ValueChanged += new System.EventHandler(this.pencilWidth_Change);
+            this.pen_width_nud.ValueChanged += new System.EventHandler(this.pencilWidth_Change);
             // 
             // groupBox2
             // 
@@ -282,41 +284,41 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Favourite color";
             // 
-            // radioButton1
+            // circle_rb
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.CausesValidation = false;
-            this.radioButton1.Location = new System.Drawing.Point(10, 62);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(51, 17);
-            this.radioButton1.TabIndex = 14;
-            this.radioButton1.Text = "Circle";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.circle_rb.AutoSize = true;
+            this.circle_rb.CausesValidation = false;
+            this.circle_rb.Location = new System.Drawing.Point(10, 62);
+            this.circle_rb.Name = "circle_rb";
+            this.circle_rb.Size = new System.Drawing.Size(51, 17);
+            this.circle_rb.TabIndex = 14;
+            this.circle_rb.Text = "Circle";
+            this.circle_rb.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rect_rb
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.CausesValidation = false;
-            this.radioButton2.Location = new System.Drawing.Point(10, 20);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(74, 17);
-            this.radioButton2.TabIndex = 16;
-            this.radioButton2.Text = "Rectangle";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rect_rb.AutoSize = true;
+            this.rect_rb.CausesValidation = false;
+            this.rect_rb.Location = new System.Drawing.Point(10, 20);
+            this.rect_rb.Name = "rect_rb";
+            this.rect_rb.Size = new System.Drawing.Size(74, 17);
+            this.rect_rb.TabIndex = 16;
+            this.rect_rb.Text = "Rectangle";
+            this.rect_rb.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown1
+            // circle_radius_nud
             // 
-            this.numericUpDown1.CausesValidation = false;
-            this.numericUpDown1.Location = new System.Drawing.Point(67, 62);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.circle_radius_nud.CausesValidation = false;
+            this.circle_radius_nud.Location = new System.Drawing.Point(67, 62);
+            this.circle_radius_nud.Maximum = new decimal(new int[] {
             900,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(40, 20);
-            this.numericUpDown1.TabIndex = 15;
-            this.numericUpDown1.TabStop = false;
+            this.circle_radius_nud.Name = "circle_radius_nud";
+            this.circle_radius_nud.Size = new System.Drawing.Size(40, 20);
+            this.circle_radius_nud.TabIndex = 15;
+            this.circle_radius_nud.TabStop = false;
             // 
             // label1
             // 
@@ -327,19 +329,19 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "(radius)";
             // 
-            // numericUpDown2
+            // rectangle_width_nud
             // 
-            this.numericUpDown2.CausesValidation = false;
-            this.numericUpDown2.Location = new System.Drawing.Point(107, 16);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
+            this.rectangle_width_nud.CausesValidation = false;
+            this.rectangle_width_nud.Location = new System.Drawing.Point(107, 16);
+            this.rectangle_width_nud.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(38, 20);
-            this.numericUpDown2.TabIndex = 17;
-            this.numericUpDown2.TabStop = false;
+            this.rectangle_width_nud.Name = "rectangle_width_nud";
+            this.rectangle_width_nud.Size = new System.Drawing.Size(38, 20);
+            this.rectangle_width_nud.TabIndex = 17;
+            this.rectangle_width_nud.TabStop = false;
             // 
             // label2
             // 
@@ -350,19 +352,19 @@
             this.label2.TabIndex = 19;
             this.label2.Text = "(width)";
             // 
-            // numericUpDown3
+            // rectangle_height_nud
             // 
-            this.numericUpDown3.CausesValidation = false;
-            this.numericUpDown3.Location = new System.Drawing.Point(159, 16);
-            this.numericUpDown3.Maximum = new decimal(new int[] {
+            this.rectangle_height_nud.CausesValidation = false;
+            this.rectangle_height_nud.Location = new System.Drawing.Point(159, 16);
+            this.rectangle_height_nud.Maximum = new decimal(new int[] {
             1214,
             0,
             0,
             0});
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(38, 20);
-            this.numericUpDown3.TabIndex = 18;
-            this.numericUpDown3.TabStop = false;
+            this.rectangle_height_nud.Name = "rectangle_height_nud";
+            this.rectangle_height_nud.Size = new System.Drawing.Size(38, 20);
+            this.rectangle_height_nud.TabIndex = 18;
+            this.rectangle_height_nud.TabStop = false;
             // 
             // label3
             // 
@@ -373,58 +375,51 @@
             this.label3.TabIndex = 21;
             this.label3.Text = "(height)";
             // 
-            // radioButton3
+            // basic_pen_rb
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.CausesValidation = false;
-            this.radioButton3.Location = new System.Drawing.Point(321, 16);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(44, 17);
-            this.radioButton3.TabIndex = 22;
-            this.radioButton3.Text = "Pen";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.basic_pen_rb.AutoSize = true;
+            this.basic_pen_rb.CausesValidation = false;
+            this.basic_pen_rb.Enabled = false;
+            this.basic_pen_rb.Location = new System.Drawing.Point(321, 16);
+            this.basic_pen_rb.Name = "basic_pen_rb";
+            this.basic_pen_rb.Size = new System.Drawing.Size(44, 17);
+            this.basic_pen_rb.TabIndex = 22;
+            this.basic_pen_rb.Text = "Pen";
+            this.basic_pen_rb.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // spray_rb
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.CausesValidation = false;
-            this.radioButton4.Location = new System.Drawing.Point(321, 39);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(52, 17);
-            this.radioButton4.TabIndex = 11;
-            this.radioButton4.Text = "Spray";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.spray_rb.AutoSize = true;
+            this.spray_rb.CausesValidation = false;
+            this.spray_rb.Enabled = false;
+            this.spray_rb.Location = new System.Drawing.Point(321, 39);
+            this.spray_rb.Name = "spray_rb";
+            this.spray_rb.Size = new System.Drawing.Size(52, 17);
+            this.spray_rb.TabIndex = 11;
+            this.spray_rb.Text = "Spray";
+            this.spray_rb.UseVisualStyleBackColor = true;
             // 
-            // igracb
+            // game_cb
             // 
-            this.igracb.AutoSize = true;
-            this.igracb.Location = new System.Drawing.Point(11, 739);
-            this.igracb.Name = "igracb";
-            this.igracb.Size = new System.Drawing.Size(81, 17);
-            this.igracb.TabIndex = 27;
-            this.igracb.Text = "GameMode";
-            this.igracb.UseVisualStyleBackColor = true;
-            this.igracb.CheckedChanged += new System.EventHandler(this.gameMode_Change);
+            this.game_cb.AutoSize = true;
+            this.game_cb.Location = new System.Drawing.Point(12, 740);
+            this.game_cb.Name = "game_cb";
+            this.game_cb.Size = new System.Drawing.Size(81, 17);
+            this.game_cb.TabIndex = 27;
+            this.game_cb.Text = "GameMode";
+            this.game_cb.UseVisualStyleBackColor = true;
+            this.game_cb.CheckedChanged += new System.EventHandler(this.gameMode_Change);
             // 
-            // zapocnibt
+            // end_game_btn
             // 
-            this.zapocnibt.Location = new System.Drawing.Point(91, 735);
-            this.zapocnibt.Name = "zapocnibt";
-            this.zapocnibt.Size = new System.Drawing.Size(120, 23);
-            this.zapocnibt.TabIndex = 28;
-            this.zapocnibt.Text = "Start GameMode";
-            this.zapocnibt.UseVisualStyleBackColor = true;
-            this.zapocnibt.Click += new System.EventHandler(this.startGame_Click);
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(214, 735);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(120, 23);
-            this.button8.TabIndex = 29;
-            this.button8.Text = "End GameMode";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.endGame_Click);
+            this.end_game_btn.Location = new System.Drawing.Point(99, 738);
+            this.end_game_btn.Name = "end_game_btn";
+            this.end_game_btn.Size = new System.Drawing.Size(120, 21);
+            this.end_game_btn.TabIndex = 29;
+            this.end_game_btn.Text = "End GameMode";
+            this.end_game_btn.UseVisualStyleBackColor = true;
+            this.end_game_btn.Visible = false;
+            this.end_game_btn.Click += new System.EventHandler(this.endGame_Click);
             // 
             // stopwatch_Control
             // 
@@ -440,54 +435,54 @@
             this.sacuvajCrtezToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1355, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1286, 24);
             this.menuStrip1.TabIndex = 30;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // oProgramuToolStripMenuItem
             // 
             this.oProgramuToolStripMenuItem.Name = "oProgramuToolStripMenuItem";
-            this.oProgramuToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
-            this.oProgramuToolStripMenuItem.Text = "O programu";
+            this.oProgramuToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.oProgramuToolStripMenuItem.Text = "About";
             this.oProgramuToolStripMenuItem.Click += new System.EventHandler(this.aboutSoftware_Click);
             // 
             // pomocToolStripMenuItem
             // 
             this.pomocToolStripMenuItem.Name = "pomocToolStripMenuItem";
-            this.pomocToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.pomocToolStripMenuItem.Text = "Pomoc...";
+            this.pomocToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.pomocToolStripMenuItem.Text = "Help";
             this.pomocToolStripMenuItem.Click += new System.EventHandler(this.help_Click);
             // 
             // resetujSveToolStripMenuItem
             // 
             this.resetujSveToolStripMenuItem.Name = "resetujSveToolStripMenuItem";
-            this.resetujSveToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
-            this.resetujSveToolStripMenuItem.Text = "Resetuj sve";
+            this.resetujSveToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.resetujSveToolStripMenuItem.Text = "Reset All";
             this.resetujSveToolStripMenuItem.Click += new System.EventHandler(this.resetAll_Click);
             // 
             // sacuvajCrtezToolStripMenuItem
             // 
             this.sacuvajCrtezToolStripMenuItem.Enabled = false;
             this.sacuvajCrtezToolStripMenuItem.Name = "sacuvajCrtezToolStripMenuItem";
-            this.sacuvajCrtezToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
-            this.sacuvajCrtezToolStripMenuItem.Text = "Sacuvaj crtez";
+            this.sacuvajCrtezToolStripMenuItem.Size = new System.Drawing.Size(211, 20);
+            this.sacuvajCrtezToolStripMenuItem.Text = "Save drawing (not yet implemented)";
             this.sacuvajCrtezToolStripMenuItem.Click += new System.EventHandler(this.saveDrawing_Click);
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.radioButton5);
+            this.groupBox4.Controls.Add(this.eraser_rb);
             this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Controls.Add(this.numericUpDown4);
-            this.groupBox4.Controls.Add(this.radioButton3);
-            this.groupBox4.Controls.Add(this.radioButton4);
-            this.groupBox4.Controls.Add(this.numericUpDown3);
-            this.groupBox4.Controls.Add(this.radioButton2);
-            this.groupBox4.Controls.Add(this.numericUpDown2);
+            this.groupBox4.Controls.Add(this.spray_radius_nud);
+            this.groupBox4.Controls.Add(this.basic_pen_rb);
+            this.groupBox4.Controls.Add(this.spray_rb);
+            this.groupBox4.Controls.Add(this.rectangle_height_nud);
+            this.groupBox4.Controls.Add(this.rect_rb);
+            this.groupBox4.Controls.Add(this.rectangle_width_nud);
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.label1);
-            this.groupBox4.Controls.Add(this.numericUpDown1);
-            this.groupBox4.Controls.Add(this.radioButton1);
+            this.groupBox4.Controls.Add(this.circle_radius_nud);
+            this.groupBox4.Controls.Add(this.circle_rb);
             this.groupBox4.Location = new System.Drawing.Point(759, 27);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(513, 98);
@@ -495,44 +490,60 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Tools";
             // 
-            // radioButton5
+            // eraser_rb
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(321, 62);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(55, 17);
-            this.radioButton5.TabIndex = 32;
-            this.radioButton5.Text = "Eraser";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.eraser_rb.AutoSize = true;
+            this.eraser_rb.Enabled = false;
+            this.eraser_rb.Location = new System.Drawing.Point(321, 62);
+            this.eraser_rb.Name = "eraser_rb";
+            this.eraser_rb.Size = new System.Drawing.Size(55, 17);
+            this.eraser_rb.TabIndex = 32;
+            this.eraser_rb.Text = "Eraser";
+            this.eraser_rb.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Enabled = false;
             this.label4.Location = new System.Drawing.Point(420, 43);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 13);
             this.label4.TabIndex = 25;
             this.label4.Text = "(radius)";
             // 
-            // numericUpDown4
+            // spray_radius_nud
             // 
-            this.numericUpDown4.CausesValidation = false;
-            this.numericUpDown4.Location = new System.Drawing.Point(376, 39);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(38, 20);
-            this.numericUpDown4.TabIndex = 12;
-            this.numericUpDown4.TabStop = false;
+            this.spray_radius_nud.CausesValidation = false;
+            this.spray_radius_nud.Enabled = false;
+            this.spray_radius_nud.Location = new System.Drawing.Point(376, 39);
+            this.spray_radius_nud.Name = "spray_radius_nud";
+            this.spray_radius_nud.Size = new System.Drawing.Size(38, 20);
+            this.spray_radius_nud.TabIndex = 12;
+            this.spray_radius_nud.TabStop = false;
             // 
-            // Form1
+            // drawingCanvas
+            // 
+            this.drawingCanvas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.drawingCanvas.Location = new System.Drawing.Point(11, 131);
+            this.drawingCanvas.Name = "drawingCanvas";
+            this.drawingCanvas.Size = new System.Drawing.Size(1261, 602);
+            this.drawingCanvas.TabIndex = 32;
+            this.drawingCanvas.TabStop = false;
+            this.drawingCanvas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.drawingCanvas_MouseClick);
+            this.drawingCanvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.drawingCanvas_MouseDown);
+            this.drawingCanvas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.drawingCanvas_MouseMove);
+            this.drawingCanvas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.drawingCanvas_MouseUp);
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1355, 761);
+            this.ClientSize = new System.Drawing.Size(1286, 769);
+            this.Controls.Add(this.drawingCanvas);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.zapocnibt);
-            this.Controls.Add(this.igracb);
+            this.Controls.Add(this.end_game_btn);
+            this.Controls.Add(this.game_cb);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -540,25 +551,22 @@
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Paint";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseClick);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pen_width_nud)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circle_radius_nud)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rectangle_width_nud)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rectangle_height_nud)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spray_radius_nud)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drawingCanvas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -579,21 +587,20 @@
         private System.Windows.Forms.Button zelena;
         private System.Windows.Forms.Button favourite_color_pictureBox;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.RadioButton circle_rb;
+        private System.Windows.Forms.RadioButton rect_rb;
+        private System.Windows.Forms.NumericUpDown circle_radius_nud;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown rectangle_width_nud;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown rectangle_height_nud;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.RadioButton basic_pen_rb;
+        private System.Windows.Forms.ColorDialog color_mixer;
         private System.Windows.Forms.Button Colormixer;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.CheckBox igracb;
-        private System.Windows.Forms.Button zapocnibt;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.RadioButton spray_rb;
+        private System.Windows.Forms.CheckBox game_cb;
+        private System.Windows.Forms.Button end_game_btn;
         private System.Windows.Forms.Timer stopwatch_Control;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem oProgramuToolStripMenuItem;
@@ -602,9 +609,10 @@
         private System.Windows.Forms.ToolStripMenuItem sacuvajCrtezToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
-        private System.Windows.Forms.NumericUpDown numericUpDown5;
-        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.NumericUpDown spray_radius_nud;
+        private System.Windows.Forms.NumericUpDown pen_width_nud;
+        private System.Windows.Forms.RadioButton eraser_rb;
+        private System.Windows.Forms.PictureBox drawingCanvas;
     }
 }
 
