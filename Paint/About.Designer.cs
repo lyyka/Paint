@@ -30,13 +30,14 @@
         {
             this.palette_image = new System.Windows.Forms.PictureBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.closeAbout_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.palette_image)).BeginInit();
             this.SuspendLayout();
             // 
             // palette_image
             // 
+            this.palette_image.BackgroundImage = global::Paint.Properties.Resources.palette;
             this.palette_image.Location = new System.Drawing.Point(12, 12);
             this.palette_image.Name = "palette_image";
             this.palette_image.Size = new System.Drawing.Size(348, 192);
@@ -53,15 +54,15 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "luka.robajac@gmail.com";
             // 
-            // button1
+            // closeAbout_btn
             // 
-            this.button1.Location = new System.Drawing.Point(129, 296);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 31);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.closeAbout_btn.Location = new System.Drawing.Point(129, 296);
+            this.closeAbout_btn.Name = "closeAbout_btn";
+            this.closeAbout_btn.Size = new System.Drawing.Size(118, 31);
+            this.closeAbout_btn.TabIndex = 6;
+            this.closeAbout_btn.Text = "OK";
+            this.closeAbout_btn.UseVisualStyleBackColor = true;
+            this.closeAbout_btn.Click += new System.EventHandler(this.closeAbout_Click);
             // 
             // label1
             // 
@@ -79,7 +80,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(372, 353);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.closeAbout_btn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.palette_image);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -98,7 +99,7 @@
 
         private System.Windows.Forms.PictureBox palette_image;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button closeAbout_btn;
         private System.Windows.Forms.Label label1;
     }
 }

@@ -19,11 +19,10 @@ namespace Paint
 
         private void About_Load(object sender, EventArgs e)
         {
-            Image picture = Image.FromFile(@"images/palette.jpg");
-            palette_image.BackgroundImage = picture;
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void closeAbout_Click(object sender, EventArgs e)
         {
             this.Close();
         }

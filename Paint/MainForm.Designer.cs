@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pen_width_nud = new System.Windows.Forms.NumericUpDown();
@@ -57,26 +56,30 @@
             this.basic_pen_rb = new System.Windows.Forms.RadioButton();
             this.color_mixer = new System.Windows.Forms.ColorDialog();
             this.spray_rb = new System.Windows.Forms.RadioButton();
-            this.game_cb = new System.Windows.Forms.CheckBox();
-            this.end_game_btn = new System.Windows.Forms.Button();
-            this.stopwatch_Control = new System.Windows.Forms.Timer(this.components);
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newDrawing_ts = new System.Windows.Forms.ToolStripMenuItem();
+            this.openDrawing_ts = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveDrawing_ts = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAs_ts = new System.Windows.Forms.ToolStripMenuItem();
+            this.edit_ts = new System.Windows.Forms.ToolStripMenuItem();
+            this.canvasSettings_ts = new System.Windows.Forms.ToolStripMenuItem();
+            this.resetAll_ts = new System.Windows.Forms.ToolStripMenuItem();
+            this.undo_ts = new System.Windows.Forms.ToolStripMenuItem();
             this.about_ts = new System.Windows.Forms.ToolStripMenuItem();
             this.help_ts = new System.Windows.Forms.ToolStripMenuItem();
-            this.resetAll_ts = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveDrawing_ts = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.spray_pb = new System.Windows.Forms.PictureBox();
+            this.pen_pb = new System.Windows.Forms.PictureBox();
+            this.cricle_pb = new System.Windows.Forms.PictureBox();
+            this.rect_pb = new System.Windows.Forms.PictureBox();
             this.eraser_rb = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.spray_radius_nud = new System.Windows.Forms.NumericUpDown();
-            this.drawingCanvas = new System.Windows.Forms.PictureBox();
-            this.undo_ts = new System.Windows.Forms.ToolStripMenuItem();
-            this.rect_pb = new System.Windows.Forms.PictureBox();
-            this.cricle_pb = new System.Windows.Forms.PictureBox();
-            this.pen_pb = new System.Windows.Forms.PictureBox();
-            this.spray_pb = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.saveDrawing_Dialog = new System.Windows.Forms.SaveFileDialog();
+            this.drawingCanvas = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pen_width_nud)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -84,19 +87,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.circle_radius_nud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rectangle_width_nud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rectangle_height_nud)).BeginInit();
-            this.menuStrip1.SuspendLayout();
+            this.menuStrip.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spray_pb)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pen_pb)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cricle_pb)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rect_pb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spray_radius_nud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drawingCanvas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rect_pb)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cricle_pb)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pen_pb)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spray_pb)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.pen_width_nud);
             this.groupBox1.Location = new System.Drawing.Point(11, 27);
             this.groupBox1.Name = "groupBox1";
@@ -127,6 +131,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.White;
             this.groupBox2.Controls.Add(this.Colormixer);
             this.groupBox2.Controls.Add(this.braon);
             this.groupBox2.Controls.Add(this.svetlozelena);
@@ -143,17 +148,18 @@
             this.groupBox2.Size = new System.Drawing.Size(343, 118);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Color";
+            this.groupBox2.Text = "Colors";
             // 
             // Colormixer
             // 
-            this.Colormixer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Colormixer.BackgroundImage")));
+            this.Colormixer.BackColor = System.Drawing.Color.White;
+            this.Colormixer.BackgroundImage = global::Paint.Properties.Resources.color_palette_UI;
             this.Colormixer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Colormixer.Location = new System.Drawing.Point(216, 29);
             this.Colormixer.Name = "Colormixer";
             this.Colormixer.Size = new System.Drawing.Size(121, 61);
             this.Colormixer.TabIndex = 11;
-            this.Colormixer.UseVisualStyleBackColor = true;
+            this.Colormixer.UseVisualStyleBackColor = false;
             this.Colormixer.Click += new System.EventHandler(this.Colormixer_Click);
             // 
             // braon
@@ -290,6 +296,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.White;
             this.groupBox3.Controls.Add(this.favourite_color_pictureBox);
             this.groupBox3.Location = new System.Drawing.Point(576, 27);
             this.groupBox3.Name = "groupBox3";
@@ -302,7 +309,7 @@
             // 
             this.circle_rb.AutoSize = true;
             this.circle_rb.CausesValidation = false;
-            this.circle_rb.Location = new System.Drawing.Point(16, 71);
+            this.circle_rb.Location = new System.Drawing.Point(15, 81);
             this.circle_rb.Name = "circle_rb";
             this.circle_rb.Size = new System.Drawing.Size(14, 13);
             this.circle_rb.TabIndex = 14;
@@ -312,7 +319,7 @@
             // 
             this.rect_rb.AutoSize = true;
             this.rect_rb.CausesValidation = false;
-            this.rect_rb.Location = new System.Drawing.Point(16, 19);
+            this.rect_rb.Location = new System.Drawing.Point(15, 29);
             this.rect_rb.Name = "rect_rb";
             this.rect_rb.Size = new System.Drawing.Size(14, 13);
             this.rect_rb.TabIndex = 16;
@@ -321,7 +328,7 @@
             // circle_radius_nud
             // 
             this.circle_radius_nud.CausesValidation = false;
-            this.circle_radius_nud.Location = new System.Drawing.Point(89, 64);
+            this.circle_radius_nud.Location = new System.Drawing.Point(88, 74);
             this.circle_radius_nud.Maximum = new decimal(new int[] {
             900,
             0,
@@ -335,7 +342,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(87, 87);
+            this.label1.Location = new System.Drawing.Point(86, 97);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 17;
@@ -344,7 +351,7 @@
             // rectangle_width_nud
             // 
             this.rectangle_width_nud.CausesValidation = false;
-            this.rectangle_width_nud.Location = new System.Drawing.Point(89, 13);
+            this.rectangle_width_nud.Location = new System.Drawing.Point(88, 23);
             this.rectangle_width_nud.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -358,7 +365,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(88, 36);
+            this.label2.Location = new System.Drawing.Point(87, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 19;
@@ -367,7 +374,7 @@
             // rectangle_height_nud
             // 
             this.rectangle_height_nud.CausesValidation = false;
-            this.rectangle_height_nud.Location = new System.Drawing.Point(141, 13);
+            this.rectangle_height_nud.Location = new System.Drawing.Point(140, 23);
             this.rectangle_height_nud.Maximum = new decimal(new int[] {
             1214,
             0,
@@ -381,7 +388,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(138, 36);
+            this.label3.Location = new System.Drawing.Point(137, 46);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 21;
@@ -407,52 +414,91 @@
             this.spray_rb.TabIndex = 11;
             this.spray_rb.UseVisualStyleBackColor = true;
             // 
-            // game_cb
+            // menuStrip
             // 
-            this.game_cb.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.game_cb.AutoSize = true;
-            this.game_cb.Location = new System.Drawing.Point(11, 772);
-            this.game_cb.Name = "game_cb";
-            this.game_cb.Size = new System.Drawing.Size(81, 17);
-            this.game_cb.TabIndex = 27;
-            this.game_cb.Text = "GameMode";
-            this.game_cb.UseVisualStyleBackColor = true;
-            this.game_cb.CheckedChanged += new System.EventHandler(this.gameMode_Change);
-            // 
-            // end_game_btn
-            // 
-            this.end_game_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.end_game_btn.Location = new System.Drawing.Point(98, 770);
-            this.end_game_btn.Name = "end_game_btn";
-            this.end_game_btn.Size = new System.Drawing.Size(120, 21);
-            this.end_game_btn.TabIndex = 29;
-            this.end_game_btn.Text = "End GameMode";
-            this.end_game_btn.UseVisualStyleBackColor = true;
-            this.end_game_btn.Visible = false;
-            this.end_game_btn.Click += new System.EventHandler(this.endGame_Click);
-            // 
-            // stopwatch_Control
-            // 
-            this.stopwatch_Control.Interval = 1000;
-            this.stopwatch_Control.Tick += new System.EventHandler(this.gameTime_Tick);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStrip.BackColor = System.Drawing.Color.White;
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.edit_ts,
             this.about_ts,
-            this.help_ts,
+            this.help_ts});
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(1360, 24);
+            this.menuStrip.TabIndex = 30;
+            this.menuStrip.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newDrawing_ts,
+            this.openDrawing_ts,
+            this.saveDrawing_ts,
+            this.saveAs_ts});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // newDrawing_ts
+            // 
+            this.newDrawing_ts.Name = "newDrawing_ts";
+            this.newDrawing_ts.Size = new System.Drawing.Size(215, 22);
+            this.newDrawing_ts.Text = "New Drawing";
+            this.newDrawing_ts.Click += new System.EventHandler(this.newDrawing_ts_Click);
+            // 
+            // openDrawing_ts
+            // 
+            this.openDrawing_ts.Enabled = false;
+            this.openDrawing_ts.Name = "openDrawing_ts";
+            this.openDrawing_ts.Size = new System.Drawing.Size(215, 22);
+            this.openDrawing_ts.Text = "Open... (not implemented)";
+            // 
+            // saveDrawing_ts
+            // 
+            this.saveDrawing_ts.Enabled = false;
+            this.saveDrawing_ts.Name = "saveDrawing_ts";
+            this.saveDrawing_ts.Size = new System.Drawing.Size(215, 22);
+            this.saveDrawing_ts.Text = "Save...";
+            this.saveDrawing_ts.Click += new System.EventHandler(this.saveDrawing_ts_Click);
+            // 
+            // saveAs_ts
+            // 
+            this.saveAs_ts.Enabled = false;
+            this.saveAs_ts.Name = "saveAs_ts";
+            this.saveAs_ts.Size = new System.Drawing.Size(215, 22);
+            this.saveAs_ts.Text = "Save As...";
+            this.saveAs_ts.Click += new System.EventHandler(this.saveAs_ts_Click);
+            // 
+            // edit_ts
+            // 
+            this.edit_ts.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.canvasSettings_ts,
             this.resetAll_ts,
-            this.undo_ts,
-            this.saveDrawing_ts});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1360, 24);
-            this.menuStrip1.TabIndex = 30;
-            this.menuStrip1.Text = "menuStrip1";
+            this.undo_ts});
+            this.edit_ts.Name = "edit_ts";
+            this.edit_ts.Size = new System.Drawing.Size(39, 20);
+            this.edit_ts.Text = "Edit";
+            // 
+            // canvasSettings_ts
+            // 
+            this.canvasSettings_ts.Name = "canvasSettings_ts";
+            this.canvasSettings_ts.Size = new System.Drawing.Size(166, 22);
+            this.canvasSettings_ts.Text = "Canvas Settings...";
+            this.canvasSettings_ts.Click += new System.EventHandler(this.canvasSettings_ts_Click);
+            // 
+            // resetAll_ts
+            // 
+            this.resetAll_ts.Name = "resetAll_ts";
+            this.resetAll_ts.Size = new System.Drawing.Size(166, 22);
+            this.resetAll_ts.Text = "Reset All";
+            this.resetAll_ts.Click += new System.EventHandler(this.resetAll_Click);
+            // 
+            // undo_ts
+            // 
+            this.undo_ts.Name = "undo_ts";
+            this.undo_ts.Size = new System.Drawing.Size(166, 22);
+            this.undo_ts.Text = "Undo";
+            this.undo_ts.Click += new System.EventHandler(this.undo_ts_Click);
             // 
             // about_ts
             // 
@@ -468,24 +514,11 @@
             this.help_ts.Text = "Help";
             this.help_ts.Click += new System.EventHandler(this.help_Click);
             // 
-            // resetAll_ts
-            // 
-            this.resetAll_ts.Name = "resetAll_ts";
-            this.resetAll_ts.Size = new System.Drawing.Size(64, 20);
-            this.resetAll_ts.Text = "Reset All";
-            this.resetAll_ts.Click += new System.EventHandler(this.resetAll_Click);
-            // 
-            // saveDrawing_ts
-            // 
-            this.saveDrawing_ts.Name = "saveDrawing_ts";
-            this.saveDrawing_ts.Size = new System.Drawing.Size(89, 20);
-            this.saveDrawing_ts.Text = "Save drawing";
-            this.saveDrawing_ts.Click += new System.EventHandler(this.saveDrawing_Click);
-            // 
             // groupBox4
             // 
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.BackColor = System.Drawing.Color.White;
             this.groupBox4.Controls.Add(this.pictureBox1);
             this.groupBox4.Controls.Add(this.spray_pb);
             this.groupBox4.Controls.Add(this.pen_pb);
@@ -510,6 +543,61 @@
             this.groupBox4.TabIndex = 31;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Tools";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(327, 78);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(52, 32);
+            this.pictureBox1.TabIndex = 37;
+            this.pictureBox1.TabStop = false;
+            // 
+            // spray_pb
+            // 
+            this.spray_pb.BackColor = System.Drawing.Color.Transparent;
+            this.spray_pb.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("spray_pb.BackgroundImage")));
+            this.spray_pb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.spray_pb.Location = new System.Drawing.Point(327, 45);
+            this.spray_pb.Name = "spray_pb";
+            this.spray_pb.Size = new System.Drawing.Size(52, 32);
+            this.spray_pb.TabIndex = 36;
+            this.spray_pb.TabStop = false;
+            // 
+            // pen_pb
+            // 
+            this.pen_pb.BackColor = System.Drawing.Color.Transparent;
+            this.pen_pb.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pen_pb.BackgroundImage")));
+            this.pen_pb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pen_pb.Location = new System.Drawing.Point(327, 12);
+            this.pen_pb.Name = "pen_pb";
+            this.pen_pb.Size = new System.Drawing.Size(52, 32);
+            this.pen_pb.TabIndex = 35;
+            this.pen_pb.TabStop = false;
+            // 
+            // cricle_pb
+            // 
+            this.cricle_pb.BackColor = System.Drawing.Color.Transparent;
+            this.cricle_pb.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cricle_pb.BackgroundImage")));
+            this.cricle_pb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cricle_pb.Location = new System.Drawing.Point(30, 71);
+            this.cricle_pb.Name = "cricle_pb";
+            this.cricle_pb.Size = new System.Drawing.Size(52, 32);
+            this.cricle_pb.TabIndex = 34;
+            this.cricle_pb.TabStop = false;
+            // 
+            // rect_pb
+            // 
+            this.rect_pb.BackColor = System.Drawing.Color.Transparent;
+            this.rect_pb.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rect_pb.BackgroundImage")));
+            this.rect_pb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.rect_pb.Location = new System.Drawing.Point(30, 22);
+            this.rect_pb.Name = "rect_pb";
+            this.rect_pb.Size = new System.Drawing.Size(52, 32);
+            this.rect_pb.TabIndex = 33;
+            this.rect_pb.TabStop = false;
             // 
             // eraser_rb
             // 
@@ -539,102 +627,51 @@
             this.spray_radius_nud.TabIndex = 12;
             this.spray_radius_nud.TabStop = false;
             // 
+            // saveDrawing_Dialog
+            // 
+            this.saveDrawing_Dialog.Filter = "PNG|*.png";
+            // 
             // drawingCanvas
             // 
             this.drawingCanvas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.drawingCanvas.BackColor = System.Drawing.Color.White;
             this.drawingCanvas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.drawingCanvas.Cursor = System.Windows.Forms.Cursors.Cross;
             this.drawingCanvas.Location = new System.Drawing.Point(11, 151);
             this.drawingCanvas.Name = "drawingCanvas";
-            this.drawingCanvas.Size = new System.Drawing.Size(1337, 613);
+            this.drawingCanvas.Size = new System.Drawing.Size(1337, 638);
             this.drawingCanvas.TabIndex = 32;
             this.drawingCanvas.TabStop = false;
+            this.drawingCanvas.Visible = false;
             this.drawingCanvas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.drawingCanvas_MouseClick);
             this.drawingCanvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.drawingCanvas_MouseDown);
             this.drawingCanvas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.drawingCanvas_MouseMove);
             this.drawingCanvas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.drawingCanvas_MouseUp);
             // 
-            // undo_ts
+            // panel1
             // 
-            this.undo_ts.Name = "undo_ts";
-            this.undo_ts.Size = new System.Drawing.Size(48, 20);
-            this.undo_ts.Text = "Undo";
-            this.undo_ts.Click += new System.EventHandler(this.undo_ts_Click);
-            // 
-            // rect_pb
-            // 
-            this.rect_pb.BackColor = System.Drawing.Color.Transparent;
-            this.rect_pb.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rect_pb.BackgroundImage")));
-            this.rect_pb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.rect_pb.Location = new System.Drawing.Point(31, 12);
-            this.rect_pb.Name = "rect_pb";
-            this.rect_pb.Size = new System.Drawing.Size(52, 32);
-            this.rect_pb.TabIndex = 33;
-            this.rect_pb.TabStop = false;
-            // 
-            // cricle_pb
-            // 
-            this.cricle_pb.BackColor = System.Drawing.Color.Transparent;
-            this.cricle_pb.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cricle_pb.BackgroundImage")));
-            this.cricle_pb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cricle_pb.Location = new System.Drawing.Point(31, 61);
-            this.cricle_pb.Name = "cricle_pb";
-            this.cricle_pb.Size = new System.Drawing.Size(52, 32);
-            this.cricle_pb.TabIndex = 34;
-            this.cricle_pb.TabStop = false;
-            // 
-            // pen_pb
-            // 
-            this.pen_pb.BackColor = System.Drawing.Color.Transparent;
-            this.pen_pb.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pen_pb.BackgroundImage")));
-            this.pen_pb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pen_pb.Location = new System.Drawing.Point(327, 12);
-            this.pen_pb.Name = "pen_pb";
-            this.pen_pb.Size = new System.Drawing.Size(52, 32);
-            this.pen_pb.TabIndex = 35;
-            this.pen_pb.TabStop = false;
-            // 
-            // spray_pb
-            // 
-            this.spray_pb.BackColor = System.Drawing.Color.Transparent;
-            this.spray_pb.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("spray_pb.BackgroundImage")));
-            this.spray_pb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.spray_pb.Location = new System.Drawing.Point(327, 45);
-            this.spray_pb.Name = "spray_pb";
-            this.spray_pb.Size = new System.Drawing.Size(52, 32);
-            this.spray_pb.TabIndex = 36;
-            this.spray_pb.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(327, 78);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(52, 32);
-            this.pictureBox1.TabIndex = 37;
-            this.pictureBox1.TabStop = false;
-            // 
-            // saveDrawing_Dialog
-            // 
-            this.saveDrawing_Dialog.Filter = "PNG|*.png";
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(0, 23);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1360, 126);
+            this.panel1.TabIndex = 33;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.AutoScroll = true;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1360, 801);
             this.Controls.Add(this.drawingCanvas);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.end_game_btn);
-            this.Controls.Add(this.game_cb);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.menuStrip);
+            this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.Black;
             this.MaximizeBox = false;
             this.Name = "MainForm";
@@ -648,17 +685,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.circle_radius_nud)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rectangle_width_nud)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rectangle_height_nud)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spray_pb)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pen_pb)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cricle_pb)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rect_pb)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spray_radius_nud)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drawingCanvas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rect_pb)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cricle_pb)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pen_pb)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spray_pb)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -691,27 +728,31 @@
         private System.Windows.Forms.ColorDialog color_mixer;
         private System.Windows.Forms.Button Colormixer;
         private System.Windows.Forms.RadioButton spray_rb;
-        private System.Windows.Forms.CheckBox game_cb;
-        private System.Windows.Forms.Button end_game_btn;
-        private System.Windows.Forms.Timer stopwatch_Control;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem about_ts;
         private System.Windows.Forms.ToolStripMenuItem help_ts;
-        private System.Windows.Forms.ToolStripMenuItem resetAll_ts;
-        private System.Windows.Forms.ToolStripMenuItem saveDrawing_ts;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown spray_radius_nud;
         private System.Windows.Forms.NumericUpDown pen_width_nud;
         private System.Windows.Forms.RadioButton eraser_rb;
-        private System.Windows.Forms.PictureBox drawingCanvas;
-        private System.Windows.Forms.ToolStripMenuItem undo_ts;
         private System.Windows.Forms.PictureBox rect_pb;
         private System.Windows.Forms.PictureBox cricle_pb;
         private System.Windows.Forms.PictureBox pen_pb;
         private System.Windows.Forms.PictureBox spray_pb;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.SaveFileDialog saveDrawing_Dialog;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newDrawing_ts;
+        private System.Windows.Forms.ToolStripMenuItem openDrawing_ts;
+        private System.Windows.Forms.ToolStripMenuItem saveDrawing_ts;
+        private System.Windows.Forms.ToolStripMenuItem saveAs_ts;
+        public System.Windows.Forms.PictureBox drawingCanvas;
+        private System.Windows.Forms.ToolStripMenuItem edit_ts;
+        private System.Windows.Forms.ToolStripMenuItem resetAll_ts;
+        private System.Windows.Forms.ToolStripMenuItem undo_ts;
+        private System.Windows.Forms.ToolStripMenuItem canvasSettings_ts;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

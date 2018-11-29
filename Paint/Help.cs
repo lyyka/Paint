@@ -17,13 +17,7 @@ namespace Paint
             InitializeComponent();
         }
 
-        private void Form4_Load(object sender, EventArgs e)
-        {
-            Image help2 = Image.FromFile(@"images/help.png");
-            pictureBox1.Image = help2;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void closeHelp_Click(object sender, EventArgs e)
         {
             this.Close();
         }

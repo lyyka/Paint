@@ -92,11 +92,11 @@
     <Compile Include="Help.Designer.cs">
       <DependentUpon>Help.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameTask.cs">
+    <Compile Include="CanvasSettings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GameTask.Designer.cs">
-      <DependentUpon>GameTask.cs</DependentUpon>
+    <Compile Include="CanvasSettings.Designer.cs">
+      <DependentUpon>CanvasSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -109,24 +109,24 @@
     <EmbeddedResource Include="Help.resx">
       <DependentUpon>Help.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GameTask.resx">
-      <DependentUpon>GameTask.cs</DependentUpon>
+    <EmbeddedResource Include="CanvasSettings.resx">
+      <DependentUpon>CanvasSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Paint_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -135,15 +135,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\unnamed.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\eraser-307517_640.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Untitled-1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6">
@@ -162,6 +153,30 @@
       <Project>{17126ac3-dace-493c-ad49-184ab4a6fe8d}</Project>
       <Name>GraphicObjects</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\palette.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\color_palette_UI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eraser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rectangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spray.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

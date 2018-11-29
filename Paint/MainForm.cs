@@ -15,6 +15,7 @@ namespace Paint
 {
     public partial class MainForm : Form
     {
+        string current_file = "";
         // drawing buffers
         List<GObject> objects = new List<GObject>();
         List<List<GObject>> steps = new List<List<GObject>>();
@@ -40,10 +41,6 @@ namespace Paint
         // coordinats on mouse down
         Color last_color;
         int x_pos, y_pos;
-        // game
-        string game_mark;
-        public int game_seconds;
-        public int game_minutes;
         // pens
         Pen pen = new Pen (Color.Black, 1);
         public MainForm()
@@ -159,103 +156,57 @@ namespace Paint
 
         #endregion
 
-        #region game
-
-        private void gameMode_Change(object sender, EventArgs e) // game mode on
-        {
-            if (game_cb.Checked == true)
-            {
-                // clear canvas
-                Refresh();
-                // show the game task
-                GameTask game_task_window = new GameTask();
-                game_task_window.Show();
-                // start the game
-                MessageBox.Show("GameMode On.");
-                stopwatch_Control.Enabled = true;
-                // show end game button
-                end_game_btn.Visible = true;
-            }
-            if (game_cb.Checked == false)
-            {
-                stopwatch_Control.Enabled = false;
-            }
-        }
-
-        private void gameTime_Tick(object sender, EventArgs e) // game time
-        {
-            game_seconds++;
-            if (game_seconds == 60)
-            {
-                game_seconds = 0;
-                game_minutes++;
-                if (game_minutes >= 0 && game_minutes < 3)
-                {
-                    game_mark = "A";
-                }
-                if (game_minutes >= 3 && game_minutes < 5)
-                {
-                    game_mark = "B";
-                }
-                if (game_minutes >= 5 && game_minutes < 6)
-                {
-                    game_mark = "C";
-                }
-                if (game_minutes >= 6 && game_minutes < 7)
-                {
-                    game_mark = "D";
-                }
-            }
-        }
-
-        private void endGame_Click(object sender, EventArgs e) // end game
-        {
-            if (game_cb.Checked)
-            {
-                if(game_minutes == 0)
-                {
-                    game_mark = "A";
-                }
-                MessageBox.Show("You finished in " + game_minutes + " minute(s) and " + game_seconds + " seconds. Your mark is " + game_mark + ".");
-                stopwatch_Control.Enabled = false;
-                game_cb.Checked = false;
-
-                this.Visible = false;
-            }
-        }
-
-        #endregion
-
         #region MENU
-        private void aboutSoftware_Click(object sender, EventArgs e) // about software
+
+        private void newDrawing_ts_Click(object sender, EventArgs e) // new drawing
         {
-            About abt = new About();
-            abt.Show();
+            CanvasSettings nd = new CanvasSettings(this, true);
+            nd.Show();
         }
 
-        private void help_Click(object sender, EventArgs e) // help
+        private void saveDrawing_ts_Click(object sender, EventArgs e) // just save
         {
-            Help Help = new Help();
-            Help.Show();
-        }
-
-        private void undo_ts_Click(object sender, EventArgs e) // undo
-        {
-            if(steps.Count > 0)
+            if(current_file.Trim().Length > 0 && File.Exists(current_file))
             {
-                objects = steps[steps.Count - 1];
-                steps.RemoveAt(steps.Count - 1);
-                drawingCanvas.Invalidate();
+                Bitmap bmp = new Bitmap(drawingCanvas.ClientSize.Width, drawingCanvas.ClientSize.Height);
+                drawingCanvas.DrawToBitmap(bmp, drawingCanvas.ClientRectangle);
+                bmp.Save(current_file);
             }
             else
             {
-                MessageBox.Show("No more steps back.");
+                SaveAs();
             }
         }
-        #endregion
 
+        private void saveAs_ts_Click(object sender, EventArgs e) // save as
+        {
+            SaveAs();
+        }
 
-        private void resetAll_Click(object sender, EventArgs e)
+        private void SaveAs() // save as
+        {
+            Bitmap bmp = new Bitmap(drawingCanvas.ClientSize.Width, drawingCanvas.ClientSize.Height);
+            drawingCanvas.DrawToBitmap(bmp, drawingCanvas.ClientRectangle);
+
+            saveDrawing_Dialog.ShowDialog();
+
+            if (saveDrawing_Dialog.FileName != "")
+            {
+                bmp.Save(saveDrawing_Dialog.FileName);
+
+                Text = "Current: " + saveDrawing_Dialog.FileName;
+
+                current_file = saveDrawing_Dialog.FileName;
+            }
+        }
+
+        private void canvasSettings_ts_Click(object sender, EventArgs e) // settings
+        {
+            CanvasSettings cs = new CanvasSettings(this, false);
+            cs.Show();
+        }
+
+        private void resetAll_Click(object sender, EventArgs e) // reset all
         {
             // clear buffers
             objects.Clear();
@@ -272,22 +223,35 @@ namespace Paint
             rectangle_width_nud.Value = 0;
             rectangle_height_nud.Value = 0;
             spray_radius_nud.Value = 0;
-            // disable game mode
-            game_cb.Checked = false;
         }
 
-        private void saveDrawing_Click(object sender, EventArgs e)
+        private void undo_ts_Click(object sender, EventArgs e) // undo
         {
-            Bitmap bmp = new Bitmap(drawingCanvas.ClientSize.Width, drawingCanvas.ClientSize.Height);
-            drawingCanvas.DrawToBitmap(bmp, drawingCanvas.ClientRectangle);
-
-            saveDrawing_Dialog.ShowDialog();
-
-            if(saveDrawing_Dialog.FileName != null)
+            if (steps.Count > 0)
             {
-                bmp.Save(saveDrawing_Dialog.FileName);
+                objects = steps[steps.Count - 1];
+                steps.RemoveAt(steps.Count - 1);
+                drawingCanvas.Invalidate();
+            }
+            else
+            {
+                MessageBox.Show("No more steps back.");
             }
         }
+
+        private void aboutSoftware_Click(object sender, EventArgs e) // about software
+        {
+            About abt = new About();
+            abt.Show();
+        }
+
+        private void help_Click(object sender, EventArgs e) // help
+        {
+            Help Help = new Help();
+            Help.Show();
+        }
+
+        #endregion
 
         private void pencilWidth_Change(object sender, EventArgs e)
         {
@@ -336,7 +300,10 @@ namespace Paint
 
         private void favourite_color_pictreBox_Click(object sender, EventArgs e) // change current color to favourite color
         {
-            ChangeColor(favourite_color_pictureBox.BackColor);
+            if(colors.ContainsKey(favourite_color_pictureBox.BackColor))
+            {
+                ChangeColor(favourite_color_pictureBox.BackColor);
+            }
         }
 
         private void Colormixer_Click(object sender, EventArgs e) // open color mixer
@@ -409,13 +376,27 @@ namespace Paint
 
         #endregion
 
+        public void initCanvas(int width, int height, bool full_refresh)
+        {
+            if (full_refresh)
+            {
+                current_file = "";
+                Text = "Current file: Untitled";
+                saveAs_ts.Enabled = true;
+                saveDrawing_ts.Enabled = true;
+                objects.Clear();
+            }
+            drawingCanvas.Refresh();
+
+            drawingCanvas.Width = width;
+            drawingCanvas.Height = height;
+            drawingCanvas.Visible = true;
+        }
+
         private void MainForm_Load(object sender, EventArgs e) // form load
         {
-            Icon = new Icon(@"images/icon.ico");
-            game_cb.Checked = false;
             basic_pen_rb.Checked = true;
             Colormixer.FlatStyle = FlatStyle.Popup;
-            end_game_btn.FlatStyle = FlatStyle.Popup;
             // paint event
             drawingCanvas.Paint += dcPaint;
         }
