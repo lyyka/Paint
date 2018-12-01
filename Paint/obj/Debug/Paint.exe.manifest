@@ -42,26 +42,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GraphicObjects.dll" size="7168">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GraphicObjects.dll" size="7680">
       <assemblyIdentity name="GraphicObjects" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>S4JMakcwTA+L/ofSc1QYrJcDRx/ABjaB+TWgY+zONyA=</dsig:DigestValue>
+        <dsig:DigestValue>om2rThn4Qwp+0p3JrXKM31BoTDEg7YwzR3oqvZBODfo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Paint.exe" size="348672">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Paint.exe" size="351744">
       <assemblyIdentity name="Paint" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>BSGlmkz5JZ3fiu1b1wb/9uQFf5J5NjddLl0I/LlYAm4=</dsig:DigestValue>
+        <dsig:DigestValue>BGqTHI3+trL9Z1hK6AngC/72NB4/uyl02t9uY+koRG0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

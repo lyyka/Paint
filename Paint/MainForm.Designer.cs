@@ -32,27 +32,21 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pen_width_nud = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.favColor_label = new System.Windows.Forms.Label();
+            this.mostUsedColor_pb = new System.Windows.Forms.Button();
             this.Colormixer = new System.Windows.Forms.Button();
-            this.braon = new System.Windows.Forms.Button();
-            this.svetlozelena = new System.Windows.Forms.Button();
-            this.svetloplava = new System.Windows.Forms.Button();
-            this.roze = new System.Windows.Forms.Button();
-            this.crna = new System.Windows.Forms.Button();
-            this.ljubicasta = new System.Windows.Forms.Button();
-            this.crvena = new System.Windows.Forms.Button();
-            this.narandzasta = new System.Windows.Forms.Button();
-            this.zuta = new System.Windows.Forms.Button();
-            this.zelena = new System.Windows.Forms.Button();
-            this.favourite_color_pictureBox = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.brownColor = new System.Windows.Forms.Button();
+            this.limeColor = new System.Windows.Forms.Button();
+            this.aquaColor = new System.Windows.Forms.Button();
+            this.whiteColor = new System.Windows.Forms.Button();
+            this.blackColor = new System.Windows.Forms.Button();
+            this.purpleColor = new System.Windows.Forms.Button();
+            this.redColor = new System.Windows.Forms.Button();
+            this.orangeColor = new System.Windows.Forms.Button();
+            this.yellowColor = new System.Windows.Forms.Button();
+            this.greenColor = new System.Windows.Forms.Button();
             this.circle_rb = new System.Windows.Forms.RadioButton();
             this.rect_rb = new System.Windows.Forms.RadioButton();
-            this.circle_radius_nud = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.rectangle_width_nud = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
-            this.rectangle_height_nud = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
             this.basic_pen_rb = new System.Windows.Forms.RadioButton();
             this.color_mixer = new System.Windows.Forms.ColorDialog();
             this.spray_rb = new System.Windows.Forms.RadioButton();
@@ -67,34 +61,40 @@
             this.resetAll_ts = new System.Windows.Forms.ToolStripMenuItem();
             this.undo_ts = new System.Windows.Forms.ToolStripMenuItem();
             this.about_ts = new System.Windows.Forms.ToolStripMenuItem();
-            this.help_ts = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.spray_pb = new System.Windows.Forms.PictureBox();
-            this.pen_pb = new System.Windows.Forms.PictureBox();
-            this.cricle_pb = new System.Windows.Forms.PictureBox();
-            this.rect_pb = new System.Windows.Forms.PictureBox();
             this.eraser_rb = new System.Windows.Forms.RadioButton();
-            this.label4 = new System.Windows.Forms.Label();
-            this.spray_radius_nud = new System.Windows.Forms.NumericUpDown();
             this.saveDrawing_Dialog = new System.Windows.Forms.SaveFileDialog();
-            this.drawingCanvas = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.shapesControl_gb = new System.Windows.Forms.GroupBox();
+            this.rect_pb = new System.Windows.Forms.PictureBox();
+            this.cricle_pb = new System.Windows.Forms.PictureBox();
+            this.drawingControls_gb = new System.Windows.Forms.GroupBox();
+            this.text_pb = new System.Windows.Forms.PictureBox();
+            this.text_rb = new System.Windows.Forms.RadioButton();
+            this.pen_pb = new System.Windows.Forms.PictureBox();
+            this.eraser_pb = new System.Windows.Forms.PictureBox();
+            this.spray_pb = new System.Windows.Forms.PictureBox();
+            this.openDrawing_Dialog = new System.Windows.Forms.OpenFileDialog();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.savedStatus_label = new System.Windows.Forms.Label();
+            this.sizeValue_label = new System.Windows.Forms.Label();
+            this.sizeCaption_label = new System.Windows.Forms.Label();
+            this.drawingCanvas = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pen_width_nud)).BeginInit();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.circle_radius_nud)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rectangle_width_nud)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rectangle_height_nud)).BeginInit();
             this.menuStrip.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spray_pb)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pen_pb)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cricle_pb)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.shapesControl_gb.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rect_pb)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spray_radius_nud)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cricle_pb)).BeginInit();
+            this.drawingControls_gb.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.text_pb)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pen_pb)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eraser_pb)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spray_pb)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drawingCanvas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,9 +102,9 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.pen_width_nud);
-            this.groupBox1.Location = new System.Drawing.Point(11, 27);
+            this.groupBox1.Location = new System.Drawing.Point(12, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 118);
+            this.groupBox1.Size = new System.Drawing.Size(148, 118);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pen width";
@@ -112,14 +112,14 @@
             // pen_width_nud
             // 
             this.pen_width_nud.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pen_width_nud.Location = new System.Drawing.Point(6, 39);
+            this.pen_width_nud.Location = new System.Drawing.Point(20, 36);
             this.pen_width_nud.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.pen_width_nud.Name = "pen_width_nud";
-            this.pen_width_nud.Size = new System.Drawing.Size(188, 45);
+            this.pen_width_nud.Size = new System.Drawing.Size(101, 45);
             this.pen_width_nud.TabIndex = 0;
             this.pen_width_nud.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.pen_width_nud.Value = new decimal(new int[] {
@@ -132,184 +132,194 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.Controls.Add(this.favColor_label);
+            this.groupBox2.Controls.Add(this.mostUsedColor_pb);
             this.groupBox2.Controls.Add(this.Colormixer);
-            this.groupBox2.Controls.Add(this.braon);
-            this.groupBox2.Controls.Add(this.svetlozelena);
-            this.groupBox2.Controls.Add(this.svetloplava);
-            this.groupBox2.Controls.Add(this.roze);
-            this.groupBox2.Controls.Add(this.crna);
-            this.groupBox2.Controls.Add(this.ljubicasta);
-            this.groupBox2.Controls.Add(this.crvena);
-            this.groupBox2.Controls.Add(this.narandzasta);
-            this.groupBox2.Controls.Add(this.zuta);
-            this.groupBox2.Controls.Add(this.zelena);
-            this.groupBox2.Location = new System.Drawing.Point(227, 27);
+            this.groupBox2.Controls.Add(this.brownColor);
+            this.groupBox2.Controls.Add(this.limeColor);
+            this.groupBox2.Controls.Add(this.aquaColor);
+            this.groupBox2.Controls.Add(this.whiteColor);
+            this.groupBox2.Controls.Add(this.blackColor);
+            this.groupBox2.Controls.Add(this.purpleColor);
+            this.groupBox2.Controls.Add(this.redColor);
+            this.groupBox2.Controls.Add(this.orangeColor);
+            this.groupBox2.Controls.Add(this.yellowColor);
+            this.groupBox2.Controls.Add(this.greenColor);
+            this.groupBox2.Location = new System.Drawing.Point(165, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(343, 118);
+            this.groupBox2.Size = new System.Drawing.Size(347, 118);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Colors";
+            // 
+            // favColor_label
+            // 
+            this.favColor_label.AutoSize = true;
+            this.favColor_label.Location = new System.Drawing.Point(271, 36);
+            this.favColor_label.Name = "favColor_label";
+            this.favColor_label.Size = new System.Drawing.Size(56, 13);
+            this.favColor_label.TabIndex = 34;
+            this.favColor_label.Text = "Most used";
+            // 
+            // mostUsedColor_pb
+            // 
+            this.mostUsedColor_pb.BackColor = System.Drawing.Color.LightGray;
+            this.mostUsedColor_pb.FlatAppearance.BorderSize = 0;
+            this.mostUsedColor_pb.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.mostUsedColor_pb.Location = new System.Drawing.Point(282, 53);
+            this.mostUsedColor_pb.Name = "mostUsedColor_pb";
+            this.mostUsedColor_pb.Size = new System.Drawing.Size(36, 27);
+            this.mostUsedColor_pb.TabIndex = 10;
+            this.mostUsedColor_pb.UseVisualStyleBackColor = false;
             // 
             // Colormixer
             // 
             this.Colormixer.BackColor = System.Drawing.Color.White;
             this.Colormixer.BackgroundImage = global::Paint.Properties.Resources.color_palette_UI;
             this.Colormixer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Colormixer.Location = new System.Drawing.Point(216, 29);
+            this.Colormixer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Colormixer.Location = new System.Drawing.Point(170, 29);
             this.Colormixer.Name = "Colormixer";
-            this.Colormixer.Size = new System.Drawing.Size(121, 61);
+            this.Colormixer.Size = new System.Drawing.Size(76, 59);
             this.Colormixer.TabIndex = 11;
             this.Colormixer.UseVisualStyleBackColor = false;
             this.Colormixer.Click += new System.EventHandler(this.Colormixer_Click);
             // 
-            // braon
+            // brownColor
             // 
-            this.braon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.braon.FlatAppearance.BorderSize = 0;
-            this.braon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.braon.Location = new System.Drawing.Point(174, 63);
-            this.braon.Name = "braon";
-            this.braon.Size = new System.Drawing.Size(36, 27);
-            this.braon.TabIndex = 9;
-            this.braon.UseVisualStyleBackColor = false;
-            this.braon.Click += new System.EventHandler(this.brown_Click);
+            this.brownColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.brownColor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.brownColor.FlatAppearance.BorderSize = 0;
+            this.brownColor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.brownColor.Location = new System.Drawing.Point(139, 63);
+            this.brownColor.Name = "brownColor";
+            this.brownColor.Size = new System.Drawing.Size(25, 25);
+            this.brownColor.TabIndex = 9;
+            this.brownColor.TabStop = false;
+            this.brownColor.UseVisualStyleBackColor = false;
             // 
-            // svetlozelena
+            // limeColor
             // 
-            this.svetlozelena.BackColor = System.Drawing.Color.Lime;
-            this.svetlozelena.FlatAppearance.BorderSize = 0;
-            this.svetlozelena.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.svetlozelena.Location = new System.Drawing.Point(132, 63);
-            this.svetlozelena.Name = "svetlozelena";
-            this.svetlozelena.Size = new System.Drawing.Size(36, 27);
-            this.svetlozelena.TabIndex = 8;
-            this.svetlozelena.UseVisualStyleBackColor = false;
-            this.svetlozelena.Click += new System.EventHandler(this.lightgreen_Click);
+            this.limeColor.BackColor = System.Drawing.Color.Lime;
+            this.limeColor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.limeColor.FlatAppearance.BorderSize = 0;
+            this.limeColor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.limeColor.Location = new System.Drawing.Point(108, 63);
+            this.limeColor.Name = "limeColor";
+            this.limeColor.Size = new System.Drawing.Size(25, 25);
+            this.limeColor.TabIndex = 8;
+            this.limeColor.TabStop = false;
+            this.limeColor.UseVisualStyleBackColor = false;
             // 
-            // svetloplava
+            // aquaColor
             // 
-            this.svetloplava.BackColor = System.Drawing.Color.Aqua;
-            this.svetloplava.FlatAppearance.BorderSize = 0;
-            this.svetloplava.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.svetloplava.Location = new System.Drawing.Point(90, 62);
-            this.svetloplava.Name = "svetloplava";
-            this.svetloplava.Size = new System.Drawing.Size(36, 27);
-            this.svetloplava.TabIndex = 7;
-            this.svetloplava.UseVisualStyleBackColor = false;
-            this.svetloplava.Click += new System.EventHandler(this.lightblue_Click);
+            this.aquaColor.BackColor = System.Drawing.Color.Aqua;
+            this.aquaColor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.aquaColor.FlatAppearance.BorderSize = 0;
+            this.aquaColor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.aquaColor.Location = new System.Drawing.Point(77, 63);
+            this.aquaColor.Name = "aquaColor";
+            this.aquaColor.Size = new System.Drawing.Size(25, 25);
+            this.aquaColor.TabIndex = 7;
+            this.aquaColor.TabStop = false;
+            this.aquaColor.UseVisualStyleBackColor = false;
             // 
-            // roze
+            // whiteColor
             // 
-            this.roze.BackColor = System.Drawing.Color.Fuchsia;
-            this.roze.FlatAppearance.BorderSize = 0;
-            this.roze.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roze.Location = new System.Drawing.Point(48, 62);
-            this.roze.Name = "roze";
-            this.roze.Size = new System.Drawing.Size(36, 27);
-            this.roze.TabIndex = 6;
-            this.roze.UseVisualStyleBackColor = false;
-            this.roze.Click += new System.EventHandler(this.pink_Click);
+            this.whiteColor.BackColor = System.Drawing.Color.White;
+            this.whiteColor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.whiteColor.FlatAppearance.BorderSize = 0;
+            this.whiteColor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.whiteColor.Location = new System.Drawing.Point(15, 63);
+            this.whiteColor.Name = "whiteColor";
+            this.whiteColor.Size = new System.Drawing.Size(25, 25);
+            this.whiteColor.TabIndex = 6;
+            this.whiteColor.TabStop = false;
+            this.whiteColor.UseVisualStyleBackColor = false;
             // 
-            // crna
+            // blackColor
             // 
-            this.crna.BackColor = System.Drawing.Color.Black;
-            this.crna.FlatAppearance.BorderSize = 0;
-            this.crna.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.crna.Location = new System.Drawing.Point(6, 62);
-            this.crna.Name = "crna";
-            this.crna.Size = new System.Drawing.Size(36, 27);
-            this.crna.TabIndex = 5;
-            this.crna.UseVisualStyleBackColor = false;
-            this.crna.Click += new System.EventHandler(this.black_Click);
+            this.blackColor.BackColor = System.Drawing.Color.Black;
+            this.blackColor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.blackColor.FlatAppearance.BorderSize = 0;
+            this.blackColor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.blackColor.Location = new System.Drawing.Point(46, 63);
+            this.blackColor.Name = "blackColor";
+            this.blackColor.Size = new System.Drawing.Size(25, 25);
+            this.blackColor.TabIndex = 5;
+            this.blackColor.TabStop = false;
+            this.blackColor.UseVisualStyleBackColor = false;
             // 
-            // ljubicasta
+            // purpleColor
             // 
-            this.ljubicasta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.ljubicasta.FlatAppearance.BorderSize = 0;
-            this.ljubicasta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ljubicasta.Location = new System.Drawing.Point(174, 30);
-            this.ljubicasta.Name = "ljubicasta";
-            this.ljubicasta.Size = new System.Drawing.Size(36, 27);
-            this.ljubicasta.TabIndex = 4;
-            this.ljubicasta.UseVisualStyleBackColor = false;
-            this.ljubicasta.Click += new System.EventHandler(this.purple_Click);
+            this.purpleColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.purpleColor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.purpleColor.FlatAppearance.BorderSize = 0;
+            this.purpleColor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.purpleColor.Location = new System.Drawing.Point(139, 30);
+            this.purpleColor.Name = "purpleColor";
+            this.purpleColor.Size = new System.Drawing.Size(25, 25);
+            this.purpleColor.TabIndex = 4;
+            this.purpleColor.TabStop = false;
+            this.purpleColor.UseVisualStyleBackColor = false;
             // 
-            // crvena
+            // redColor
             // 
-            this.crvena.BackColor = System.Drawing.Color.Red;
-            this.crvena.FlatAppearance.BorderSize = 0;
-            this.crvena.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.crvena.Location = new System.Drawing.Point(132, 30);
-            this.crvena.Name = "crvena";
-            this.crvena.Size = new System.Drawing.Size(36, 27);
-            this.crvena.TabIndex = 3;
-            this.crvena.UseVisualStyleBackColor = false;
-            this.crvena.Click += new System.EventHandler(this.red_Click);
+            this.redColor.BackColor = System.Drawing.Color.Red;
+            this.redColor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.redColor.FlatAppearance.BorderSize = 0;
+            this.redColor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.redColor.Location = new System.Drawing.Point(108, 30);
+            this.redColor.Name = "redColor";
+            this.redColor.Size = new System.Drawing.Size(25, 25);
+            this.redColor.TabIndex = 3;
+            this.redColor.TabStop = false;
+            this.redColor.UseVisualStyleBackColor = false;
             // 
-            // narandzasta
+            // orangeColor
             // 
-            this.narandzasta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.narandzasta.FlatAppearance.BorderSize = 0;
-            this.narandzasta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.narandzasta.Location = new System.Drawing.Point(90, 29);
-            this.narandzasta.Name = "narandzasta";
-            this.narandzasta.Size = new System.Drawing.Size(36, 27);
-            this.narandzasta.TabIndex = 2;
-            this.narandzasta.UseVisualStyleBackColor = false;
-            this.narandzasta.Click += new System.EventHandler(this.orange_Click);
+            this.orangeColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.orangeColor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.orangeColor.FlatAppearance.BorderSize = 0;
+            this.orangeColor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.orangeColor.Location = new System.Drawing.Point(77, 30);
+            this.orangeColor.Name = "orangeColor";
+            this.orangeColor.Size = new System.Drawing.Size(25, 25);
+            this.orangeColor.TabIndex = 2;
+            this.orangeColor.TabStop = false;
+            this.orangeColor.UseVisualStyleBackColor = false;
             // 
-            // zuta
+            // yellowColor
             // 
-            this.zuta.BackColor = System.Drawing.Color.Yellow;
-            this.zuta.FlatAppearance.BorderSize = 0;
-            this.zuta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.zuta.Location = new System.Drawing.Point(48, 30);
-            this.zuta.Name = "zuta";
-            this.zuta.Size = new System.Drawing.Size(36, 27);
-            this.zuta.TabIndex = 1;
-            this.zuta.UseVisualStyleBackColor = false;
-            this.zuta.Click += new System.EventHandler(this.yellow_Click);
+            this.yellowColor.BackColor = System.Drawing.Color.Yellow;
+            this.yellowColor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.yellowColor.FlatAppearance.BorderSize = 0;
+            this.yellowColor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.yellowColor.Location = new System.Drawing.Point(46, 30);
+            this.yellowColor.Name = "yellowColor";
+            this.yellowColor.Size = new System.Drawing.Size(25, 25);
+            this.yellowColor.TabIndex = 1;
+            this.yellowColor.TabStop = false;
+            this.yellowColor.UseVisualStyleBackColor = false;
             // 
-            // zelena
+            // greenColor
             // 
-            this.zelena.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.zelena.FlatAppearance.BorderSize = 0;
-            this.zelena.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.zelena.Location = new System.Drawing.Point(6, 30);
-            this.zelena.Name = "zelena";
-            this.zelena.Size = new System.Drawing.Size(36, 27);
-            this.zelena.TabIndex = 0;
-            this.zelena.UseVisualStyleBackColor = false;
-            this.zelena.Click += new System.EventHandler(this.green_Click);
-            // 
-            // favourite_color_pictureBox
-            // 
-            this.favourite_color_pictureBox.BackColor = System.Drawing.Color.LightGray;
-            this.favourite_color_pictureBox.FlatAppearance.BorderSize = 0;
-            this.favourite_color_pictureBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.favourite_color_pictureBox.Location = new System.Drawing.Point(67, 46);
-            this.favourite_color_pictureBox.Name = "favourite_color_pictureBox";
-            this.favourite_color_pictureBox.Size = new System.Drawing.Size(36, 27);
-            this.favourite_color_pictureBox.TabIndex = 10;
-            this.favourite_color_pictureBox.UseVisualStyleBackColor = false;
-            this.favourite_color_pictureBox.Click += new System.EventHandler(this.favourite_color_pictreBox_Click);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.BackColor = System.Drawing.Color.White;
-            this.groupBox3.Controls.Add(this.favourite_color_pictureBox);
-            this.groupBox3.Location = new System.Drawing.Point(576, 27);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(177, 118);
-            this.groupBox3.TabIndex = 10;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Favourite color";
+            this.greenColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.greenColor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.greenColor.FlatAppearance.BorderSize = 0;
+            this.greenColor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.greenColor.Location = new System.Drawing.Point(15, 30);
+            this.greenColor.Name = "greenColor";
+            this.greenColor.Size = new System.Drawing.Size(25, 25);
+            this.greenColor.TabIndex = 0;
+            this.greenColor.TabStop = false;
+            this.greenColor.UseVisualStyleBackColor = false;
             // 
             // circle_rb
             // 
             this.circle_rb.AutoSize = true;
             this.circle_rb.CausesValidation = false;
-            this.circle_rb.Location = new System.Drawing.Point(15, 81);
+            this.circle_rb.Location = new System.Drawing.Point(70, 36);
             this.circle_rb.Name = "circle_rb";
             this.circle_rb.Size = new System.Drawing.Size(14, 13);
             this.circle_rb.TabIndex = 14;
@@ -319,86 +329,17 @@
             // 
             this.rect_rb.AutoSize = true;
             this.rect_rb.CausesValidation = false;
-            this.rect_rb.Location = new System.Drawing.Point(15, 29);
+            this.rect_rb.Location = new System.Drawing.Point(7, 36);
             this.rect_rb.Name = "rect_rb";
             this.rect_rb.Size = new System.Drawing.Size(14, 13);
             this.rect_rb.TabIndex = 16;
             this.rect_rb.UseVisualStyleBackColor = true;
             // 
-            // circle_radius_nud
-            // 
-            this.circle_radius_nud.CausesValidation = false;
-            this.circle_radius_nud.Location = new System.Drawing.Point(88, 74);
-            this.circle_radius_nud.Maximum = new decimal(new int[] {
-            900,
-            0,
-            0,
-            0});
-            this.circle_radius_nud.Name = "circle_radius_nud";
-            this.circle_radius_nud.Size = new System.Drawing.Size(38, 20);
-            this.circle_radius_nud.TabIndex = 15;
-            this.circle_radius_nud.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(86, 97);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 13);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "(radius)";
-            // 
-            // rectangle_width_nud
-            // 
-            this.rectangle_width_nud.CausesValidation = false;
-            this.rectangle_width_nud.Location = new System.Drawing.Point(88, 23);
-            this.rectangle_width_nud.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.rectangle_width_nud.Name = "rectangle_width_nud";
-            this.rectangle_width_nud.Size = new System.Drawing.Size(38, 20);
-            this.rectangle_width_nud.TabIndex = 17;
-            this.rectangle_width_nud.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(87, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "(width)";
-            // 
-            // rectangle_height_nud
-            // 
-            this.rectangle_height_nud.CausesValidation = false;
-            this.rectangle_height_nud.Location = new System.Drawing.Point(140, 23);
-            this.rectangle_height_nud.Maximum = new decimal(new int[] {
-            1214,
-            0,
-            0,
-            0});
-            this.rectangle_height_nud.Name = "rectangle_height_nud";
-            this.rectangle_height_nud.Size = new System.Drawing.Size(38, 20);
-            this.rectangle_height_nud.TabIndex = 18;
-            this.rectangle_height_nud.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(137, 46);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 13);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "(height)";
-            // 
             // basic_pen_rb
             // 
             this.basic_pen_rb.AutoSize = true;
             this.basic_pen_rb.CausesValidation = false;
-            this.basic_pen_rb.Location = new System.Drawing.Point(313, 19);
+            this.basic_pen_rb.Location = new System.Drawing.Point(6, 36);
             this.basic_pen_rb.Name = "basic_pen_rb";
             this.basic_pen_rb.Size = new System.Drawing.Size(14, 13);
             this.basic_pen_rb.TabIndex = 22;
@@ -408,7 +349,7 @@
             // 
             this.spray_rb.AutoSize = true;
             this.spray_rb.CausesValidation = false;
-            this.spray_rb.Location = new System.Drawing.Point(313, 56);
+            this.spray_rb.Location = new System.Drawing.Point(64, 36);
             this.spray_rb.Name = "spray_rb";
             this.spray_rb.Size = new System.Drawing.Size(14, 13);
             this.spray_rb.TabIndex = 11;
@@ -420,10 +361,10 @@
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.edit_ts,
-            this.about_ts,
-            this.help_ts});
+            this.about_ts});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
+            this.menuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.menuStrip.Size = new System.Drawing.Size(1360, 24);
             this.menuStrip.TabIndex = 30;
             this.menuStrip.Text = "menuStrip1";
@@ -442,22 +383,22 @@
             // newDrawing_ts
             // 
             this.newDrawing_ts.Name = "newDrawing_ts";
-            this.newDrawing_ts.Size = new System.Drawing.Size(215, 22);
+            this.newDrawing_ts.Size = new System.Drawing.Size(145, 22);
             this.newDrawing_ts.Text = "New Drawing";
             this.newDrawing_ts.Click += new System.EventHandler(this.newDrawing_ts_Click);
             // 
             // openDrawing_ts
             // 
-            this.openDrawing_ts.Enabled = false;
             this.openDrawing_ts.Name = "openDrawing_ts";
-            this.openDrawing_ts.Size = new System.Drawing.Size(215, 22);
-            this.openDrawing_ts.Text = "Open... (not implemented)";
+            this.openDrawing_ts.Size = new System.Drawing.Size(145, 22);
+            this.openDrawing_ts.Text = "Open...";
+            this.openDrawing_ts.Click += new System.EventHandler(this.openDrawing_ts_Click);
             // 
             // saveDrawing_ts
             // 
             this.saveDrawing_ts.Enabled = false;
             this.saveDrawing_ts.Name = "saveDrawing_ts";
-            this.saveDrawing_ts.Size = new System.Drawing.Size(215, 22);
+            this.saveDrawing_ts.Size = new System.Drawing.Size(145, 22);
             this.saveDrawing_ts.Text = "Save...";
             this.saveDrawing_ts.Click += new System.EventHandler(this.saveDrawing_ts_Click);
             // 
@@ -465,7 +406,7 @@
             // 
             this.saveAs_ts.Enabled = false;
             this.saveAs_ts.Name = "saveAs_ts";
-            this.saveAs_ts.Size = new System.Drawing.Size(215, 22);
+            this.saveAs_ts.Size = new System.Drawing.Size(145, 22);
             this.saveAs_ts.Text = "Save As...";
             this.saveAs_ts.Click += new System.EventHandler(this.saveAs_ts_Click);
             // 
@@ -507,129 +448,185 @@
             this.about_ts.Text = "About";
             this.about_ts.Click += new System.EventHandler(this.aboutSoftware_Click);
             // 
-            // help_ts
-            // 
-            this.help_ts.Name = "help_ts";
-            this.help_ts.Size = new System.Drawing.Size(44, 20);
-            this.help_ts.Text = "Help";
-            this.help_ts.Click += new System.EventHandler(this.help_Click);
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox4.BackColor = System.Drawing.Color.White;
-            this.groupBox4.Controls.Add(this.pictureBox1);
-            this.groupBox4.Controls.Add(this.spray_pb);
-            this.groupBox4.Controls.Add(this.pen_pb);
-            this.groupBox4.Controls.Add(this.cricle_pb);
-            this.groupBox4.Controls.Add(this.rect_pb);
-            this.groupBox4.Controls.Add(this.eraser_rb);
-            this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Controls.Add(this.spray_radius_nud);
-            this.groupBox4.Controls.Add(this.basic_pen_rb);
-            this.groupBox4.Controls.Add(this.spray_rb);
-            this.groupBox4.Controls.Add(this.rectangle_height_nud);
-            this.groupBox4.Controls.Add(this.rect_rb);
-            this.groupBox4.Controls.Add(this.rectangle_width_nud);
-            this.groupBox4.Controls.Add(this.label2);
-            this.groupBox4.Controls.Add(this.label3);
-            this.groupBox4.Controls.Add(this.label1);
-            this.groupBox4.Controls.Add(this.circle_radius_nud);
-            this.groupBox4.Controls.Add(this.circle_rb);
-            this.groupBox4.Location = new System.Drawing.Point(759, 27);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(589, 118);
-            this.groupBox4.TabIndex = 31;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Tools";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(327, 78);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(52, 32);
-            this.pictureBox1.TabIndex = 37;
-            this.pictureBox1.TabStop = false;
-            // 
-            // spray_pb
-            // 
-            this.spray_pb.BackColor = System.Drawing.Color.Transparent;
-            this.spray_pb.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("spray_pb.BackgroundImage")));
-            this.spray_pb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.spray_pb.Location = new System.Drawing.Point(327, 45);
-            this.spray_pb.Name = "spray_pb";
-            this.spray_pb.Size = new System.Drawing.Size(52, 32);
-            this.spray_pb.TabIndex = 36;
-            this.spray_pb.TabStop = false;
-            // 
-            // pen_pb
-            // 
-            this.pen_pb.BackColor = System.Drawing.Color.Transparent;
-            this.pen_pb.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pen_pb.BackgroundImage")));
-            this.pen_pb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pen_pb.Location = new System.Drawing.Point(327, 12);
-            this.pen_pb.Name = "pen_pb";
-            this.pen_pb.Size = new System.Drawing.Size(52, 32);
-            this.pen_pb.TabIndex = 35;
-            this.pen_pb.TabStop = false;
-            // 
-            // cricle_pb
-            // 
-            this.cricle_pb.BackColor = System.Drawing.Color.Transparent;
-            this.cricle_pb.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cricle_pb.BackgroundImage")));
-            this.cricle_pb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cricle_pb.Location = new System.Drawing.Point(30, 71);
-            this.cricle_pb.Name = "cricle_pb";
-            this.cricle_pb.Size = new System.Drawing.Size(52, 32);
-            this.cricle_pb.TabIndex = 34;
-            this.cricle_pb.TabStop = false;
-            // 
-            // rect_pb
-            // 
-            this.rect_pb.BackColor = System.Drawing.Color.Transparent;
-            this.rect_pb.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rect_pb.BackgroundImage")));
-            this.rect_pb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.rect_pb.Location = new System.Drawing.Point(30, 22);
-            this.rect_pb.Name = "rect_pb";
-            this.rect_pb.Size = new System.Drawing.Size(52, 32);
-            this.rect_pb.TabIndex = 33;
-            this.rect_pb.TabStop = false;
-            // 
             // eraser_rb
             // 
             this.eraser_rb.AutoSize = true;
-            this.eraser_rb.Location = new System.Drawing.Point(313, 91);
+            this.eraser_rb.Location = new System.Drawing.Point(122, 36);
             this.eraser_rb.Name = "eraser_rb";
             this.eraser_rb.Size = new System.Drawing.Size(14, 13);
             this.eraser_rb.TabIndex = 32;
             this.eraser_rb.UseVisualStyleBackColor = true;
             this.eraser_rb.CheckedChanged += new System.EventHandler(this.eraser_rb_CheckedChanged);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(384, 68);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "(radius)";
-            // 
-            // spray_radius_nud
-            // 
-            this.spray_radius_nud.CausesValidation = false;
-            this.spray_radius_nud.Location = new System.Drawing.Point(385, 45);
-            this.spray_radius_nud.Name = "spray_radius_nud";
-            this.spray_radius_nud.Size = new System.Drawing.Size(38, 20);
-            this.spray_radius_nud.TabIndex = 12;
-            this.spray_radius_nud.TabStop = false;
-            // 
             // saveDrawing_Dialog
             // 
             this.saveDrawing_Dialog.Filter = "PNG|*.png";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.shapesControl_gb);
+            this.panel1.Controls.Add(this.drawingControls_gb);
+            this.panel1.Controls.Add(this.groupBox2);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Location = new System.Drawing.Point(0, 24);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1360, 129);
+            this.panel1.TabIndex = 33;
+            // 
+            // shapesControl_gb
+            // 
+            this.shapesControl_gb.Controls.Add(this.rect_pb);
+            this.shapesControl_gb.Controls.Add(this.circle_rb);
+            this.shapesControl_gb.Controls.Add(this.cricle_pb);
+            this.shapesControl_gb.Controls.Add(this.rect_rb);
+            this.shapesControl_gb.Location = new System.Drawing.Point(796, 3);
+            this.shapesControl_gb.Name = "shapesControl_gb";
+            this.shapesControl_gb.Size = new System.Drawing.Size(549, 118);
+            this.shapesControl_gb.TabIndex = 36;
+            this.shapesControl_gb.TabStop = false;
+            this.shapesControl_gb.Text = "Shapes";
+            // 
+            // rect_pb
+            // 
+            this.rect_pb.BackColor = System.Drawing.Color.Transparent;
+            this.rect_pb.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rect_pb.BackgroundImage")));
+            this.rect_pb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.rect_pb.Location = new System.Drawing.Point(27, 23);
+            this.rect_pb.Name = "rect_pb";
+            this.rect_pb.Size = new System.Drawing.Size(32, 32);
+            this.rect_pb.TabIndex = 33;
+            this.rect_pb.TabStop = false;
+            // 
+            // cricle_pb
+            // 
+            this.cricle_pb.BackColor = System.Drawing.Color.Transparent;
+            this.cricle_pb.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cricle_pb.BackgroundImage")));
+            this.cricle_pb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cricle_pb.Location = new System.Drawing.Point(90, 23);
+            this.cricle_pb.Name = "cricle_pb";
+            this.cricle_pb.Size = new System.Drawing.Size(32, 32);
+            this.cricle_pb.TabIndex = 34;
+            this.cricle_pb.TabStop = false;
+            // 
+            // drawingControls_gb
+            // 
+            this.drawingControls_gb.Controls.Add(this.text_pb);
+            this.drawingControls_gb.Controls.Add(this.text_rb);
+            this.drawingControls_gb.Controls.Add(this.pen_pb);
+            this.drawingControls_gb.Controls.Add(this.spray_rb);
+            this.drawingControls_gb.Controls.Add(this.eraser_pb);
+            this.drawingControls_gb.Controls.Add(this.basic_pen_rb);
+            this.drawingControls_gb.Controls.Add(this.spray_pb);
+            this.drawingControls_gb.Controls.Add(this.eraser_rb);
+            this.drawingControls_gb.Location = new System.Drawing.Point(518, 3);
+            this.drawingControls_gb.Name = "drawingControls_gb";
+            this.drawingControls_gb.Size = new System.Drawing.Size(272, 118);
+            this.drawingControls_gb.TabIndex = 36;
+            this.drawingControls_gb.TabStop = false;
+            this.drawingControls_gb.Text = "Drawing";
+            // 
+            // text_pb
+            // 
+            this.text_pb.BackColor = System.Drawing.Color.Transparent;
+            this.text_pb.BackgroundImage = global::Paint.Properties.Resources.text;
+            this.text_pb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.text_pb.Location = new System.Drawing.Point(200, 23);
+            this.text_pb.Name = "text_pb";
+            this.text_pb.Size = new System.Drawing.Size(32, 32);
+            this.text_pb.TabIndex = 39;
+            this.text_pb.TabStop = false;
+            // 
+            // text_rb
+            // 
+            this.text_rb.AutoSize = true;
+            this.text_rb.Location = new System.Drawing.Point(180, 36);
+            this.text_rb.Name = "text_rb";
+            this.text_rb.Size = new System.Drawing.Size(14, 13);
+            this.text_rb.TabIndex = 38;
+            this.text_rb.UseVisualStyleBackColor = true;
+            // 
+            // pen_pb
+            // 
+            this.pen_pb.BackColor = System.Drawing.Color.Transparent;
+            this.pen_pb.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pen_pb.BackgroundImage")));
+            this.pen_pb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pen_pb.Location = new System.Drawing.Point(26, 23);
+            this.pen_pb.Name = "pen_pb";
+            this.pen_pb.Size = new System.Drawing.Size(32, 32);
+            this.pen_pb.TabIndex = 35;
+            this.pen_pb.TabStop = false;
+            // 
+            // eraser_pb
+            // 
+            this.eraser_pb.BackColor = System.Drawing.Color.Transparent;
+            this.eraser_pb.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("eraser_pb.BackgroundImage")));
+            this.eraser_pb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.eraser_pb.Location = new System.Drawing.Point(142, 23);
+            this.eraser_pb.Name = "eraser_pb";
+            this.eraser_pb.Size = new System.Drawing.Size(32, 32);
+            this.eraser_pb.TabIndex = 37;
+            this.eraser_pb.TabStop = false;
+            // 
+            // spray_pb
+            // 
+            this.spray_pb.BackColor = System.Drawing.Color.Transparent;
+            this.spray_pb.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("spray_pb.BackgroundImage")));
+            this.spray_pb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.spray_pb.Location = new System.Drawing.Point(84, 23);
+            this.spray_pb.Name = "spray_pb";
+            this.spray_pb.Size = new System.Drawing.Size(32, 32);
+            this.spray_pb.TabIndex = 36;
+            this.spray_pb.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Controls.Add(this.menuStrip);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1360, 153);
+            this.panel2.TabIndex = 34;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.savedStatus_label);
+            this.panel3.Controls.Add(this.sizeValue_label);
+            this.panel3.Controls.Add(this.sizeCaption_label);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 828);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1360, 23);
+            this.panel3.TabIndex = 35;
+            // 
+            // savedStatus_label
+            // 
+            this.savedStatus_label.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.savedStatus_label.Location = new System.Drawing.Point(1260, 0);
+            this.savedStatus_label.Name = "savedStatus_label";
+            this.savedStatus_label.Size = new System.Drawing.Size(100, 23);
+            this.savedStatus_label.TabIndex = 38;
+            this.savedStatus_label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // sizeValue_label
+            // 
+            this.sizeValue_label.AutoSize = true;
+            this.sizeValue_label.Location = new System.Drawing.Point(71, 5);
+            this.sizeValue_label.Name = "sizeValue_label";
+            this.sizeValue_label.Size = new System.Drawing.Size(0, 13);
+            this.sizeValue_label.TabIndex = 37;
+            // 
+            // sizeCaption_label
+            // 
+            this.sizeCaption_label.AutoSize = true;
+            this.sizeCaption_label.Location = new System.Drawing.Point(3, 5);
+            this.sizeCaption_label.Name = "sizeCaption_label";
+            this.sizeCaption_label.Size = new System.Drawing.Size(67, 13);
+            this.sizeCaption_label.TabIndex = 36;
+            this.sizeCaption_label.Text = "Canvas size:";
             // 
             // drawingCanvas
             // 
@@ -637,42 +634,32 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.drawingCanvas.BackColor = System.Drawing.Color.White;
+            this.drawingCanvas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.drawingCanvas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.drawingCanvas.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.drawingCanvas.Location = new System.Drawing.Point(11, 151);
+            this.drawingCanvas.Location = new System.Drawing.Point(14, 166);
             this.drawingCanvas.Name = "drawingCanvas";
-            this.drawingCanvas.Size = new System.Drawing.Size(1337, 638);
+            this.drawingCanvas.Size = new System.Drawing.Size(1331, 648);
             this.drawingCanvas.TabIndex = 32;
             this.drawingCanvas.TabStop = false;
             this.drawingCanvas.Visible = false;
-            this.drawingCanvas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.drawingCanvas_MouseClick);
             this.drawingCanvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.drawingCanvas_MouseDown);
             this.drawingCanvas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.drawingCanvas_MouseMove);
             this.drawingCanvas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.drawingCanvas_MouseUp);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(0, 23);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1360, 126);
-            this.panel1.TabIndex = 33;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.AutoScrollMargin = new System.Drawing.Size(10, 10);
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1360, 801);
+            this.ClientSize = new System.Drawing.Size(1360, 851);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.drawingCanvas);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.menuStrip);
-            this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -681,66 +668,58 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pen_width_nud)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.circle_radius_nud)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rectangle_width_nud)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rectangle_height_nud)).EndInit();
+            this.groupBox2.PerformLayout();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spray_pb)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pen_pb)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cricle_pb)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.shapesControl_gb.ResumeLayout(false);
+            this.shapesControl_gb.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rect_pb)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spray_radius_nud)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cricle_pb)).EndInit();
+            this.drawingControls_gb.ResumeLayout(false);
+            this.drawingControls_gb.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.text_pb)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pen_pb)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eraser_pb)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spray_pb)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drawingCanvas)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button braon;
-        private System.Windows.Forms.Button svetlozelena;
-        private System.Windows.Forms.Button svetloplava;
-        private System.Windows.Forms.Button roze;
-        private System.Windows.Forms.Button crna;
-        private System.Windows.Forms.Button ljubicasta;
-        private System.Windows.Forms.Button crvena;
-        private System.Windows.Forms.Button narandzasta;
-        private System.Windows.Forms.Button zuta;
-        private System.Windows.Forms.Button zelena;
-        private System.Windows.Forms.Button favourite_color_pictureBox;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button brownColor;
+        private System.Windows.Forms.Button limeColor;
+        private System.Windows.Forms.Button aquaColor;
+        private System.Windows.Forms.Button whiteColor;
+        private System.Windows.Forms.Button blackColor;
+        private System.Windows.Forms.Button purpleColor;
+        private System.Windows.Forms.Button redColor;
+        private System.Windows.Forms.Button orangeColor;
+        private System.Windows.Forms.Button yellowColor;
+        private System.Windows.Forms.Button greenColor;
+        private System.Windows.Forms.Button mostUsedColor_pb;
         private System.Windows.Forms.RadioButton circle_rb;
         private System.Windows.Forms.RadioButton rect_rb;
-        private System.Windows.Forms.NumericUpDown circle_radius_nud;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown rectangle_width_nud;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown rectangle_height_nud;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RadioButton basic_pen_rb;
         private System.Windows.Forms.ColorDialog color_mixer;
         private System.Windows.Forms.Button Colormixer;
         private System.Windows.Forms.RadioButton spray_rb;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem about_ts;
-        private System.Windows.Forms.ToolStripMenuItem help_ts;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown spray_radius_nud;
         private System.Windows.Forms.NumericUpDown pen_width_nud;
         private System.Windows.Forms.RadioButton eraser_rb;
         private System.Windows.Forms.PictureBox rect_pb;
         private System.Windows.Forms.PictureBox cricle_pb;
         private System.Windows.Forms.PictureBox pen_pb;
         private System.Windows.Forms.PictureBox spray_pb;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox eraser_pb;
         private System.Windows.Forms.SaveFileDialog saveDrawing_Dialog;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newDrawing_ts;
@@ -753,6 +732,17 @@
         private System.Windows.Forms.ToolStripMenuItem undo_ts;
         private System.Windows.Forms.ToolStripMenuItem canvasSettings_ts;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label favColor_label;
+        private System.Windows.Forms.OpenFileDialog openDrawing_Dialog;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label sizeValue_label;
+        private System.Windows.Forms.Label sizeCaption_label;
+        private System.Windows.Forms.Label savedStatus_label;
+        private System.Windows.Forms.GroupBox shapesControl_gb;
+        private System.Windows.Forms.GroupBox drawingControls_gb;
+        private System.Windows.Forms.PictureBox text_pb;
+        private System.Windows.Forms.RadioButton text_rb;
     }
 }
 

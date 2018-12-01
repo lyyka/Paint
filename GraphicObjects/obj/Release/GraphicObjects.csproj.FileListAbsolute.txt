@@ -1,0 +1,6 @@
+C:\Users\Asus\Documents\git\Paint\GraphicObjects\bin\Release\GraphicObjects.dll
+C:\Users\Asus\Documents\git\Paint\GraphicObjects\bin\Release\GraphicObjects.pdb
+C:\Users\Asus\Documents\git\Paint\GraphicObjects\obj\Release\GraphicObjects.csprojAssemblyReference.cache
+C:\Users\Asus\Documents\git\Paint\GraphicObjects\obj\Release\GraphicObjects.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Documents\git\Paint\GraphicObjects\obj\Release\GraphicObjects.dll
+C:\Users\Asus\Documents\git\Paint\GraphicObjects\obj\Release\GraphicObjects.pdb

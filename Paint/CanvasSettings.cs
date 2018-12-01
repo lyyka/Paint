@@ -29,7 +29,7 @@ namespace Paint
 
         private void CanvasSettings_Load(object sender, EventArgs e)
         {
-            if (main_form.drawingCanvas.Visible && !new_canvas)
+            if (!new_canvas)
             {
                 canvas_width = main_form.drawingCanvas.Width;
                 canvas_height = main_form.drawingCanvas.Height;
@@ -48,7 +48,7 @@ namespace Paint
 
         private void createCanvas_Click(object sender, EventArgs e)
         {
-            if (main_form.drawingCanvas.Visible && new_canvas)
+            if (new_canvas)
             {
                 DialogResult dg = MessageBox.Show("By creating new canvas your current progress will be lost! Are you sure you want to do this?", "Warning!", MessageBoxButtons.YesNo);
 

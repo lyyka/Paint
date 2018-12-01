@@ -69,7 +69,6 @@ C:\Users\Asus\Documents\git\Paint\Paint\bin\Debug\Paint.exe
 C:\Users\Asus\Documents\git\Paint\Paint\bin\Debug\Paint.pdb
 C:\Users\Asus\Documents\git\Paint\Paint\obj\Debug\Paint.About.resources
 C:\Users\Asus\Documents\git\Paint\Paint\obj\Debug\Paint.MainForm.resources
-C:\Users\Asus\Documents\git\Paint\Paint\obj\Debug\Paint.Help.resources
 C:\Users\Asus\Documents\git\Paint\Paint\obj\Debug\Paint.Properties.Resources.resources
 C:\Users\Asus\Documents\git\Paint\Paint\obj\Debug\Paint.csproj.GenerateResource.cache
 C:\Users\Asus\Documents\git\Paint\Paint\obj\Debug\Paint.csproj.CoreCompileInputs.cache
@@ -82,3 +81,4 @@ C:\Users\Asus\Documents\git\Paint\Paint\bin\Debug\GraphicObjects.dll
 C:\Users\Asus\Documents\git\Paint\Paint\bin\Debug\GraphicObjects.pdb
 C:\Users\Asus\Documents\git\Paint\Paint\obj\Debug\Paint.csproj.CopyComplete
 C:\Users\Asus\Documents\git\Paint\Paint\obj\Debug\Paint.CanvasSettings.resources
+C:\Users\Asus\Documents\git\Paint\Paint\obj\Debug\Paint.AddText.resources

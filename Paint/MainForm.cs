@@ -18,6 +18,7 @@ namespace Paint
         string current_file = "";
         // drawing buffers
         List<GObject> objects = new List<GObject>();
+        List<GObject> last_saved = new List<GObject>();
         List<List<GObject>> steps = new List<List<GObject>>();
         // colors - only basic ones. When user chooses from color mixer, that color is added too.
         Dictionary<Color, int> colors = new Dictionary<Color, int>()
@@ -38,9 +39,12 @@ namespace Paint
         bool drawing = false;
         // coordinates on mouse move
         int new_x_pos, new_y_pos;
-        // coordinats on mouse down
+        // coordinates on mouse down for drawing
         Color last_color;
         int x_pos, y_pos;
+        // for drawing circles and reactangles real time
+        int live_circle_rect_x;
+        int live_circle_rect_y;
         // pens
         Pen pen = new Pen (Color.Black, 1);
         public MainForm()
@@ -52,11 +56,47 @@ namespace Paint
 
         private void dcPaint(object sender, PaintEventArgs e)
         {
+            if (rect_rb.Checked)
+            {
+                liveDrawRectangle(e.Graphics);
+            }
+            if (circle_rb.Checked)
+            {
+                liveDrawEllipse(e.Graphics);
+            }
             Draw(e.Graphics);
+        }
+
+        // live draw functions
+
+        private void liveDrawRectangle(Graphics g)
+        {
+            g.DrawRectangle(pen, x_pos, y_pos, live_circle_rect_x, live_circle_rect_y);
+        }
+
+        private void liveDrawEllipse(Graphics g)
+        {
+            g.DrawEllipse(pen, x_pos, y_pos, live_circle_rect_x, live_circle_rect_y);
+        }
+
+        // add txt callback from AddText form
+        public void AddText(int xPos, int ypos, string text, Font font, Color color)
+        {
+            GObject new_text = new Text(xPos, ypos, text, font, color, pen.Width);
+            objects.Add(new_text);
+
+            drawingCanvas.Invalidate();
         }
 
         private void Draw(Graphics g)
         {
+            if(last_saved.Count != objects.Count)
+            {
+                savedStatus_label.Text = "Pending changes";
+            }
+
+            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
             // will draw from saved
 
             for (int i = 0; i < objects.Count; i++)
@@ -68,18 +108,40 @@ namespace Paint
         private void drawingCanvas_MouseDown(object sender, MouseEventArgs e)
         {
             drawing = true;
+            // copy from objects to objects_copy
             List<GObject> objects_copy = new List<GObject>();
-            for(int i = 0; i < objects.Count; i++)
+            for (int i = 0; i < objects.Count; i++)
             {
                 objects_copy.Add(objects[i]);
             }
+            // add list of current objects to steps, so user can undo to last made step
             steps.Add(objects_copy);
+            // position on mouse down
             x_pos = e.X;
             y_pos = e.Y;
+
+
+            // INTIALIZE ADD TEXT ON MOUSE DOWN
+            if (text_rb.Checked)
+            {
+                AddText at = new AddText(pen.Color,x_pos,y_pos, this);
+                at.Show();
+            }
         }
 
         private void drawingCanvas_MouseUp(object sender, MouseEventArgs e)
         {
+            // save live drawn shapes on mouse up
+            if (rect_rb.Checked)
+            {
+                GObject new_rect = new Rect(x_pos, y_pos, live_circle_rect_x, live_circle_rect_y, pen.Color, pen.Width);
+                objects.Add(new_rect);
+            }
+            if (circle_rb.Checked)
+            {
+                GObject new_ellipse = new Ellipse(x_pos, y_pos, live_circle_rect_x, live_circle_rect_y, pen.Color, pen.Width);
+                objects.Add(new_ellipse);
+            }
             drawing = false;
         }
 
@@ -95,18 +157,18 @@ namespace Paint
                 {
                     GObject new_line = new Line(
                         x_pos, y_pos, new_x_pos, new_y_pos,
-                        pen.Color,
+                        eraser_rb.Checked ? Color.White : pen.Color,
                         pen.Width
                     );
                     objects.Add(new_line);
-                    drawingCanvas.Invalidate();
                     x_pos = new_x_pos;
                     y_pos = new_y_pos;
+                    drawingCanvas.Invalidate();
                 }
                 // save spray
                 if (spray_rb.Checked)
                 {
-                    int spray_radius = Convert.ToInt32(spray_radius_nud.Value);
+                    int spray_radius = Convert.ToInt32(pen.Width);
                     for (int i = 0; i < 100; ++i)
                     {
                         double theta = _rnd.NextDouble() * (Math.PI * 2);
@@ -114,44 +176,20 @@ namespace Paint
                         double x = new_x_pos + Math.Cos(theta) * r;
                         double y = new_y_pos + Math.Sin(theta) * r;
 
-                        GObject ellipse = new Ellipse((int)x - 1, (int)y - 1, 1, 1, pen.Color, pen.Width);
+                        GObject ellipse = new Ellipse((int)x - 1, (int)y - 1, 1, 1, pen.Color, 1);
                         objects.Add(ellipse);
                     }
-                    Rectangle invalidate_rect = new Rectangle(Convert.ToInt32(new_x_pos - spray_radius - pen.Width), Convert.ToInt32(new_y_pos - spray_radius - pen.Width), Convert.ToInt32(spray_radius * 2), Convert.ToInt32(spray_radius * 2));
-                    drawingCanvas.Invalidate(invalidate_rect);
+                    drawingCanvas.Invalidate();
+                }
+                // draw rectangle on mouse move
+                if (rect_rb.Checked || circle_rb.Checked)
+                {
+                    live_circle_rect_x = new_x_pos - x_pos;
+                    live_circle_rect_y = new_y_pos - y_pos;
+
+                    drawingCanvas.Invalidate();
                 }
             }
-        }
-
-        private void drawingCanvas_MouseClick(object sender, MouseEventArgs e)
-        {
-            // save ellipses
-            if (circle_rb.Checked == true)
-            {
-                int circle_radius = Convert.ToInt32(circle_radius_nud.Value);
-                GObject new_ellipse = new Ellipse(x_pos - circle_radius, y_pos - circle_radius, circle_radius * 2, circle_radius * 2,
-                        pen.Color,
-                        pen.Width);
-                objects.Add(new_ellipse);
-
-                Rectangle invalidate_rect = new Rectangle(Convert.ToInt32(x_pos - circle_radius - pen.Width), Convert.ToInt32(y_pos - circle_radius - pen.Width), Convert.ToInt32(circle_radius * 2 + 2*pen.Width), Convert.ToInt32(circle_radius * 2 + 2*pen.Width));
-                drawingCanvas.Invalidate(invalidate_rect);
-            }
-            // save rectangles
-            if (rect_rb.Checked == true)
-            {
-                int rect_width = Convert.ToInt32(rectangle_width_nud.Value);
-                int rect_height = Convert.ToInt32(rectangle_height_nud.Value);
-                GObject new_rect = new Rect(x_pos, y_pos, rect_width, rect_height,
-                        pen.Color,
-                        pen.Width);
-                objects.Add(new_rect);
-
-                Rectangle invalidate_rect = new Rectangle(Convert.ToInt32(x_pos - pen.Width),Convert.ToInt32(y_pos - pen.Width), Convert.ToInt32(rect_width + 2*pen.Width), Convert.ToInt32(rect_height + 2*pen.Width));
-                drawingCanvas.Invalidate(invalidate_rect);
-            }
-
-            
         }
 
         #endregion
@@ -160,8 +198,40 @@ namespace Paint
 
         private void newDrawing_ts_Click(object sender, EventArgs e) // new drawing
         {
-            CanvasSettings nd = new CanvasSettings(this, true);
-            nd.Show();
+            CanvasSettings cs = new CanvasSettings(this, true);
+            cs.Show();
+        }
+
+        private void openDrawing_ts_Click(object sender, EventArgs e) // open existing drawing
+        {
+            openDrawing_Dialog.ShowDialog();
+            if(openDrawing_Dialog.FileName.Trim() != "")
+            {
+                string file_name = openDrawing_Dialog.FileName;
+                if(objects.Count > 0)
+                {
+                    DialogResult dg = MessageBox.Show("By opening new file your current progress will be lost! Are you sure you want to do this?", "Warning!", MessageBoxButtons.YesNo);
+
+                    if (dg == DialogResult.Yes)
+                    {
+                        openImage(file_name);
+                    }
+                }
+                else
+                {
+                    openImage(file_name);
+                }
+            }
+        }
+
+        private void openImage(string file_name)
+        {
+            current_file = file_name;
+            Text = "Current: " + current_file;
+            Image opened = Image.FromFile(current_file);
+            drawingCanvas.Width = opened.Width;
+            drawingCanvas.Height = opened.Height;
+            drawingCanvas.BackgroundImage = opened;
         }
 
         private void saveDrawing_ts_Click(object sender, EventArgs e) // just save
@@ -171,6 +241,7 @@ namespace Paint
                 Bitmap bmp = new Bitmap(drawingCanvas.ClientSize.Width, drawingCanvas.ClientSize.Height);
                 drawingCanvas.DrawToBitmap(bmp, drawingCanvas.ClientRectangle);
                 bmp.Save(current_file);
+                setSaved();
             }
             else
             {
@@ -198,6 +269,15 @@ namespace Paint
 
                 current_file = saveDrawing_Dialog.FileName;
             }
+            setSaved();
+        }
+        private void setSaved() // save saved objects, so we have what to compare if changes occured
+        {
+            savedStatus_label.Text = "Changes saved";
+            for (int i = 0; i < objects.Count; i++)
+            {
+                last_saved.Add(objects[i]);
+            }
         }
 
         private void canvasSettings_ts_Click(object sender, EventArgs e) // settings
@@ -218,11 +298,6 @@ namespace Paint
             ChangeColor(Color.Black);
             // check basic pen input method
             basic_pen_rb.Checked = true;
-            // reset numeric-up-down values
-            circle_radius_nud.Value = 0;
-            rectangle_width_nud.Value = 0;
-            rectangle_height_nud.Value = 0;
-            spray_radius_nud.Value = 0;
         }
 
         private void undo_ts_Click(object sender, EventArgs e) // undo
@@ -245,12 +320,6 @@ namespace Paint
             abt.Show();
         }
 
-        private void help_Click(object sender, EventArgs e) // help
-        {
-            Help Help = new Help();
-            Help.Show();
-        }
-
         #endregion
 
         private void pencilWidth_Change(object sender, EventArgs e)
@@ -260,13 +329,13 @@ namespace Paint
 
         #region colorChanges
 
-        private void getFavouriteColor()
+        private void getMostUsedColor()
         {
             List<KeyValuePair<Color, int>> sorted_colors = (from pair in colors
                                                             orderby pair.Value descending
                                                             select pair).ToList();
 
-            favourite_color_pictureBox.BackColor = sorted_colors[0].Key;
+            mostUsedColor_pb.BackColor = sorted_colors[0].Key;
             
         }
 
@@ -280,7 +349,7 @@ namespace Paint
                 // set this color to all
                 pen.Color = color;
                 // get the favourite one
-                getFavouriteColor();
+                getMostUsedColor();
             }
             
         }
@@ -295,14 +364,6 @@ namespace Paint
             else
             {
                 pen.Color = last_color;
-            }
-        }
-
-        private void favourite_color_pictreBox_Click(object sender, EventArgs e) // change current color to favourite color
-        {
-            if(colors.ContainsKey(favourite_color_pictureBox.BackColor))
-            {
-                ChangeColor(favourite_color_pictureBox.BackColor);
             }
         }
 
@@ -324,54 +385,14 @@ namespace Paint
             }
         }
 
-        private void green_Click(object sender, EventArgs e) // change to green
+        private void colorBox_Click(object sender, EventArgs e) // on color boxes click
         {
-            ChangeColor(Color.FromArgb(0, 192, 0));
-        }
+            Button colorButton_clicked = sender as Button;
 
-        private void yellow_Click(object sender, EventArgs e) // change to yellow
-        {
-            ChangeColor(Color.Yellow);
-        }
-
-        private void orange_Click(object sender, EventArgs e) // change to orange
-        {
-            ChangeColor(Color.FromArgb(255, 128, 0));
-        }
-
-        private void red_Click(object sender, EventArgs e) // change to red
-        {
-            ChangeColor(Color.Red);
-        }
-
-        private void purple_Click(object sender, EventArgs e) // change to purple
-        {
-            ChangeColor(Color.FromArgb(192, 0, 192));
-        }
-
-        private void black_Click(object sender, EventArgs e) // pchange to black
-        {
-            ChangeColor(Color.Black);
-        }
-
-        private void pink_Click(object sender, EventArgs e) // change to pink
-        {
-            ChangeColor(Color.Fuchsia);
-        }
-
-        private void lightblue_Click(object sender, EventArgs e)// change to light blue
-        {
-            ChangeColor(Color.Aqua);
-        }
-
-        private void lightgreen_Click(object sender, EventArgs e) // change to light green
-        {
-            ChangeColor(Color.Lime);
-        }
-
-        private void brown_Click(object sender, EventArgs e) // change to brown
-        {
-            ChangeColor(Color.FromArgb(192, 0, 0));
+            if (colors.ContainsKey(colorButton_clicked.BackColor))
+            {
+                ChangeColor(colorButton_clicked.BackColor);
+            }
         }
 
         #endregion
@@ -390,15 +411,30 @@ namespace Paint
 
             drawingCanvas.Width = width;
             drawingCanvas.Height = height;
+            sizeValue_label.Text = width + "x" + height;
             drawingCanvas.Visible = true;
         }
 
         private void MainForm_Load(object sender, EventArgs e) // form load
         {
+            // select basic pen drawing method
             basic_pen_rb.Checked = true;
-            Colormixer.FlatStyle = FlatStyle.Popup;
+            // click events for colors
+            greenColor.Click += colorBox_Click;
+            yellowColor.Click += colorBox_Click;
+            orangeColor.Click += colorBox_Click;
+            redColor.Click += colorBox_Click;
+            purpleColor.Click += colorBox_Click;
+            whiteColor.Click += colorBox_Click;
+            blackColor.Click += colorBox_Click;
+            aquaColor.Click += colorBox_Click;
+            limeColor.Click += colorBox_Click;
+            brownColor.Click += colorBox_Click;
+            mostUsedColor_pb.Click += colorBox_Click;
             // paint event
             drawingCanvas.Paint += dcPaint;
+
+            initCanvas(drawingCanvas.Width, drawingCanvas.Height, true);
         }
     }
 }
