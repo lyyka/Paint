@@ -37,7 +37,7 @@
             // 
             // palette_image
             // 
-            this.palette_image.BackgroundImage = global::Paint.Properties.Resources.palette;
+            this.palette_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.palette_image.Location = new System.Drawing.Point(12, 12);
             this.palette_image.Name = "palette_image";
             this.palette_image.Size = new System.Drawing.Size(348, 192);

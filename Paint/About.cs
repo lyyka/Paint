@@ -19,7 +19,8 @@ namespace Paint
 
         private void About_Load(object sender, EventArgs e)
         {
-
+            Icon = new Icon(@"images/icon.ico");
+            palette_image.BackgroundImage = Image.FromFile(@"images/palette.jpg");
         }
 
         private void closeAbout_Click(object sender, EventArgs e)

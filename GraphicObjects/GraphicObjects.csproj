@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Spray.cs" />
     <Compile Include="Ellipse.cs" />
     <Compile Include="GObject.cs" />
     <Compile Include="Line.cs" />

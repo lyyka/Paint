@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pen_width_nud = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -45,11 +44,7 @@
             this.orangeColor = new System.Windows.Forms.Button();
             this.yellowColor = new System.Windows.Forms.Button();
             this.greenColor = new System.Windows.Forms.Button();
-            this.circle_rb = new System.Windows.Forms.RadioButton();
-            this.rect_rb = new System.Windows.Forms.RadioButton();
-            this.basic_pen_rb = new System.Windows.Forms.RadioButton();
             this.color_mixer = new System.Windows.Forms.ColorDialog();
-            this.spray_rb = new System.Windows.Forms.RadioButton();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newDrawing_ts = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,15 +56,13 @@
             this.resetAll_ts = new System.Windows.Forms.ToolStripMenuItem();
             this.undo_ts = new System.Windows.Forms.ToolStripMenuItem();
             this.about_ts = new System.Windows.Forms.ToolStripMenuItem();
-            this.eraser_rb = new System.Windows.Forms.RadioButton();
             this.saveDrawing_Dialog = new System.Windows.Forms.SaveFileDialog();
             this.panel1 = new System.Windows.Forms.Panel();
             this.shapesControl_gb = new System.Windows.Forms.GroupBox();
             this.rect_pb = new System.Windows.Forms.PictureBox();
-            this.cricle_pb = new System.Windows.Forms.PictureBox();
+            this.circle_pb = new System.Windows.Forms.PictureBox();
             this.drawingControls_gb = new System.Windows.Forms.GroupBox();
             this.text_pb = new System.Windows.Forms.PictureBox();
-            this.text_rb = new System.Windows.Forms.RadioButton();
             this.pen_pb = new System.Windows.Forms.PictureBox();
             this.eraser_pb = new System.Windows.Forms.PictureBox();
             this.spray_pb = new System.Windows.Forms.PictureBox();
@@ -87,7 +80,7 @@
             this.panel1.SuspendLayout();
             this.shapesControl_gb.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rect_pb)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cricle_pb)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circle_pb)).BeginInit();
             this.drawingControls_gb.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.text_pb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pen_pb)).BeginInit();
@@ -175,7 +168,6 @@
             // Colormixer
             // 
             this.Colormixer.BackColor = System.Drawing.Color.White;
-            this.Colormixer.BackgroundImage = global::Paint.Properties.Resources.color_palette_UI;
             this.Colormixer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Colormixer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Colormixer.Location = new System.Drawing.Point(170, 29);
@@ -315,46 +307,6 @@
             this.greenColor.TabStop = false;
             this.greenColor.UseVisualStyleBackColor = false;
             // 
-            // circle_rb
-            // 
-            this.circle_rb.AutoSize = true;
-            this.circle_rb.CausesValidation = false;
-            this.circle_rb.Location = new System.Drawing.Point(70, 36);
-            this.circle_rb.Name = "circle_rb";
-            this.circle_rb.Size = new System.Drawing.Size(14, 13);
-            this.circle_rb.TabIndex = 14;
-            this.circle_rb.UseVisualStyleBackColor = true;
-            // 
-            // rect_rb
-            // 
-            this.rect_rb.AutoSize = true;
-            this.rect_rb.CausesValidation = false;
-            this.rect_rb.Location = new System.Drawing.Point(7, 36);
-            this.rect_rb.Name = "rect_rb";
-            this.rect_rb.Size = new System.Drawing.Size(14, 13);
-            this.rect_rb.TabIndex = 16;
-            this.rect_rb.UseVisualStyleBackColor = true;
-            // 
-            // basic_pen_rb
-            // 
-            this.basic_pen_rb.AutoSize = true;
-            this.basic_pen_rb.CausesValidation = false;
-            this.basic_pen_rb.Location = new System.Drawing.Point(6, 36);
-            this.basic_pen_rb.Name = "basic_pen_rb";
-            this.basic_pen_rb.Size = new System.Drawing.Size(14, 13);
-            this.basic_pen_rb.TabIndex = 22;
-            this.basic_pen_rb.UseVisualStyleBackColor = true;
-            // 
-            // spray_rb
-            // 
-            this.spray_rb.AutoSize = true;
-            this.spray_rb.CausesValidation = false;
-            this.spray_rb.Location = new System.Drawing.Point(64, 36);
-            this.spray_rb.Name = "spray_rb";
-            this.spray_rb.Size = new System.Drawing.Size(14, 13);
-            this.spray_rb.TabIndex = 11;
-            this.spray_rb.UseVisualStyleBackColor = true;
-            // 
             // menuStrip
             // 
             this.menuStrip.BackColor = System.Drawing.Color.White;
@@ -448,16 +400,6 @@
             this.about_ts.Text = "About";
             this.about_ts.Click += new System.EventHandler(this.aboutSoftware_Click);
             // 
-            // eraser_rb
-            // 
-            this.eraser_rb.AutoSize = true;
-            this.eraser_rb.Location = new System.Drawing.Point(122, 36);
-            this.eraser_rb.Name = "eraser_rb";
-            this.eraser_rb.Size = new System.Drawing.Size(14, 13);
-            this.eraser_rb.TabIndex = 32;
-            this.eraser_rb.UseVisualStyleBackColor = true;
-            this.eraser_rb.CheckedChanged += new System.EventHandler(this.eraser_rb_CheckedChanged);
-            // 
             // saveDrawing_Dialog
             // 
             this.saveDrawing_Dialog.Filter = "PNG|*.png";
@@ -477,9 +419,7 @@
             // shapesControl_gb
             // 
             this.shapesControl_gb.Controls.Add(this.rect_pb);
-            this.shapesControl_gb.Controls.Add(this.circle_rb);
-            this.shapesControl_gb.Controls.Add(this.cricle_pb);
-            this.shapesControl_gb.Controls.Add(this.rect_rb);
+            this.shapesControl_gb.Controls.Add(this.circle_pb);
             this.shapesControl_gb.Location = new System.Drawing.Point(796, 3);
             this.shapesControl_gb.Name = "shapesControl_gb";
             this.shapesControl_gb.Size = new System.Drawing.Size(549, 118);
@@ -490,35 +430,33 @@
             // rect_pb
             // 
             this.rect_pb.BackColor = System.Drawing.Color.Transparent;
-            this.rect_pb.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rect_pb.BackgroundImage")));
             this.rect_pb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.rect_pb.Location = new System.Drawing.Point(27, 23);
+            this.rect_pb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rect_pb.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rect_pb.Location = new System.Drawing.Point(6, 23);
             this.rect_pb.Name = "rect_pb";
             this.rect_pb.Size = new System.Drawing.Size(32, 32);
             this.rect_pb.TabIndex = 33;
             this.rect_pb.TabStop = false;
             // 
-            // cricle_pb
+            // circle_pb
             // 
-            this.cricle_pb.BackColor = System.Drawing.Color.Transparent;
-            this.cricle_pb.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cricle_pb.BackgroundImage")));
-            this.cricle_pb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cricle_pb.Location = new System.Drawing.Point(90, 23);
-            this.cricle_pb.Name = "cricle_pb";
-            this.cricle_pb.Size = new System.Drawing.Size(32, 32);
-            this.cricle_pb.TabIndex = 34;
-            this.cricle_pb.TabStop = false;
+            this.circle_pb.BackColor = System.Drawing.Color.Transparent;
+            this.circle_pb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.circle_pb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.circle_pb.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.circle_pb.Location = new System.Drawing.Point(44, 23);
+            this.circle_pb.Name = "circle_pb";
+            this.circle_pb.Size = new System.Drawing.Size(32, 32);
+            this.circle_pb.TabIndex = 34;
+            this.circle_pb.TabStop = false;
             // 
             // drawingControls_gb
             // 
             this.drawingControls_gb.Controls.Add(this.text_pb);
-            this.drawingControls_gb.Controls.Add(this.text_rb);
             this.drawingControls_gb.Controls.Add(this.pen_pb);
-            this.drawingControls_gb.Controls.Add(this.spray_rb);
             this.drawingControls_gb.Controls.Add(this.eraser_pb);
-            this.drawingControls_gb.Controls.Add(this.basic_pen_rb);
             this.drawingControls_gb.Controls.Add(this.spray_pb);
-            this.drawingControls_gb.Controls.Add(this.eraser_rb);
             this.drawingControls_gb.Location = new System.Drawing.Point(518, 3);
             this.drawingControls_gb.Name = "drawingControls_gb";
             this.drawingControls_gb.Size = new System.Drawing.Size(272, 118);
@@ -529,29 +467,22 @@
             // text_pb
             // 
             this.text_pb.BackColor = System.Drawing.Color.Transparent;
-            this.text_pb.BackgroundImage = global::Paint.Properties.Resources.text;
             this.text_pb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.text_pb.Location = new System.Drawing.Point(200, 23);
+            this.text_pb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.text_pb.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.text_pb.Location = new System.Drawing.Point(120, 23);
             this.text_pb.Name = "text_pb";
             this.text_pb.Size = new System.Drawing.Size(32, 32);
             this.text_pb.TabIndex = 39;
             this.text_pb.TabStop = false;
             // 
-            // text_rb
-            // 
-            this.text_rb.AutoSize = true;
-            this.text_rb.Location = new System.Drawing.Point(180, 36);
-            this.text_rb.Name = "text_rb";
-            this.text_rb.Size = new System.Drawing.Size(14, 13);
-            this.text_rb.TabIndex = 38;
-            this.text_rb.UseVisualStyleBackColor = true;
-            // 
             // pen_pb
             // 
             this.pen_pb.BackColor = System.Drawing.Color.Transparent;
-            this.pen_pb.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pen_pb.BackgroundImage")));
             this.pen_pb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pen_pb.Location = new System.Drawing.Point(26, 23);
+            this.pen_pb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pen_pb.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pen_pb.Location = new System.Drawing.Point(6, 23);
             this.pen_pb.Name = "pen_pb";
             this.pen_pb.Size = new System.Drawing.Size(32, 32);
             this.pen_pb.TabIndex = 35;
@@ -560,9 +491,10 @@
             // eraser_pb
             // 
             this.eraser_pb.BackColor = System.Drawing.Color.Transparent;
-            this.eraser_pb.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("eraser_pb.BackgroundImage")));
             this.eraser_pb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.eraser_pb.Location = new System.Drawing.Point(142, 23);
+            this.eraser_pb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.eraser_pb.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.eraser_pb.Location = new System.Drawing.Point(82, 23);
             this.eraser_pb.Name = "eraser_pb";
             this.eraser_pb.Size = new System.Drawing.Size(32, 32);
             this.eraser_pb.TabIndex = 37;
@@ -571,9 +503,10 @@
             // spray_pb
             // 
             this.spray_pb.BackColor = System.Drawing.Color.Transparent;
-            this.spray_pb.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("spray_pb.BackgroundImage")));
             this.spray_pb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.spray_pb.Location = new System.Drawing.Point(84, 23);
+            this.spray_pb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.spray_pb.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.spray_pb.Location = new System.Drawing.Point(44, 23);
             this.spray_pb.Name = "spray_pb";
             this.spray_pb.Size = new System.Drawing.Size(32, 32);
             this.spray_pb.TabIndex = 36;
@@ -653,7 +586,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoScrollMargin = new System.Drawing.Size(10, 10);
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1360, 851);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -664,6 +597,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Paint";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pen_width_nud)).EndInit();
@@ -673,11 +607,9 @@
             this.menuStrip.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.shapesControl_gb.ResumeLayout(false);
-            this.shapesControl_gb.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rect_pb)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cricle_pb)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circle_pb)).EndInit();
             this.drawingControls_gb.ResumeLayout(false);
-            this.drawingControls_gb.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.text_pb)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pen_pb)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eraser_pb)).EndInit();
@@ -705,18 +637,13 @@
         private System.Windows.Forms.Button yellowColor;
         private System.Windows.Forms.Button greenColor;
         private System.Windows.Forms.Button mostUsedColor_pb;
-        private System.Windows.Forms.RadioButton circle_rb;
-        private System.Windows.Forms.RadioButton rect_rb;
-        private System.Windows.Forms.RadioButton basic_pen_rb;
         private System.Windows.Forms.ColorDialog color_mixer;
         private System.Windows.Forms.Button Colormixer;
-        private System.Windows.Forms.RadioButton spray_rb;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem about_ts;
         private System.Windows.Forms.NumericUpDown pen_width_nud;
-        private System.Windows.Forms.RadioButton eraser_rb;
         private System.Windows.Forms.PictureBox rect_pb;
-        private System.Windows.Forms.PictureBox cricle_pb;
+        private System.Windows.Forms.PictureBox circle_pb;
         private System.Windows.Forms.PictureBox pen_pb;
         private System.Windows.Forms.PictureBox spray_pb;
         private System.Windows.Forms.PictureBox eraser_pb;
@@ -742,7 +669,6 @@
         private System.Windows.Forms.GroupBox shapesControl_gb;
         private System.Windows.Forms.GroupBox drawingControls_gb;
         private System.Windows.Forms.PictureBox text_pb;
-        private System.Windows.Forms.RadioButton text_rb;
     }
 }
 

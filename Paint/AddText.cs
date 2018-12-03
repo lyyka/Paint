@@ -39,7 +39,7 @@ namespace Paint
             currentColor_pb.BackColor = current_color;
         }
 
-        private void coloMixer_Click(object sender, EventArgs e)
+        private void currentColor_pb_Click(object sender, EventArgs e)
         {
             color_mixer.ShowDialog();
             if (color_mixer.Color != null)
@@ -60,6 +60,7 @@ namespace Paint
             {
                 Font new_font = new Font(fontFamily_cb.Items[fontFamily_cb.SelectedIndex].ToString(), font_size);
                 caller.AddText(xPos, yPos, text, new_font, current_color);
+                Close();
             }
             else
             {
@@ -72,5 +73,7 @@ namespace Paint
             Font preview_font = new Font(fontFamily_cb.Items[fontFamily_cb.SelectedIndex].ToString(), 12);
             previewLabel.Font = preview_font;
         }
+
+        
     }
 }

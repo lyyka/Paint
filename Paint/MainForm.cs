@@ -15,6 +15,7 @@ namespace Paint
 {
     public partial class MainForm : Form
     {
+        Control current_control;
         string current_file = "";
         // drawing buffers
         List<GObject> objects = new List<GObject>();
@@ -34,6 +35,8 @@ namespace Paint
             {Color.Lime,0},
             {Color.FromArgb(192, 0, 0),0}
         };
+        // all input methods
+        List<Control> draw_methods;
         Random _rnd = new Random();
         // indicates if the user's mouse is pressed down on the canvas
         bool drawing = false;
@@ -45,7 +48,7 @@ namespace Paint
         // for drawing circles and reactangles real time
         int live_circle_rect_x;
         int live_circle_rect_y;
-        // pens
+        // pen
         Pen pen = new Pen (Color.Black, 1);
         public MainForm()
         {
@@ -56,41 +59,33 @@ namespace Paint
 
         private void dcPaint(object sender, PaintEventArgs e)
         {
-            if (rect_rb.Checked)
+            Draw(e.Graphics);
+            if (current_control == rect_pb)
             {
                 liveDrawRectangle(e.Graphics);
             }
-            if (circle_rb.Checked)
+            if (current_control == circle_pb)
             {
                 liveDrawEllipse(e.Graphics);
             }
-            Draw(e.Graphics);
         }
 
         // live draw functions
 
         private void liveDrawRectangle(Graphics g)
         {
-            g.DrawRectangle(pen, x_pos, y_pos, live_circle_rect_x, live_circle_rect_y);
+            g.DrawRectangle(pen, Math.Min(x_pos,live_circle_rect_x), Math.Min(y_pos, live_circle_rect_y), Math.Abs(live_circle_rect_x - x_pos), Math.Abs(live_circle_rect_y - y_pos));
         }
 
         private void liveDrawEllipse(Graphics g)
         {
-            g.DrawEllipse(pen, x_pos, y_pos, live_circle_rect_x, live_circle_rect_y);
+            g.DrawEllipse(pen, Math.Min(x_pos, live_circle_rect_x), Math.Min(y_pos, live_circle_rect_y), Math.Abs(live_circle_rect_x - x_pos), Math.Abs(live_circle_rect_y - y_pos));
         }
 
-        // add txt callback from AddText form
-        public void AddText(int xPos, int ypos, string text, Font font, Color color)
-        {
-            GObject new_text = new Text(xPos, ypos, text, font, color, pen.Width);
-            objects.Add(new_text);
-
-            drawingCanvas.Invalidate();
-        }
-
+        // draw - called on paint
         private void Draw(Graphics g)
         {
-            if(last_saved.Count != objects.Count)
+            if (last_saved.Count != objects.Count)
             {
                 savedStatus_label.Text = "Pending changes";
             }
@@ -103,6 +98,15 @@ namespace Paint
             {
                 objects[i].Draw(g);
             }
+        }
+
+        // add txt callback from AddText form
+        public void AddText(int xPos, int ypos, string text, Font font, Color color)
+        {
+            GObject new_text = new Text(xPos, ypos, text, font, color, pen.Width);
+            objects.Add(new_text);
+
+            drawingCanvas.Invalidate();
         }
 
         private void drawingCanvas_MouseDown(object sender, MouseEventArgs e)
@@ -122,27 +126,11 @@ namespace Paint
 
 
             // INTIALIZE ADD TEXT ON MOUSE DOWN
-            if (text_rb.Checked)
+            if (current_control == text_pb)
             {
                 AddText at = new AddText(pen.Color,x_pos,y_pos, this);
                 at.Show();
             }
-        }
-
-        private void drawingCanvas_MouseUp(object sender, MouseEventArgs e)
-        {
-            // save live drawn shapes on mouse up
-            if (rect_rb.Checked)
-            {
-                GObject new_rect = new Rect(x_pos, y_pos, live_circle_rect_x, live_circle_rect_y, pen.Color, pen.Width);
-                objects.Add(new_rect);
-            }
-            if (circle_rb.Checked)
-            {
-                GObject new_ellipse = new Ellipse(x_pos, y_pos, live_circle_rect_x, live_circle_rect_y, pen.Color, pen.Width);
-                objects.Add(new_ellipse);
-            }
-            drawing = false;
         }
 
         private void drawingCanvas_MouseMove(object sender, MouseEventArgs e)
@@ -153,11 +141,11 @@ namespace Paint
             if (drawing)
             {
                 // save eraser and basic pen (both are just lines, colors differ)
-                if (eraser_rb.Checked || basic_pen_rb.Checked)
+                if (current_control == eraser_pb || current_control == pen_pb)
                 {
                     GObject new_line = new Line(
                         x_pos, y_pos, new_x_pos, new_y_pos,
-                        eraser_rb.Checked ? Color.White : pen.Color,
+                        current_control == eraser_pb ? Color.White : pen.Color,
                         pen.Width
                     );
                     objects.Add(new_line);
@@ -166,7 +154,7 @@ namespace Paint
                     drawingCanvas.Invalidate();
                 }
                 // save spray
-                if (spray_rb.Checked)
+                if (current_control == spray_pb)
                 {
                     int spray_radius = Convert.ToInt32(pen.Width);
                     for (int i = 0; i < 100; ++i)
@@ -176,31 +164,65 @@ namespace Paint
                         double x = new_x_pos + Math.Cos(theta) * r;
                         double y = new_y_pos + Math.Sin(theta) * r;
 
-                        GObject ellipse = new Ellipse((int)x - 1, (int)y - 1, 1, 1, pen.Color, 1);
+                        GObject ellipse = new Spray((int)x - 1, (int)y - 1, 1, 1, pen.Color, 1);
                         objects.Add(ellipse);
                     }
-                    drawingCanvas.Invalidate();
+                    Region invalidate = new Region(new Rectangle(new_x_pos - spray_radius, new_y_pos - spray_radius, spray_radius*2, spray_radius*2));
+                    drawingCanvas.Invalidate(invalidate);
                 }
                 // draw rectangle on mouse move
-                if (rect_rb.Checked || circle_rb.Checked)
+                if (current_control == rect_pb || current_control == circle_pb)
                 {
-                    live_circle_rect_x = new_x_pos - x_pos;
-                    live_circle_rect_y = new_y_pos - y_pos;
+                    live_circle_rect_x = new_x_pos;
+                    live_circle_rect_y = new_y_pos;
 
                     drawingCanvas.Invalidate();
                 }
             }
         }
 
+        private void drawingCanvas_MouseUp(object sender, MouseEventArgs e)
+        {
+            // save live drawn shapes on mouse up
+            if (current_control == rect_pb)
+            {
+                GObject new_rect = new Rect(x_pos, y_pos, live_circle_rect_x, live_circle_rect_y, pen.Color, pen.Width);
+                objects.Add(new_rect);
+            }
+            if (current_control == circle_pb)
+            {
+                GObject new_ellipse = new Ellipse(x_pos, y_pos, live_circle_rect_x, live_circle_rect_y, pen.Color, pen.Width);
+                objects.Add(new_ellipse);
+            }
+            drawing = false;
+        }
+        
         #endregion
 
-        #region MENU
+        #region MENU AND SAVING
 
         private void newDrawing_ts_Click(object sender, EventArgs e) // new drawing
         {
             CanvasSettings cs = new CanvasSettings(this, true);
             cs.Show();
         }
+
+        // on form close
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(last_saved.Count != objects.Count)
+            {
+                DialogResult dg = MessageBox.Show("There are unsaved changes. Do you wish to save first?", "Warning!", MessageBoxButtons.YesNo);
+
+                if (dg == DialogResult.Yes)
+                {
+                    Save();
+
+                    Close();
+                }
+            }
+        }
+        // on form close
 
         private void openDrawing_ts_Click(object sender, EventArgs e) // open existing drawing
         {
@@ -236,7 +258,17 @@ namespace Paint
 
         private void saveDrawing_ts_Click(object sender, EventArgs e) // just save
         {
-            if(current_file.Trim().Length > 0 && File.Exists(current_file))
+            Save();
+        }
+
+        private void saveAs_ts_Click(object sender, EventArgs e) // save as
+        {
+            SaveAs();
+        }
+
+        private void Save() // just save to existing
+        {
+            if (current_file.Trim().Length > 0 && File.Exists(current_file))
             {
                 Bitmap bmp = new Bitmap(drawingCanvas.ClientSize.Width, drawingCanvas.ClientSize.Height);
                 drawingCanvas.DrawToBitmap(bmp, drawingCanvas.ClientRectangle);
@@ -247,11 +279,6 @@ namespace Paint
             {
                 SaveAs();
             }
-        }
-
-        private void saveAs_ts_Click(object sender, EventArgs e) // save as
-        {
-            SaveAs();
         }
 
         private void SaveAs() // save as
@@ -297,7 +324,7 @@ namespace Paint
             pen.Width = 1;
             ChangeColor(Color.Black);
             // check basic pen input method
-            basic_pen_rb.Checked = true;
+            current_control = pen_pb;
         }
 
         private void undo_ts_Click(object sender, EventArgs e) // undo
@@ -356,7 +383,7 @@ namespace Paint
 
         private void eraser_rb_CheckedChanged(object sender, EventArgs e)
         {
-            if (eraser_rb.Checked)
+            if (current_control == eraser_pb)
             {
                 last_color = pen.Color;
                 pen.Color = Color.White;
@@ -415,10 +442,46 @@ namespace Paint
             drawingCanvas.Visible = true;
         }
 
+        // change input method
+        private void ChangeDrawInput(object sender, EventArgs e)
+        {
+            //reset colors
+            ResetDrawInputBackground();
+            //mark the selected one
+            Control clicked_control = sender as Control;
+            current_control = clicked_control;
+            clicked_control.BackColor = Color.LightSteelBlue;
+        }
+
+        // reset colors on all input methods
+        private void ResetDrawInputBackground()
+        {
+            foreach(Control draw_input_method in draw_methods)
+            {
+                draw_input_method.BackColor = Color.Transparent;
+            }
+        }
+
         private void MainForm_Load(object sender, EventArgs e) // form load
         {
-            // select basic pen drawing method
-            basic_pen_rb.Checked = true;
+            // set images for controls
+            Icon = new Icon(@"images/icon.ico");
+            Colormixer.BackgroundImage = Image.FromFile(@"images /color_palette_UI.png");
+            pen_pb.BackgroundImage = Image.FromFile(@"images/pencil.png");
+            spray_pb.BackgroundImage = Image.FromFile(@"images/spray.png");
+            eraser_pb.BackgroundImage = Image.FromFile(@"images/eraser.png");
+            text_pb.BackgroundImage = Image.FromFile(@"images/text.png");
+            rect_pb.BackgroundImage = Image.FromFile(@"images/rectangle.png");
+            circle_pb.BackgroundImage = Image.FromFile(@"images/circle.png");
+            // select basic pen
+            current_control = pen_pb;
+            // click events for drawing controls
+            pen_pb.Click += ChangeDrawInput;
+            spray_pb.Click += ChangeDrawInput;
+            eraser_pb.Click += ChangeDrawInput;
+            text_pb.Click += ChangeDrawInput;
+            rect_pb.Click += ChangeDrawInput;
+            circle_pb.Click += ChangeDrawInput;
             // click events for colors
             greenColor.Click += colorBox_Click;
             yellowColor.Click += colorBox_Click;
@@ -433,7 +496,9 @@ namespace Paint
             mostUsedColor_pb.Click += colorBox_Click;
             // paint event
             drawingCanvas.Paint += dcPaint;
-
+            // add draw methods to list
+            draw_methods = new List<Control>() { pen_pb, spray_pb, eraser_pb, text_pb, rect_pb, circle_pb };
+            // initialize canvas
             initCanvas(drawingCanvas.Width, drawingCanvas.Height, true);
         }
     }

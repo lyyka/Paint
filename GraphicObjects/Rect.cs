@@ -26,7 +26,7 @@ namespace GraphicObjects
         public override void Draw(Graphics g)
         {
             Pen temp_pen = new Pen(penColor, penWidth);
-            g.DrawRectangle(temp_pen, xPos, yPos, xSize, ySize);
+            g.DrawRectangle(temp_pen, Math.Min(xPos, xSize), Math.Min(yPos, ySize), Math.Abs(xSize - xPos), Math.Abs(ySize - yPos));
         }
     }
 }

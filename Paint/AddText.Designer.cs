@@ -34,8 +34,6 @@
             this.fontSize_label = new System.Windows.Forms.Label();
             this.currentColor_pb = new System.Windows.Forms.PictureBox();
             this.color_label = new System.Windows.Forms.Label();
-            this.or_label = new System.Windows.Forms.Label();
-            this.coloMixer = new System.Windows.Forms.Button();
             this.addText_btn = new System.Windows.Forms.Button();
             this.color_mixer = new System.Windows.Forms.ColorDialog();
             this.fontFamily_cb = new System.Windows.Forms.ComboBox();
@@ -86,6 +84,7 @@
             this.currentColor_pb.Size = new System.Drawing.Size(49, 50);
             this.currentColor_pb.TabIndex = 4;
             this.currentColor_pb.TabStop = false;
+            this.currentColor_pb.Click += new System.EventHandler(this.currentColor_pb_Click);
             // 
             // color_label
             // 
@@ -96,28 +95,6 @@
             this.color_label.Size = new System.Drawing.Size(40, 13);
             this.color_label.TabIndex = 5;
             this.color_label.Text = "Color:";
-            // 
-            // or_label
-            // 
-            this.or_label.AutoSize = true;
-            this.or_label.Location = new System.Drawing.Point(84, 228);
-            this.or_label.Name = "or_label";
-            this.or_label.Size = new System.Drawing.Size(16, 13);
-            this.or_label.TabIndex = 6;
-            this.or_label.Text = "or";
-            // 
-            // coloMixer
-            // 
-            this.coloMixer.BackColor = System.Drawing.Color.White;
-            this.coloMixer.BackgroundImage = global::Paint.Properties.Resources.color_palette_UI;
-            this.coloMixer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.coloMixer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.coloMixer.Location = new System.Drawing.Point(124, 209);
-            this.coloMixer.Name = "coloMixer";
-            this.coloMixer.Size = new System.Drawing.Size(49, 50);
-            this.coloMixer.TabIndex = 12;
-            this.coloMixer.UseVisualStyleBackColor = false;
-            this.coloMixer.Click += new System.EventHandler(this.coloMixer_Click);
             // 
             // addText_btn
             // 
@@ -170,8 +147,6 @@
             this.Controls.Add(this.fontFamily_label);
             this.Controls.Add(this.fontFamily_cb);
             this.Controls.Add(this.addText_btn);
-            this.Controls.Add(this.coloMixer);
-            this.Controls.Add(this.or_label);
             this.Controls.Add(this.color_label);
             this.Controls.Add(this.currentColor_pb);
             this.Controls.Add(this.fontSize_label);
@@ -200,8 +175,6 @@
         private System.Windows.Forms.Label fontSize_label;
         private System.Windows.Forms.PictureBox currentColor_pb;
         private System.Windows.Forms.Label color_label;
-        private System.Windows.Forms.Label or_label;
-        private System.Windows.Forms.Button coloMixer;
         private System.Windows.Forms.Button addText_btn;
         private System.Windows.Forms.ColorDialog color_mixer;
         private System.Windows.Forms.ComboBox fontFamily_cb;

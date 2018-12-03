@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace GraphicObjects
 {
-    public class Ellipse : GObject
+    public class Spray : GObject
     {
         public int xPos { get; set; }
         public int yPos { get; set; }
         public int xSize { get; set; }
         public int ySize { get; set; }
 
-        public Ellipse(int x_pos, int y_pos, int x_size, int y_size, Color pen_color, float pen_width)
+        public Spray(int x_pos, int y_pos, int x_size, int y_size, Color pen_color, float pen_width)
             :base(pen_color, pen_width)
         {
             this.xPos = x_pos;
@@ -23,10 +23,11 @@ namespace GraphicObjects
             this.ySize = y_size;
         }
 
+        // this method deffers from Ellipse.cs method, because here there is no live drawing, coordinates are always positive
         public override void Draw(Graphics g)
         {
             Pen temp_pen = new Pen(penColor, penWidth);
-            g.DrawEllipse(temp_pen, Math.Min(xPos, xSize), Math.Min(yPos, ySize), Math.Abs(xSize - xPos), Math.Abs(ySize - yPos));
+            g.DrawEllipse(temp_pen, xPos, yPos, xSize, ySize);
         }
     }
 }
