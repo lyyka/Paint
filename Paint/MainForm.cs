@@ -273,6 +273,8 @@ namespace Paint
                 Bitmap bmp = new Bitmap(drawingCanvas.ClientSize.Width, drawingCanvas.ClientSize.Height);
                 drawingCanvas.DrawToBitmap(bmp, drawingCanvas.ClientRectangle);
                 bmp.Save(current_file);
+                bmp.Dispose();
+
                 setSaved();
             }
             else
@@ -296,6 +298,9 @@ namespace Paint
 
                 current_file = saveDrawing_Dialog.FileName;
             }
+
+            bmp.Dispose();
+
             setSaved();
         }
         private void setSaved() // save saved objects, so we have what to compare if changes occured
